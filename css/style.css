@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+html { scroll-behavior: smooth; }
+
+body { font-family: 'Inter', system-ui, sans-serif; }
+
+.font-korean { font-family: 'Noto Sans KR', sans-serif; }
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero-bg {
+  background: linear-gradient(135deg, #7F1D1D 0%, #B91C1C 45%, #DC2626 75%, #EF4444 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ── Navbar ───────────────────────────────────────────── */
+#navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.10); }
+
+/* ── Section headers ──────────────────────────────────── */
+.section-title {
+  background: linear-gradient(135deg, #111827, #374151);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Transport cards ──────────────────────────────────── */
+.transport-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  border: 2px solid #E5E7EB;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.transport-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.09); }
+.transport-card.recommended { border-color: #16A34A; }
+.transport-card.not-recommended { border-color: #EF4444; }
+
+.card-badge {
+  position: absolute;
+  top: -13px;
+  left: 22px;
+  background: #16A34A;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+.card-badge.bad { background: #EF4444; }
+.card-icon { font-size: 2.4rem; margin-bottom: 14px; }
+
+.option-box {
+  background: #F9FAFB;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid #E5E7EB;
+}
+.option-box .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9CA3AF;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ── Filter buttons ───────────────────────────────────── */
+.filter-btn {
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: #fff;
+  border: 1.5px solid #E5E7EB;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: #DC2626; color: #DC2626; }
+.filter-btn.active { background: #DC2626; border-color: #DC2626; color: #fff; }
+
+/* ── Food cards ───────────────────────────────────────── */
+.food-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #E5E7EB;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.food-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.food-card.hidden { display: none !important; }
+
+.food-emoji { font-size: 2rem; margin-bottom: 10px; line-height: 1; }
+
+.korean-name {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #DC2626;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  line-height: 1.2;
+  margin-bottom: 3px;
+  transition: opacity 0.15s;
+}
+.korean-name:hover { opacity: 0.65; }
+.korean-name:active { opacity: 0.45; }
+
+.food-english { font-size: 0.88rem; font-weight: 600; color: #374151; margin-bottom: 8px; }
+
+.food-desc {
+  font-size: 0.79rem;
+  color: #6B7280;
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.food-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #F3F4F6;
+  margin-top: auto;
+}
+.price { font-weight: 700; color: #16A34A; font-size: 0.82rem; }
+.maps-link { font-size: 0.72rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
+.maps-link:hover { text-decoration: underline; }
+
+/* ── COEX cards ───────────────────────────────────────── */
+.coex-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid #E5E7EB;
+}
+.coex-card h3 { font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
+.coex-card p { font-size: 0.83rem; color: #6B7280; line-height: 1.65; margin-bottom: 12px; }
+.coex-link { font-size: 0.78rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
+.coex-link:hover { text-decoration: underline; }
+
+.highlight-card { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-color: #BFDBFE; }
+
+.app-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.app-badge {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.72rem;
+  background: #fff;
+  border: 1px solid #BFDBFE;
+  padding: 3px 10px;
+  border-radius: 12px;
+  color: #1D4ED8;
+  font-weight: 500;
+}
+
+/* ── Activity cards ───────────────────────────────────── */
+.activity-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #E5E7EB;
+  display: flex;
+  gap: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.activity-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.activity-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+.activity-card h3 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.activity-card p { font-size: 0.78rem; color: #6B7280; line-height: 1.55; margin-bottom: 10px; }
+
+.korean-tag {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.72rem;
+  color: #6B7280;
+  background: #F3F4F6;
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+
+.activity-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.activity-meta span { font-size: 0.68rem; background: #F3F4F6; padding: 3px 8px; border-radius: 10px; color: #4B5563; }
+.activity-link { font-size: 0.72rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
+.activity-link:hover { text-decoration: underline; }
+
+/* ── Tip cards ────────────────────────────────────────── */
+.tip-card { background: #fff; border-radius: 14px; padding: 22px; border: 1px solid #E5E7EB; }
+.tip-icon { font-size: 1.75rem; margin-bottom: 10px; line-height: 1; }
+.tip-card h4 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+.tip-card p { font-size: 0.79rem; color: #6B7280; line-height: 1.6; }
+
+/* ── Toast ────────────────────────────────────────────── */
+#copy-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+}

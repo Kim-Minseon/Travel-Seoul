@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your complete guide to Seoul for ICML 2026 — airport transport, Korean food guide with Korean names, restaurants near COEX, and top activities.">
+  <meta property="og:title" content="Seoul Guide for ICML 2026">
+  <meta property="og:description" content="Food, transport & things to do in Seoul — written for ICML conference attendees at COEX.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇰🇷</text></svg>">
+  <title>Seoul Guide for ICML 2026 — Food, Transport & Activities</title>
+
+  <!-- ═══════════════════════════════════════════════════════
+       GOOGLE ADSENSE — uncomment after your site is approved
+       Replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID
+       ═══════════════════════════════════════════════════════
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#DC2626',
+            'primary-dark': '#B91C1C',
+            'primary-light': '#FEE2E2',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ══════════════════════════════════════════ NAVBAR ══ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 transition-shadow duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-15 py-3">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🇰🇷</span>
+        <span class="font-bold text-gray-900">Seoul Guide</span>
+        <span class="hidden sm:inline text-xs bg-primary text-white px-2 py-0.5 rounded-full font-semibold">ICML 2026</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
+        <a href="#getting-here" class="hover:text-primary transition-colors">Getting Here</a>
+        <a href="#food-guide" class="hover:text-primary transition-colors">Food Guide</a>
+        <a href="#near-coex" class="hover:text-primary transition-colors">Near COEX</a>
+        <a href="#activities" class="hover:text-primary transition-colors">Activities</a>
+        <a href="#tips" class="hover:text-primary transition-colors">Tips</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1 text-sm font-medium text-gray-600">
+    <a href="#getting-here" class="block py-2 hover:text-primary">🚇 Getting Here</a>
+    <a href="#food-guide" class="block py-2 hover:text-primary">🍜 Food Guide</a>
+    <a href="#near-coex" class="block py-2 hover:text-primary">📍 Near COEX</a>
+    <a href="#activities" class="block py-2 hover:text-primary">🏯 Activities</a>
+    <a href="#tips" class="block py-2 hover:text-primary">💡 Tips</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════ HERO ════ -->
+<section id="hero" class="pt-[52px]">
+  <div class="hero-bg py-20 sm:py-28 px-4">
+    <div class="max-w-4xl mx-auto text-center text-white relative z-10">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+        📅 ICML 2026 · COEX, Seoul · July 2026
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 leading-tight tracking-tight">
+        Your Seoul Survival Guide
+      </h1>
+      <p class="text-xl sm:text-2xl text-white/85 mb-2 font-korean">서울에 오신 것을 환영합니다</p>
+      <p class="text-base sm:text-lg text-white/75 max-w-2xl mx-auto mb-10">
+        Everything you need: getting from Incheon Airport, what to eat, where to explore — written for ICML attendees staying near COEX.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#getting-here" class="bg-white text-primary font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">🚇 Getting Here</a>
+        <a href="#food-guide" class="bg-white/20 border border-white/40 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/30 transition-colors text-sm">🍜 Food Guide</a>
+        <a href="#activities" class="bg-white/20 border border-white/40 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/30 transition-colors text-sm">🏯 Activities</a>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-900 text-white py-3 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-1 text-xs sm:text-sm text-gray-300">
+      <span>📍 COEX Convention Center, Gangnam-gu, Seoul</span>
+      <span>🚇 Samseong Station (Lines 2 & 9)</span>
+      <span>💱 ~1,400 KRW ≈ 1 USD</span>
+      <span>🌡️ July avg. 28–33°C / 82–91°F</span>
+    </div>
+  </div>
+</section>
+
+<!-- AdSense Slot 1 ─────────────────────────────────────
+<div class="max-w-7xl mx-auto px-4 py-2">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+──────────────────────────────────────────────────────── -->
+
+<!-- ══════════════════════════════════════ GETTING HERE ═ -->
+<section id="getting-here" class="py-16 px-4 scroll-mt-16">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold section-title mb-2">Incheon Airport → Seoul</h2>
+    <p class="text-gray-500 mb-10">COEX is in Gangnam — roughly 1.5 hours from Incheon International Airport (ICN)</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- AREX -->
+      <div class="transport-card recommended">
+        <div class="card-badge">⭐ Recommended</div>
+        <div class="card-icon">🚇</div>
+        <h3 class="text-xl font-bold mb-1">AREX Metro</h3>
+        <p class="text-sm text-gray-400 font-korean mb-4">공항철도</p>
+        <div class="space-y-3">
+          <div class="option-box">
+            <span class="label">All-Stop Train 일반열차</span>
+            <div class="grid grid-cols-2 gap-2 text-sm mt-1">
+              <div><span class="label">Time</span>~66 min</div>
+              <div><span class="label">Cost</span>~₩5,150</div>
+            </div>
+            <p class="text-xs text-gray-400 mt-1.5">Stops at Hongik Univ, Seoul Station &amp; more. Runs every ~12 min.</p>
+          </div>
+          <div class="option-box">
+            <span class="label">Direct / Express 직통열차</span>
+            <div class="grid grid-cols-2 gap-2 text-sm mt-1">
+              <div><span class="label">Time</span>43 min</div>
+              <div><span class="label">Cost</span>~₩9,500</div>
+            </div>
+            <p class="text-xs text-gray-400 mt-1.5">ICN → Seoul Station only. Less frequent.</p>
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-green-50 border border-green-100 rounded-xl text-sm text-green-900">
+          <strong>To COEX:</strong> AREX → Seoul Station → Line 2 → <strong>Samseong Station (삼성역)</strong>, exit 6.
+          <br><br>
+          <strong>Tip:</strong> Buy a <strong>T-money card (T머니)</strong> at any convenience store for ₩4,000. Tap on and off all buses, subways, and most taxis.
+        </div>
+      </div>
+
+      <!-- Bus -->
+      <div class="transport-card">
+        <div class="card-icon">🚌</div>
+        <h3 class="text-xl font-bold mb-1">Airport Limousine Bus</h3>
+        <p class="text-sm text-gray-400 font-korean mb-4">공항버스</p>
+        <div class="option-box mb-3">
+          <span class="label">Route 6001 → Gangnam / COEX Area</span>
+          <div class="grid grid-cols-2 gap-2 text-sm mt-1">
+            <div><span class="label">Time</span>~80 min*</div>
+            <div><span class="label">Cost</span>~₩17,000</div>
+          </div>
+          <p class="text-xs text-gray-400 mt-1.5">*Traffic-dependent. Goes directly to Gangnam/COEX area.</p>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-1.5">
+          <li>✅ Great for heavy luggage</li>
+          <li>✅ Comfortable seats, AC</li>
+          <li>✅ Stops near many hotels</li>
+          <li>⚠️ Can be slow in rush hour</li>
+        </ul>
+        <div class="mt-4 p-3 bg-gray-50 rounded-xl text-sm text-gray-600">
+          Buy tickets at the bus counter in Arrivals (1F), or use the <strong>KAL Limousine app</strong>. Look for the blue "리무진버스" signs.
+        </div>
+      </div>
+
+      <!-- Taxi -->
+      <div class="transport-card not-recommended">
+        <div class="card-badge bad">💸 Not Recommended</div>
+        <div class="card-icon">🚕</div>
+        <h3 class="text-xl font-bold mb-1">Taxi</h3>
+        <p class="text-sm text-gray-400 font-korean mb-4">택시</p>
+        <div class="option-box mb-3">
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <div><span class="label">Time</span>60–90 min</div>
+            <div><span class="label">Cost</span>₩70,000–100,000</div>
+          </div>
+          <p class="text-xs text-red-400 mt-1.5">Night/weekend surcharges apply. Can spike with traffic.</p>
+        </div>
+        <ul class="text-sm text-gray-600 space-y-1.5">
+          <li>❌ Very expensive solo</li>
+          <li>❌ Rush-hour traffic is brutal</li>
+          <li>✅ OK split across 3–4 people</li>
+          <li>✅ Door-to-door convenience</li>
+        </ul>
+        <div class="mt-4 p-3 bg-red-50 border border-red-100 rounded-xl text-sm text-red-800">
+          If you must take one: use <strong>Kakao T (카카오T)</strong> — it shows price upfront and supports in-app payment. Available on the App Store / Play Store.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ FOOD GUIDE ═══ -->
+<section id="food-guide" class="py-16 px-4 bg-white scroll-mt-16">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold section-title mb-2">Korean Food Guide</h2>
+    <p class="text-gray-500 mb-2">Must-try dishes. <strong>Tap the Korean name</strong> to copy it — paste into Maps or show your server.</p>
+
+    <!-- Filter -->
+    <div class="flex flex-wrap gap-2 mb-8 mt-4">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bbq">🔥 BBQ &amp; Grill</button>
+      <button class="filter-btn" data-filter="pork">🥩 Pork Dishes</button>
+      <button class="filter-btn" data-filter="soup">🍲 Soups &amp; Stews</button>
+      <button class="filter-btn" data-filter="noodles">🍜 Noodles</button>
+      <button class="filter-btn" data-filter="street">🥡 Street Food</button>
+      <button class="filter-btn" data-filter="seafood">🐟 Seafood</button>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+
+      <!-- ── BBQ & GRILL ────────────────────────────── -->
+
+      <div class="food-card" data-category="bbq">
+        <div class="food-emoji">🥓</div>
+        <button class="korean-name" data-korean="삼겹살">삼겹살</button>
+        <div class="food-english">Samgyeopsal</div>
+        <p class="food-desc">Thick-cut pork belly grilled at the table. Wrap in lettuce with garlic, green peppers, and ssamjang paste. Korea's most beloved BBQ.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/삼겹살+restaurant+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="bbq">
+        <div class="food-emoji">🍖</div>
+        <button class="korean-name" data-korean="숯불갈비">숯불갈비</button>
+        <div class="food-english">Sutbul Galbi</div>
+        <p class="food-desc">Charcoal-grilled short ribs with smoky, caramelized edges. A step above regular BBQ — worth the splurge.</p>
+        <div class="food-footer">
+          <span class="price">₩₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/숯불갈비+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="bbq">
+        <div class="food-emoji">🥩</div>
+        <button class="korean-name" data-korean="불고기">불고기</button>
+        <div class="food-english">Bulgogi</div>
+        <p class="food-desc">Thinly sliced marinated beef, sweet and savory. Grilled or stir-fried — one of Korea's most internationally recognized dishes.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/불고기+restaurant+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="bbq">
+        <div class="food-emoji">🐄</div>
+        <button class="korean-name" data-korean="한우">한우</button>
+        <div class="food-english">Hanwoo Beef</div>
+        <p class="food-desc">Premium Korean native cattle — extraordinary marbling and flavor. More expensive than regular beef but genuinely different. A once-in-a-trip experience.</p>
+        <div class="food-footer">
+          <span class="price">₩₩₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/한우+restaurant+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="bbq">
+        <div class="food-emoji">🍗</div>
+        <button class="korean-name" data-korean="닭갈비">닭갈비</button>
+        <div class="food-english">Dakgalbi</div>
+        <p class="food-desc">Spicy stir-fried chicken with rice cakes, cabbage, and gochujang on a hot iron plate. Add extra cheese on top for the modern version.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/닭갈비+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <!-- ── PORK DISHES ────────────────────────────── -->
+
+      <div class="food-card" data-category="pork">
+        <div class="food-emoji">🥬</div>
+        <button class="korean-name" data-korean="보쌈">보쌈</button>
+        <div class="food-english">Bossam</div>
+        <p class="food-desc">Slow-boiled pork belly, served with cabbage or perilla leaves, oyster kimchi, and radish. Mild, tender, and endlessly satisfying.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/보쌈+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="pork">
+        <div class="food-emoji">🦶</div>
+        <button class="korean-name" data-korean="족발">족발</button>
+        <div class="food-english">Jokbal</div>
+        <p class="food-desc">Braised pig's trotters in soy sauce, ginger, and spices. Gelatinous, tender, and surprisingly delicious dipped in salted shrimp paste.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/족발+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="pork">
+        <div class="food-emoji">🌶️</div>
+        <button class="korean-name" data-korean="제육볶음">제육볶음</button>
+        <div class="food-english">Jeyuk Bokkeum</div>
+        <p class="food-desc">Spicy stir-fried pork with gochujang and vegetables. A weekday lunch staple — served over rice with banchan side dishes.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/제육볶음+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <!-- ── SOUPS & STEWS ──────────────────────────── -->
+
+      <div class="food-card" data-category="soup">
+        <div class="food-emoji">🍲</div>
+        <button class="korean-name" data-korean="김치찌개">김치찌개</button>
+        <div class="food-english">Kimchi Jjigae</div>
+        <p class="food-desc">Kimchi stew with pork and tofu. Korea's ultimate comfort food — best when the kimchi is well-fermented. Served bubbling hot.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/김치찌개+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="soup">
+        <div class="food-emoji">🍵</div>
+        <button class="korean-name" data-korean="된장찌개">된장찌개</button>
+        <div class="food-english">Doenjang Jjigae</div>
+        <p class="food-desc">Fermented soybean paste stew with tofu, zucchini, and mushrooms. Korea's answer to miso soup — earthier, heartier, and deeply umami.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/된장찌개+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="soup">
+        <div class="food-emoji">🥣</div>
+        <button class="korean-name" data-korean="부대찌개">부대찌개</button>
+        <div class="food-english">Budae Jjigae</div>
+        <p class="food-desc">"Army Stew" — born after the Korean War, made with spam, hot dogs, ramen, kimchi, and cheese in a spicy broth. Still iconic decades later.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/부대찌개+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="soup">
+        <div class="food-emoji">🍚</div>
+        <button class="korean-name" data-korean="국밥">국밥</button>
+        <div class="food-english">Gukbap</div>
+        <p class="food-desc">Rice in hot pork or beef bone broth, loaded with meat. Korea's ultimate hangover cure and the perfect midnight meal. Open 24 hours at most spots.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/국밥+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="soup">
+        <div class="food-emoji">🫙</div>
+        <button class="korean-name" data-korean="내장탕">내장탕</button>
+        <div class="food-english">Naejang Tang</div>
+        <p class="food-desc">Intensely flavored spicy offal soup. A bold local favorite — not for the squeamish, but an authentic experience beloved by Koreans.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/내장탕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <!-- ── NOODLES ─────────────────────────────────── -->
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-emoji">🍝</div>
+        <button class="korean-name" data-korean="짜장면">짜장면</button>
+        <div class="food-english">Jjajangmyeon</div>
+        <p class="food-desc">Noodles in black bean sauce with pork and vegetables. Korea's #1 delivery food — rich, satisfying, and absolutely nothing like Chinese lo mein.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/짜장면+중국집+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-emoji">🦐</div>
+        <button class="korean-name" data-korean="짬뽕">짬뽕</button>
+        <div class="food-english">Jjamppong</div>
+        <p class="food-desc">Spicy red seafood noodle soup. The fiery counterpart to jjajangmyeon — often ordered as a combo at Chinese-Korean restaurants.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/짬뽕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-emoji">🍤</div>
+        <button class="korean-name" data-korean="탕수육">탕수육</button>
+        <div class="food-english">Tangsuyuk</div>
+        <p class="food-desc">Korean sweet-and-sour crispy pork or beef. Ordered alongside jjajangmyeon. Pro debate: do you dip (부먹) or pour (찍먹) the sauce? Pick a side.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/탕수육+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-emoji">🍜</div>
+        <button class="korean-name" data-korean="칼국수">칼국수</button>
+        <div class="food-english">Kalguksu</div>
+        <p class="food-desc">Hand-made knife-cut wheat noodles in a clear anchovy or chicken broth. Simple, hearty, and deeply comforting on a long conference day.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/칼국수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-emoji">🌶️</div>
+        <button class="korean-name" data-korean="비빔국수">비빔국수</button>
+        <div class="food-english">Bibim Guksu</div>
+        <p class="food-desc">Spicy cold mixed noodles with gochujang, cucumber, and egg. Refreshing and punchy — a lifesaver in Seoul's hot, humid July weather.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/비빔국수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-emoji">🥢</div>
+        <button class="korean-name" data-korean="잔치국수">잔치국수</button>
+        <div class="food-english">Janchi Guksu</div>
+        <p class="food-desc">Traditional banquet noodle soup — thin wheat noodles in a light, clean anchovy broth. Elegant simplicity. The gentle option when your stomach needs a break.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/잔치국수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <!-- ── STREET FOOD ─────────────────────────────── -->
+
+      <div class="food-card" data-category="street">
+        <div class="food-emoji">🍢</div>
+        <button class="korean-name" data-korean="떡볶이">떡볶이</button>
+        <div class="food-english">Tteokbokki</div>
+        <p class="food-desc">Chewy rice cakes in spicy-sweet gochujang sauce. Korea's most beloved street food — available everywhere from food stalls to sit-down restaurants.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/떡볶이+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="street">
+        <div class="food-emoji">🫙</div>
+        <button class="korean-name" data-korean="순대">순대</button>
+        <div class="food-english">Sundae</div>
+        <p class="food-desc">Korean blood sausage stuffed with glass noodles and vegetables. Usually served alongside tteokbokki and twigim as the classic street food trio.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/순대+분식+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="street">
+        <div class="food-emoji">🍟</div>
+        <button class="korean-name" data-korean="튀김">튀김</button>
+        <div class="food-english">Twigim</div>
+        <p class="food-desc">Korean-style fried snacks — shrimp, squid, sweet potato, and more. Sold by weight at street stalls, typically dipped in tteokbokki sauce.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/분식집+튀김+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="street">
+        <div class="food-emoji">🌯</div>
+        <button class="korean-name" data-korean="김밥">김밥</button>
+        <div class="food-english">Gimbap</div>
+        <p class="food-desc">Seaweed rice rolls with egg, vegetables, and your choice of filling. The perfect on-the-go meal between sessions — sold at every 분식 (bunsik) shop.</p>
+        <div class="food-footer">
+          <span class="price">₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/김밥+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="street">
+        <div class="food-emoji">🍗</div>
+        <button class="korean-name" data-korean="후라이드 치킨 / 양념치킨 / 간장치킨">후라이드 / 양념 / 간장치킨</button>
+        <div class="food-english">Korean Fried Chicken</div>
+        <p class="food-desc">Double-fried for maximum crunch. Three must-try styles: Original (후라이드), sweet-spicy sauce (양념), and soy garlic (간장). Order with icy cold beer (치맥).</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/치킨+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <!-- ── SEAFOOD ──────────────────────────────────── -->
+
+      <div class="food-card" data-category="seafood">
+        <div class="food-emoji">🐟</div>
+        <button class="korean-name" data-korean="회">회</button>
+        <div class="food-english">Hoe (Raw Fish)</div>
+        <p class="food-desc">Korean-style sashimi — fresh local fish sliced and served with sesame oil &amp; salt, or wrapped in perilla with gochujang. Distinctly different from Japanese sashimi.</p>
+        <div class="food-footer">
+          <span class="price">₩₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/횟집+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="seafood">
+        <div class="food-emoji">🌊</div>
+        <button class="korean-name" data-korean="매운탕">매운탕</button>
+        <div class="food-english">Maeuntang</div>
+        <p class="food-desc">Fiery spiced fish stew with tofu, mushrooms, and vegetables. Traditionally served after eating hoe — the hot broth made from the remaining carcass.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/매운탕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="seafood">
+        <div class="food-emoji">🍣</div>
+        <button class="korean-name" data-korean="초밥">초밥</button>
+        <div class="food-english">Chobap (Sushi)</div>
+        <p class="food-desc">Korean-style nigiri with fresh domestic fish. Often larger portions and surprisingly competitive quality — and better value than Tokyo, usually.</p>
+        <div class="food-footer">
+          <span class="price">₩₩</span>
+          <a class="maps-link" href="https://www.google.com/maps/search/초밥+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        </div>
+      </div>
+
+    </div><!-- /food-grid -->
+  </div>
+</section>
+
+<!-- AdSense Slot 2 ─────────────────────────────────────
+<div class="max-w-7xl mx-auto px-4 py-2">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+──────────────────────────────────────────────────────── -->
+
+<!-- ════════════════════════════════════════ NEAR COEX ══ -->
+<section id="near-coex" class="py-16 px-4 scroll-mt-16">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold section-title mb-2">Eating Near COEX</h2>
+    <p class="text-gray-500 mb-10">Restaurant areas within walking distance or a short taxi from the venue</p>
+
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <div class="coex-card">
+        <h3>🏬 COEX Mall Food Court</h3>
+        <p>The COEX Mall B1 and upper floors have dozens of restaurants — Korean BBQ sets, noodle shops, fast food, and more. Perfect for a quick lunch between sessions. No reservation needed.</p>
+        <a class="coex-link" href="https://www.google.com/maps/search/COEX+mall+food+강남+서울" target="_blank" rel="noopener">View on Maps →</a>
+      </div>
+
+      <div class="coex-card">
+        <h3>🏯 Bongeunsa Temple Area <span class="font-korean text-gray-400 text-sm">봉은사</span></h3>
+        <p>5 minutes from COEX by foot. The surrounding streets have excellent traditional Korean restaurants — samgyeopsal spots, soup shops, and makgeolli bars with a calmer, less touristy vibe.</p>
+        <a class="coex-link" href="https://www.google.com/maps/search/봉은사+근처+맛집" target="_blank" rel="noopener">View on Maps →</a>
+      </div>
+
+      <div class="coex-card">
+        <h3>🏙️ Samseong Station Underground <span class="font-korean text-gray-400 text-sm">삼성역</span></h3>
+        <p>The underground passage connecting COEX to Samseong Station has a full stretch of cafes and restaurants. Explore the tunnels — there's more down there than you'd expect.</p>
+        <a class="coex-link" href="https://www.google.com/maps/search/삼성역+근처+맛집+서울" target="_blank" rel="noopener">View on Maps →</a>
+      </div>
+
+      <div class="coex-card">
+        <h3>🥂 Evening: Apgujeong &amp; Cheongdam <span class="font-korean text-gray-400 text-sm">압구정 · 청담</span></h3>
+        <p>10 minutes by taxi from COEX. Seoul's upscale dining district — great for conference dinners, special-occasion Korean cuisine, or wine bars. Pricier but worth it for a night out.</p>
+        <a class="coex-link" href="https://www.google.com/maps/search/압구정+맛집+서울" target="_blank" rel="noopener">View on Maps →</a>
+      </div>
+
+      <div class="coex-card highlight-card">
+        <h3>📱 Food Delivery Apps</h3>
+        <p>Staying in? Both apps work in Gangnam and most have English interfaces. Most hotels allow delivery to the lobby. Arrive time is typically 20–40 minutes.</p>
+        <div class="app-badges">
+          <span class="app-badge">배달의민족 Baemin</span>
+          <span class="app-badge">쿠팡이츠 Coupang Eats</span>
+        </div>
+      </div>
+
+      <div class="coex-card">
+        <h3>🌙 Late Night (After 10pm)</h3>
+        <p>Korean dining goes late. Options after 10pm: 24-hour 국밥 (gukbap) shops, chicken delivery via app, pojangmacha (포장마차) tent bars, or just raid the nearest CU convenience store for ramen and snacks.</p>
+        <a class="coex-link" href="https://www.google.com/maps/search/24시간+식당+강남+서울" target="_blank" rel="noopener">View on Maps →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ ACTIVITIES ══ -->
+<section id="activities" class="py-16 px-4 bg-white scroll-mt-16">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold section-title mb-2">Things To Do in Seoul</h2>
+    <p class="text-gray-500 mb-10">From ancient palaces to frozen beer — Seoul has something for every evening</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="activity-card">
+        <div class="activity-icon">🏯</div>
+        <div>
+          <h3>Gyeongbokgung Palace <span class="korean-tag">경복궁</span></h3>
+          <p>The grandest of Seoul's five palaces. Arrive early for the changing of the guard ceremony (10am &amp; 2pm). Rent a hanbok at the gate — you get free admission while wearing it.</p>
+          <div class="activity-meta">
+            <span>🕘 9am–6pm (closed Tue)</span>
+            <span>💰 ₩3,000</span>
+            <span>🚇 Gyeongbokgung (Line 3)</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/경복궁+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🌙</div>
+        <div>
+          <h3>Deoksugung Stone Wall Walk <span class="korean-tag">돌담길 야경</span></h3>
+          <p>The illuminated stone wall of Deoksugung Palace at night is one of Seoul's most atmospheric walks. Perfect after dinner — 15 minutes from City Hall station.</p>
+          <div class="activity-meta">
+            <span>🌙 Best after 7pm</span>
+            <span>💰 Free</span>
+            <span>🚇 City Hall (Lines 1 &amp; 2)</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/덕수궁+돌담길+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🌊</div>
+        <div>
+          <h3>Han River at Night <span class="korean-tag">한강 야경</span></h3>
+          <p>Grab convenience store snacks and join locals at Banpo Hangang Park. The Moonlight Rainbow Fountain runs 9–11pm on weekends. Bring a mat and sit by the water.</p>
+          <div class="activity-meta">
+            <span>🌙 Best after dark</span>
+            <span>💰 Free</span>
+            <span>🚇 Express Bus Terminal (Line 3)</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/반포한강공원+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🌍</div>
+        <div>
+          <h3>Itaewon <span class="korean-tag">이태원</span></h3>
+          <p>International neighborhood with global restaurants, craft cocktail bars, vintage boutiques, and lively nightlife. Great when you need a break from Korean food, or want to meet other travelers.</p>
+          <div class="activity-meta">
+            <span>🚇 Itaewon (Line 6)</span>
+            <span>💰 Varies</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/이태원+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🛍️</div>
+        <div>
+          <h3>Seongsu Pop-Up District <span class="korean-tag">성수 팝업스토어</span></h3>
+          <p>Seoul's Brooklyn — a former industrial district now full of rotating pop-up stores, specialty coffee, and local creative brands. New things appear weekly. Great for a half-day explore.</p>
+          <div class="activity-meta">
+            <span>🚇 Seongsu (Line 2)</span>
+            <span>💰 Free to browse</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/성수동+팝업+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">☕</div>
+        <div>
+          <h3>Specialty Cafes</h3>
+          <p>Seoul takes coffee seriously. Explore Yeonnam-dong, Mangwon, or Seongsu for independent cafés with serious single-origin roasts, beautiful interiors, and ₩6,000 lattes that actually taste good.</p>
+          <div class="activity-meta">
+            <span>🕘 Usually 9am–10pm</span>
+            <span>💰 ₩5,000–8,000</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/specialty+cafe+성수+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🛒</div>
+        <div>
+          <h3>Traditional Markets <span class="korean-tag">재래시장</span></h3>
+          <p><strong>Gwangjang Market (광장시장)</strong> — bindaetteok pancakes and silk. <strong>Namdaemun</strong> — everything imaginable. <strong>Mangwon Market</strong> — local and relaxed, less touristy.</p>
+          <div class="activity-meta">
+            <span>🕘 Morning is best</span>
+            <span>💰 Free entry</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/광장시장+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🎤</div>
+        <div>
+          <h3>Norebang (Karaoke) <span class="korean-tag">노래방</span></h3>
+          <p>Private karaoke rooms rented by the hour. Tambourines, disco lights, unlimited songs. A quintessential Korean night. For solo practice, look for coin-operated <strong>코인노래방</strong> (₩500/song).</p>
+          <div class="activity-meta">
+            <span>🕐 Open until 5am+</span>
+            <span>💰 ₩10,000–20,000/hr</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/노래방+강남+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🖥️</div>
+        <div>
+          <h3>PC Bang <span class="korean-tag">PC방</span></h3>
+          <p>Korea's legendary gaming cafes — top-tier gaming PCs, 1Gbps internet, and you can order food to your seat. Even if you don't game, it's a uniquely Korean cultural experience. Open 24 hours.</p>
+          <div class="activity-meta">
+            <span>🕐 24 hours</span>
+            <span>💰 ~₩1,500/hr</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/PC방+강남+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🍺</div>
+        <div>
+          <h3>Korean Drinking Culture <span class="korean-tag">술 문화</span></h3>
+          <p>Soju (소주) + beer = somaek (소맥), Korea's go-to combo. Try a <strong>pojangmacha (포장마차)</strong> tent bar for the most atmospheric setting — plastic chairs, grilled skewers, cheap drinks.</p>
+          <div class="activity-meta">
+            <span>🍶 Soju: ₩1,500 at convenience store</span>
+            <span>🍺 Beer: ₩3,000–6,000 at bars</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/포장마차+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🧊</div>
+        <div>
+          <h3>Frozen Beer <span class="korean-tag">얼음맥주</span></h3>
+          <p>One of Seoul's summer secrets — beer poured over a frozen mug with ice crystals forming on the surface. Ask for "얼음맥주" at any hof (호프) bar or street vendor. Life-changing in July heat.</p>
+          <div class="activity-meta">
+            <span>🌡️ Perfect for July</span>
+            <span>💰 ₩4,000–7,000</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/얼음맥주+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-icon">🏪</div>
+        <div>
+          <h3>Convenience Stores <span class="korean-tag">편의점</span></h3>
+          <p>CU (씨유), GS25, 7-Eleven, Emart24 — on every block, open 24/7. Hot foods at the counter, ₩1,500 Americanos, soju, beer, kimbap, and anything you forgot to pack. A lifestyle, not just a store.</p>
+          <div class="activity-meta">
+            <span>🕐 24/7</span>
+            <span>💰 Budget-friendly</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AdSense Slot 3 ─────────────────────────────────────
+<div class="max-w-7xl mx-auto px-4 py-2">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+──────────────────────────────────────────────────────── -->
+
+<!-- ════════════════════════════════════════ TIPS ═══════ -->
+<section id="tips" class="py-16 px-4 scroll-mt-16">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold section-title mb-2">Insider Tips</h2>
+    <p class="text-gray-500 mb-10">Things locals know that guidebooks don't always cover</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="tip-card">
+        <div class="tip-icon">💳</div>
+        <h4>T-Money Card (T머니)</h4>
+        <p>Buy at any convenience store for ₩4,000, then load cash at the subway ticket machines. Tap on/off buses, subways, and most taxis. Saves the hassle of buying individual tickets every time.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🗺️</div>
+        <h4>Use Naver Maps, Not Google</h4>
+        <p>Google Maps has poor transit routing in Korea — the bus schedules are often wrong. <strong>Naver Maps (네이버 지도)</strong> has an English UI and real-time bus tracking. Download it before you land.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🚕</div>
+        <h4>KakaoT for Taxis (카카오T)</h4>
+        <p>Korea's taxi app — shows fare upfront, in-app card payment, and you can share your ride with a friend. Essential since most drivers don't speak English and addresses can be confusing.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">💰</div>
+        <h4>Cash vs. Card</h4>
+        <p>Most restaurants and shops accept cards. Street food stalls prefer cash. ATMs are everywhere — look for <strong>Woori Bank</strong> or <strong>Shinhan Bank</strong> ATMs labeled "Global ATM" for foreign cards without extra fees.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🌡️</div>
+        <h4>July Heat &amp; Humidity</h4>
+        <p>Expect 28–35°C (82–95°F) with high humidity. Carry a small towel. Convenience stores sell cold drinks for ₩1,000–2,000. The subway and COEX are heavily air-conditioned — bring a light layer.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🗣️</div>
+        <h4>Useful Korean Phrases</h4>
+        <p>
+          <strong>"이거 주세요"</strong> (igeo juseyo) — "This one, please." Point and say it.<br>
+          <strong>"얼마예요?"</strong> (eolmayeyo) — "How much?"<br>
+          <strong>"감사합니다"</strong> (gamsahamnida) — "Thank you."<br>
+          Even a small attempt will go over well.
+        </p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">📶</div>
+        <h4>SIM Card &amp; Pocket WiFi</h4>
+        <p>Get a data SIM or pocket WiFi at the Incheon Airport arrivals hall — just walk out and the booths are right there. Korea has excellent 5G coverage everywhere in Seoul. A 10-day SIM is ~₩20,000–30,000.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🕐</div>
+        <h4>Break Time (브레이크타임)</h4>
+        <p>Many Korean restaurants close for a "break time" from ~3–5pm between lunch and dinner. If you show up and the door is locked mid-afternoon, check the hours posted on the door. Convenience stores are your friend.</p>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🥢</div>
+        <h4>Dining Etiquette</h4>
+        <p>Wait for elders or senior colleagues to eat first. Don't stick chopsticks upright in rice. Eating from shared dishes is perfectly normal. Slurping noodles is fine — it shows you're enjoying the food.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ FOOTER ═════ -->
+<footer class="bg-gray-900 text-white py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">🇰🇷</span>
+          <span class="font-bold text-lg">Seoul Guide · ICML 2026</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">An unofficial guide for conference attendees. Prices and hours are approximate — always confirm locally.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-gray-200">Sections</h4>
+        <ul class="space-y-1.5 text-sm text-gray-400">
+          <li><a href="#getting-here" class="hover:text-white transition-colors">🚇 Getting Here</a></li>
+          <li><a href="#food-guide" class="hover:text-white transition-colors">🍜 Food Guide</a></li>
+          <li><a href="#near-coex" class="hover:text-white transition-colors">📍 Near COEX</a></li>
+          <li><a href="#activities" class="hover:text-white transition-colors">🏯 Activities</a></li>
+          <li><a href="#tips" class="hover:text-white transition-colors">💡 Insider Tips</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-gray-200">Essential Apps</h4>
+        <ul class="space-y-1.5 text-sm text-gray-400">
+          <li>🗺️ <strong class="text-gray-300">Naver Maps</strong> — Best transit in Korea</li>
+          <li>🚕 <strong class="text-gray-300">Kakao T</strong> — Taxi hailing</li>
+          <li>🍔 <strong class="text-gray-300">Baemin</strong> — Food delivery</li>
+          <li>🛒 <strong class="text-gray-300">Coupang Eats</strong> — Food delivery</li>
+          <li>💬 <strong class="text-gray-300">Papago</strong> — Translation (by Naver)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+      Made for ICML 2026 attendees &nbsp;·&nbsp; 서울에서 즐거운 시간 보내세요! 🎉
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notification for copied Korean text -->
+<div id="copy-toast">Korean name copied! 복사됨 ✓</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
