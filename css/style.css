@@ -8,7 +8,7 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .hero-bg {
   background:
     linear-gradient(to bottom, rgba(10,0,0,0.55) 0%, rgba(80,10,10,0.72) 100%),
-    url('https://images.unsplash.com/photo-Mwvhyd22Lyw?w=1920&h=900&fit=crop&auto=format&q=80') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1546874177-9e664107314e?w=1920&h=900&fit=crop&auto=format&q=80') center/cover no-repeat;
   position: relative;
 }
 
