@@ -205,8 +205,14 @@
       <p class="text-sm text-gray-500 mb-4">Scroll left/right to explore the map. COEX = <span class="metro-highlight">Samseong Station 삼성역 (Line 2 — green)</span></p>
       <div class="metro-map-wrap">
         <div class="metro-map-scroll" id="metroMap">
-          <img src="https://english.seoul.go.kr/wp-content/uploads/2024/06/subway-map-eng-2500.jpg"
-               alt="Seoul Subway Map" loading="lazy">
+          <div style="position:relative; display:inline-block;">
+            <img src="https://english.seoul.go.kr/wp-content/uploads/2024/06/subway-map-eng-2500.jpg"
+                 alt="Seoul Subway Map" loading="lazy" id="metroMapImg"
+                 style="cursor:zoom-in; display:block;">
+            <div id="metroMapHint" style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:11px;font-weight:600;padding:5px 12px;border-radius:999px;pointer-events:none;backdrop-filter:blur(4px);">
+              🔍 Click to enlarge
+            </div>
+          </div>
         </div>
         <div class="metro-map-caption">
           📌 Key stations near COEX: <strong>Samseong (삼성, Line 2)</strong> · <strong>Bongeunsa (봉은사, Line 9)</strong> · <strong>COEX (코엑스, Line 9)</strong>
@@ -1128,6 +1134,29 @@
 </footer>
 
 <div id="copy-toast">Korean name copied! 복사됨 ✓</div>
+
+<!-- Metro map zoom modal -->
+<div id="metro-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.93);">
+  <!-- Controls -->
+  <div style="position:absolute;top:16px;right:16px;display:flex;align-items:center;gap:8px;z-index:10;">
+    <button id="metro-zoom-in"    class="metro-ctrl" title="Zoom in">＋</button>
+    <button id="metro-zoom-out"   class="metro-ctrl" title="Zoom out">－</button>
+    <button id="metro-zoom-reset" class="metro-ctrl" style="font-size:12px;padding:0 14px;" title="Reset">Reset</button>
+    <button id="metro-close"      class="metro-ctrl" style="margin-left:8px;" title="Close">✕</button>
+  </div>
+  <!-- Hint -->
+  <div style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.4);font-size:12px;pointer-events:none;white-space:nowrap;">
+    스크롤로 확대 · 드래그로 이동 · 모바일은 핀치 줌
+  </div>
+  <!-- Canvas -->
+  <div id="metro-canvas" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <img id="metro-modal-img"
+         src="https://english.seoul.go.kr/wp-content/uploads/2024/06/subway-map-eng-2500.jpg"
+         alt="Seoul Subway Map"
+         draggable="false"
+         style="max-width:none;user-select:none;cursor:grab;transform-origin:center center;transform:scale(1) translate(0,0);">
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

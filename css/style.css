@@ -389,6 +389,25 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .tip-card h4 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
 .tip-card p { font-size: 0.79rem; color: #6B7280; line-height: 1.6; }
 
+/* ── Metro modal controls ─────────────────────────────── */
+.metro-ctrl {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  backdrop-filter: blur(6px);
+}
+.metro-ctrl:hover { background: rgba(255,255,255,0.28); }
+
 /* ── Toast ────────────────────────────────────────────── */
 #copy-toast {
   position: fixed;
