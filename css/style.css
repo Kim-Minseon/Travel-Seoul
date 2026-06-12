@@ -1,24 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap');
 
 html { scroll-behavior: smooth; }
-
 body { font-family: 'Inter', system-ui, sans-serif; }
-
 .font-korean { font-family: 'Noto Sans KR', sans-serif; }
 
 /* ── Hero ─────────────────────────────────────────────── */
 .hero-bg {
-  background: linear-gradient(135deg, #7F1D1D 0%, #B91C1C 45%, #DC2626 75%, #EF4444 100%);
+  background:
+    linear-gradient(to bottom, rgba(10,0,0,0.55) 0%, rgba(80,10,10,0.72) 100%),
+    url('https://images.unsplash.com/photo-Mwvhyd22Lyw?w=1920&h=900&fit=crop&auto=format&q=80') center/cover no-repeat;
   position: relative;
-  overflow: hidden;
-}
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 /* ── Navbar ───────────────────────────────────────────── */
@@ -30,6 +21,17 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #DC2626;
+  margin-bottom: 10px;
 }
 
 /* ── Transport cards ──────────────────────────────────── */
@@ -76,6 +78,42 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   margin-bottom: 2px;
 }
 
+/* ── Metro map ────────────────────────────────────────── */
+.metro-map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+}
+.metro-map-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+.metro-map-scroll:active { cursor: grabbing; }
+.metro-map-scroll img {
+  display: block;
+  height: 420px;
+  width: auto;
+  max-width: none;
+}
+.metro-map-caption {
+  background: #F9FAFB;
+  border-top: 1px solid #E5E7EB;
+  padding: 12px 20px;
+  font-size: 0.8rem;
+  color: #6B7280;
+}
+.metro-highlight {
+  display: inline-block;
+  background: #FEE2E2;
+  color: #991B1B;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
 /* ── Filter buttons ───────────────────────────────────── */
 .filter-btn {
   padding: 7px 16px;
@@ -97,19 +135,37 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   background: #fff;
   border-radius: 14px;
   border: 1px solid #E5E7EB;
-  padding: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.22s, box-shadow 0.22s;
 }
-.food-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.food-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.10); }
 .food-card.hidden { display: none !important; }
 
-.food-emoji { font-size: 2rem; margin-bottom: 10px; line-height: 1; }
+.food-img-wrap {
+  height: 170px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.food-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.food-card:hover .food-img-wrap img { transform: scale(1.07); }
+
+.food-content {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 .korean-name {
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #DC2626;
   background: none;
@@ -120,14 +176,24 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   line-height: 1.2;
   margin-bottom: 3px;
   transition: opacity 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.korean-name:hover { opacity: 0.65; }
-.korean-name:active { opacity: 0.45; }
+.korean-name::after {
+  content: '📋';
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.korean-name:hover::after { opacity: 1; }
+.korean-name:hover { opacity: 0.75; }
+.korean-name:active { opacity: 0.5; }
 
-.food-english { font-size: 0.88rem; font-weight: 600; color: #374151; margin-bottom: 8px; }
+.food-english { font-size: 0.85rem; font-weight: 600; color: #374151; margin-bottom: 7px; }
 
 .food-desc {
-  font-size: 0.79rem;
+  font-size: 0.78rem;
   color: #6B7280;
   line-height: 1.55;
   flex: 1;
@@ -157,9 +223,7 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .coex-card p { font-size: 0.83rem; color: #6B7280; line-height: 1.65; margin-bottom: 12px; }
 .coex-link { font-size: 0.78rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
 .coex-link:hover { text-decoration: underline; }
-
 .highlight-card { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-color: #BFDBFE; }
-
 .app-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
 .app-badge {
   font-family: 'Noto Sans KR', sans-serif;
@@ -176,31 +240,148 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .activity-card {
   background: #fff;
   border-radius: 14px;
-  padding: 20px;
   border: 1px solid #E5E7EB;
+  overflow: hidden;
   display: flex;
-  gap: 14px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  flex-direction: column;
+  transition: transform 0.22s, box-shadow 0.22s;
 }
-.activity-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.activity-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
-.activity-card h3 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
-.activity-card p { font-size: 0.78rem; color: #6B7280; line-height: 1.55; margin-bottom: 10px; }
+.activity-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.10); }
+
+.activity-img-wrap {
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+.activity-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.activity-card:hover .activity-img-wrap img { transform: scale(1.05); }
+
+.activity-img-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.activity-img-badge.free { background: rgba(22,163,74,0.85); }
+.activity-img-badge.paid { background: rgba(220,38,38,0.8); }
+
+.activity-body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+.activity-body h3 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.activity-body p { font-size: 0.78rem; color: #6B7280; line-height: 1.55; margin-bottom: 10px; flex: 1; }
 
 .korean-tag {
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #6B7280;
   background: #F3F4F6;
   padding: 1px 8px;
   border-radius: 10px;
   margin-left: 4px;
+  font-weight: 400;
 }
 
-.activity-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
-.activity-meta span { font-size: 0.68rem; background: #F3F4F6; padding: 3px 8px; border-radius: 10px; color: #4B5563; }
-.activity-link { font-size: 0.72rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
+.activity-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.activity-meta span { font-size: 0.67rem; background: #F3F4F6; padding: 3px 8px; border-radius: 10px; color: #4B5563; }
+.activity-link { font-size: 0.72rem; color: #3B82F6; text-decoration: none; font-weight: 600; align-self: flex-start; }
 .activity-link:hover { text-decoration: underline; }
+
+/* ── Day trip cards ───────────────────────────────────── */
+.daytrip-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.daytrip-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,0.12); }
+
+.daytrip-img-wrap {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+.daytrip-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.daytrip-card:hover .daytrip-img-wrap img { transform: scale(1.06); }
+
+.daytrip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+}
+.daytrip-overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  color: #fff;
+}
+.daytrip-overlay-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.daytrip-overlay-content .korean-sub {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.trip-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.daytrip-body {
+  padding: 20px;
+}
+.daytrip-body p { font-size: 0.82rem; color: #6B7280; line-height: 1.6; margin-bottom: 14px; }
+.daytrip-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.daytrip-highlights span {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.72rem;
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.daytrip-link { font-size: 0.78rem; color: #3B82F6; font-weight: 600; text-decoration: none; }
+.daytrip-link:hover { text-decoration: underline; }
 
 /* ── Tip cards ────────────────────────────────────────── */
 .tip-card { background: #fff; border-radius: 14px; padding: 22px; border: 1px solid #E5E7EB; }
