@@ -7,8 +7,8 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 /* ── Hero ─────────────────────────────────────────────── */
 .hero-bg {
   background:
-    linear-gradient(to bottom, rgba(10,0,0,0.55) 0%, rgba(80,10,10,0.72) 100%),
-    url('https://images.unsplash.com/photo-1546874177-9e664107314e?w=1920&h=900&fit=crop&auto=format&q=80') center/cover no-repeat;
+    linear-gradient(to bottom, rgba(20,60,140,0.18) 0%, rgba(10,30,90,0.30) 100%),
+    url('../images/seoul.png') center/cover no-repeat;
   position: relative;
 }
 
@@ -383,11 +383,140 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .daytrip-link { font-size: 0.78rem; color: #3B82F6; font-weight: 600; text-decoration: none; }
 .daytrip-link:hover { text-decoration: underline; }
 
+/* ── Hiking: subway line pills ───────────────────────── */
+.subway-pill {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #fff;
+  white-space: nowrap;
+  vertical-align: middle;
+  letter-spacing: 0.01em;
+}
+.line-2   { background: #3CB54A; }
+.line-3   { background: #EF7C1C; }
+.line-5   { background: #8B50A4; }
+.line-8   { background: #E6186C; }
+.line-9   { background: #BFA22E; }
+.line-gyj { background: #77C4A3; }
+
+/* ── Hiking: access rating badges ────────────────────── */
+.access-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.access-best     { background: #DCFCE7; color: #14532D; }
+.access-great    { background: #D1FAE5; color: #065F46; }
+.access-ok       { background: #FEF9C3; color: #713F12; }
+.access-far      { background: #FEE2E2; color: #991B1B; }
+.access-distant  { background: #F3F4F6; color: #6B7280; }
+
 /* ── Tip cards ────────────────────────────────────────── */
 .tip-card { background: #fff; border-radius: 14px; padding: 22px; border: 1px solid #E5E7EB; }
 .tip-icon { font-size: 1.75rem; margin-bottom: 10px; line-height: 1; }
 .tip-card h4 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
 .tip-card p { font-size: 0.79rem; color: #6B7280; line-height: 1.6; }
+
+/* ── Hiking row toggles ───────────────────────────────── */
+.hike-name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111827;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+.hike-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.hike-toggle-btn:hover { background: #DBEAFE; color: #1D4ED8; border-color: #BFDBFE; }
+.hike-toggle-btn.open { background: #DBEAFE; color: #1D4ED8; border-color: #BFDBFE; }
+.hike-detail-row td { background: #F8FAFC; }
+.hike-detail-box {
+  border-left: 3px solid #3B82F6;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  background: #EFF6FF;
+  font-size: 0.8rem;
+  color: #1E3A5F;
+  line-height: 1.65;
+}
+
+/* ── Hiking table links & meetup button ───────────────── */
+.hike-trail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #15803D;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.hike-trail-link:hover { background: #DCFCE7; color: #166534; }
+.hike-meetup-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #1D4ED8;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.hike-meetup-btn:hover, .hike-meetup-btn.open { background: #DBEAFE; color: #1E40AF; }
+.hike-meetup-row td { background: #F8FAFF; border-top: 1px solid #DBEAFE; }
+
+/* ── Collapsible section panels ───────────────────────── */
+.section-collapse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.section-collapse-btn:hover { background: #DBEAFE; color: #1D4ED8; border-color: #BFDBFE; }
+.section-collapse-body { overflow: hidden; transition: opacity 0.2s ease; }
+.section-collapse-body.collapsed { display: none; }
 
 /* ── Metro modal controls ─────────────────────────────── */
 .metro-ctrl {
@@ -408,6 +537,19 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 }
 .metro-ctrl:hover { background: rgba(255,255,255,0.28); }
 
+/* ── Admin delete button ──────────────────────────────── */
+.meetup-delete-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  opacity: 0.4;
+  padding: 0 2px;
+  transition: opacity 0.15s;
+}
+.meetup-delete-btn:hover { opacity: 1; }
+
 /* ── Toast ────────────────────────────────────────────── */
 #copy-toast {
   position: fixed;
@@ -425,4 +567,134 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   pointer-events: none;
   z-index: 9999;
   white-space: nowrap;
+}
+
+/* ── Meetup panels ────────────────────────────────────── */
+.meetup-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F9FAFB;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4B5563;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.meetup-toggle-btn:hover { background: #FEF2F2; border-color: #FECACA; color: #DC2626; }
+
+.meetup-panel {
+  margin-top: 8px;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FAFAFA;
+  font-size: 0.72rem;
+}
+.meetup-list {
+  padding: 8px 10px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.meetup-entry {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+}
+.meetup-entry:last-child { margin-bottom: 0; }
+.meetup-entry-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 4px; }
+.meetup-name { font-weight: 700; color: #111827; font-size: 0.75rem; }
+.meetup-time { color: #DC2626; font-weight: 600; font-size: 0.68rem; white-space: nowrap; }
+.meetup-meta { color: #4B5563; margin-bottom: 2px; }
+.meetup-contact { color: #6B7280; font-style: italic; word-break: break-all; }
+.meetup-empty, .meetup-loading { display: block; color: #9CA3AF; text-align: center; padding: 10px 0; }
+
+.meetup-add-btn {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid #E5E7EB;
+  padding: 8px;
+  font-size: 0.72rem;
+  color: #DC2626;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+.meetup-add-btn:hover { background: #FEF2F2; }
+
+.meetup-form {
+  padding: 10px 12px;
+  border-top: 1px solid #E5E7EB;
+  background: #fff;
+}
+.meetup-input {
+  display: block;
+  width: 100%;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  margin-bottom: 6px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.meetup-input:focus { border-color: #DC2626; }
+textarea.meetup-input { resize: vertical; }
+.meetup-form-btns { display: flex; gap: 6px; }
+.meetup-submit-btn {
+  flex: 1;
+  background: #DC2626;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.meetup-submit-btn:hover { background: #B91C1C; }
+.meetup-submit-btn:disabled { background: #9CA3AF; cursor: not-allowed; }
+.meetup-cancel-btn {
+  background: #F3F4F6;
+  color: #6B7280;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.meetup-cancel-btn:hover { background: #E5E7EB; }
+
+/* ── Suggest-Activity card ────────────────────────────── */
+.suggest-card {
+  background: linear-gradient(135deg, #FFFBEB 0%, #fff 60%);
+  border: 2px dashed #FCD34D;
+}
+.suggest-icon { font-size: 2.4rem; margin-bottom: 8px; line-height: 1; }
+.suggest-title { font-size: 1rem; font-weight: 700; color: #DC2626; margin-bottom: 6px; }
+.suggest-desc { font-size: 0.78rem; color: #6B7280; line-height: 1.5; margin-bottom: 12px; }
+.suggest-submit-btn { flex: none; width: 100%; margin-top: 4px; }
+#suggest-list { margin-top: 12px; }
+#suggest-list > p {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
 }

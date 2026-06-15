@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seoul Hiking Guide · ICML 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .trail-card { background:#fff; border-radius:16px; border:1px solid #E5E7EB; overflow:hidden; margin-bottom:2.5rem; }
+    .trail-header { padding:24px 28px 20px; border-bottom:1px solid #F3F4F6; }
+    .trail-body { padding:24px 28px; }
+    .trail-meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .trail-tag { display:inline-flex; align-items:center; gap:5px; font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:999px; }
+    .tag-elevation { background:#EFF6FF; color:#1D4ED8; }
+    .tag-difficulty-easy { background:#F0FDF4; color:#15803D; }
+    .tag-difficulty-moderate { background:#FEF9C3; color:#92400E; }
+    .tag-difficulty-hard { background:#FEF2F2; color:#B91C1C; }
+    .tag-time { background:#F5F3FF; color:#6D28D9; }
+    .tag-best { background:#FFF7ED; color:#C2410C; }
+    .route-step { display:flex; align-items:flex-start; gap:12px; padding:10px 0; border-bottom:1px dashed #F3F4F6; }
+    .route-step:last-child { border-bottom:none; }
+    .route-num { width:22px; height:22px; border-radius:50%; background:#111827; color:#fff; font-size:0.65rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .tip-row { display:flex; gap:10px; padding:8px 0; font-size:0.83rem; color:#374151; }
+    .tip-row .tip-icon2 { font-size:1rem; flex-shrink:0; }
+    .section-jump { display:inline-block; padding:6px 14px; border-radius:8px; background:#F3F4F6; color:#374151; text-decoration:none; font-size:0.78rem; font-weight:600; margin-right:6px; margin-bottom:6px; transition:background 0.15s; }
+    .section-jump:hover { background:#E5E7EB; }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <div class="bg-gray-900 text-white px-4 py-3 sticky top-0 z-50 shadow-lg">
+    <div class="max-w-3xl mx-auto flex items-center gap-4">
+      <a href="index.html#hiking" class="text-gray-400 hover:text-white text-sm transition-colors">← Back to Seoul Guide</a>
+      <span class="text-white font-bold">⛰️ Seoul Hiking Guide · ICML 2026</span>
+    </div>
+  </div>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+
+    <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Hiking Near Seoul</h1>
+    <p class="text-gray-500 mb-6 leading-relaxed">Six mountains reachable by subway from COEX (삼성역). Most trails are well-marked with Korean/English signs. Bring water, a light snack, and good footwear.</p>
+
+    <div class="mb-10 p-4 bg-white rounded-xl border border-gray-200">
+      <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Jump to mountain</p>
+      <a href="#gwanaksan"  class="section-jump">🏞️ 관악산</a>
+      <a href="#eungbongsan" class="section-jump">🌅 응봉산</a>
+      <a href="#achasan"    class="section-jump">🏯 아차산</a>
+      <a href="#inwangsan"  class="section-jump">🏙️ 인왕산</a>
+      <a href="#bugaksan"   class="section-jump">🌲 북악산</a>
+      <a href="#bukhansan"  class="section-jump">⛰️ 북한산</a>
+    </div>
+
+    <div class="trail-card" id="gwanaksan">
+      <div class="trail-header">
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <h2 class="text-2xl font-bold text-gray-900">관악산</h2>
+          <span class="text-lg text-gray-500 font-medium">Gwanaksan</span>
+          <span class="text-sm text-gray-400">· 632 m</span>
+        </div>
+        <div class="trail-meta">
+          <span class="trail-tag tag-elevation">⛰️ 632 m</span>
+          <span class="trail-tag tag-difficulty-moderate">🟡 Easy–Moderate</span>
+          <span class="trail-tag tag-time">⏱ 3–5 hrs round-trip</span>
+          <span class="trail-tag tag-best">🌸 Best: Spring / Autumn</span>
+        </div>
+      </div>
+      <div class="trail-body">
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">The closest major mountain to COEX reachable by direct subway — no transfers. Multiple trailheads and well-maintained paths make this ideal for a first Korean hiking experience. The summit observatory (연주대) rewards with sweeping views of southern Seoul.</p>
+
+        <h3 class="font-bold text-gray-800 mb-3">Recommended Routes</h3>
+        <div class="mb-5">
+          <div class="route-step">
+            <div class="route-num">1</div>
+            <div><strong class="text-gray-800 text-sm">Seoul National University entrance (서울대입구역)</strong><span class="text-gray-500 text-xs ml-2">Most popular · well-signed</span><p class="text-gray-600 text-xs mt-1">Exit 3, walk ~15 min to the main trailhead. Wide, paved lower path transitions to rocky trail near the top. Passing through Gwanak Art Center area.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">2</div>
+            <div><strong class="text-gray-800 text-sm">Sadang entrance (사당역)</strong><span class="text-gray-500 text-xs ml-2">Shorter but steeper</span><p class="text-gray-600 text-xs mt-1">Exit 5, follow the signs. ~2 hrs to summit. Popular with early morning regulars. Cafes at the base open from 6am.</p></div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">Tips</h3>
+        <div class="tip-row"><span class="tip-icon2">🌅</span><span>Start before 8am in summer — temperatures climb quickly after 10am.</span></div>
+        <div class="tip-row"><span class="tip-icon2">👟</span><span>Trail shoes recommended; the summit approach has loose granite steps.</span></div>
+        <div class="tip-row"><span class="tip-icon2">💧</span><span>Water fountains at both trailheads but scarce on the route — carry at least 1L.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🚇</span><span>Direct from Samseong Station (Line 2) — no transfers. ~15–20 min.</span></div>
+      </div>
+    </div>
+
+    <div class="trail-card" id="eungbongsan">
+      <div class="trail-header">
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <h2 class="text-2xl font-bold text-gray-900">응봉산</h2>
+          <span class="text-lg text-gray-500 font-medium">Eungbongsan</span>
+          <span class="text-sm text-gray-400">· 94 m</span>
+        </div>
+        <div class="trail-meta">
+          <span class="trail-tag tag-elevation">⛰️ 94 m</span>
+          <span class="trail-tag tag-difficulty-easy">🟢 Very Easy</span>
+          <span class="trail-tag tag-time">⏱ ~30 min to summit</span>
+          <span class="trail-tag tag-best">🌅 Best: Sunrise</span>
+        </div>
+      </div>
+      <div class="trail-body">
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">Seoul's most accessible sunrise viewpoint. The short ascent is easy enough even in business casual shoes, and the octagonal pavilion (팔각정) at the top is a favourite for Han River panoramas. The entire mountain takes under an hour out-and-back — perfect before an early conference session.</p>
+
+        <h3 class="font-bold text-gray-800 mb-3">The Route</h3>
+        <div class="mb-5">
+          <div class="route-step">
+            <div class="route-num">1</div>
+            <div><strong class="text-gray-800 text-sm">Eungbong Station (응봉역, Gyeongui–Jungang Line)</strong><p class="text-gray-600 text-xs mt-1">Exit 1, turn left. The trailhead is immediately visible with stone steps leading uphill.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">2</div>
+            <div><strong class="text-gray-800 text-sm">Summit pavilion (팔각정)</strong><p class="text-gray-600 text-xs mt-1">~20–30 min gentle climb. Octagonal pavilion at top — Han River visible in both directions, Achasan ridge to the east.</p></div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">Tips</h3>
+        <div class="tip-row"><span class="tip-icon2">🌄</span><span>Arrive 20 min before sunrise — the view over the Han River is stunning.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🧥</span><span>Bring a light jacket; the hilltop can be breezy even in summer mornings.</span></div>
+        <div class="tip-row"><span class="tip-icon2">📸</span><span>The forsythia (개나리) festival in spring makes this especially photogenic in April.</span></div>
+      </div>
+    </div>
+
+    <div class="trail-card" id="achasan">
+      <div class="trail-header">
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <h2 class="text-2xl font-bold text-gray-900">아차산</h2>
+          <span class="text-lg text-gray-500 font-medium">Achasan</span>
+          <span class="text-sm text-gray-400">· 287 m</span>
+        </div>
+        <div class="trail-meta">
+          <span class="trail-tag tag-elevation">⛰️ 287 m</span>
+          <span class="trail-tag tag-difficulty-easy">🟢 Easy</span>
+          <span class="trail-tag tag-time">⏱ 2–3 hrs round-trip</span>
+          <span class="trail-tag tag-best">🌇 Best: Sunset</span>
+        </div>
+      </div>
+      <div class="trail-body">
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">A ridgeline trail hugging the Han River with ancient Goguryeo fortress ruins (5th–7th century) along the way. Well-paved paths near the base make the lower section accessible to all fitness levels. Sunset from the ridge over the Han River valley is one of Seoul's best views.</p>
+
+        <h3 class="font-bold text-gray-800 mb-3">The Route</h3>
+        <div class="mb-5">
+          <div class="route-step">
+            <div class="route-num">1</div>
+            <div><strong class="text-gray-800 text-sm">Achasan Station (아차산역, Line 5)</strong><p class="text-gray-600 text-xs mt-1">Exit 2, walk straight ~10 min to the main entrance (아차산 입구). Trail map boards at the gate.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">2</div>
+            <div><strong class="text-gray-800 text-sm">Fortress wall ridge (아차산성)</strong><p class="text-gray-600 text-xs mt-1">Follow the main trail uphill past restored fortress sections. The ridge runs north toward Yongmasan — easy extension if time allows.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">3</div>
+            <div><strong class="text-gray-800 text-sm">Summit viewpoint</strong><p class="text-gray-600 text-xs mt-1">Han River visible to the south, Namsan Tower to the west. Return the same way or loop via the valley trail.</p></div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">Tips</h3>
+        <div class="tip-row"><span class="tip-icon2">🌇</span><span>Time your ascent to reach the ridge ~40 min before sunset.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🏰</span><span>Look for the restored Goguryeo fortress wall sections along the ridge — they're genuinely ancient.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🔄</span><span>The Achasan–Yongmasan ridge traverse is a popular 3-hour loop — worth it if you have time.</span></div>
+      </div>
+    </div>
+
+    <div class="trail-card" id="inwangsan">
+      <div class="trail-header">
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <h2 class="text-2xl font-bold text-gray-900">인왕산</h2>
+          <span class="text-lg text-gray-500 font-medium">Inwangsan</span>
+          <span class="text-sm text-gray-400">· 338 m</span>
+        </div>
+        <div class="trail-meta">
+          <span class="trail-tag tag-elevation">⛰️ 338 m</span>
+          <span class="trail-tag tag-difficulty-moderate">🟡 Moderate</span>
+          <span class="trail-tag tag-time">⏱ 2–3 hrs round-trip</span>
+          <span class="trail-tag tag-best">🌃 Best: Evening</span>
+        </div>
+      </div>
+      <div class="trail-body">
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">Famous for massive granite boulders, shamanic shrines (Inwang Seonang), and the Hanyangdoseong fortress wall that drapes across its ridgeline. Best experienced in the evening when the illuminated fortress wall creates a dramatic nightscape over central Seoul.</p>
+
+        <h3 class="font-bold text-gray-800 mb-3">The Route</h3>
+        <div class="mb-5">
+          <div class="route-step">
+            <div class="route-num">1</div>
+            <div><strong class="text-gray-800 text-sm">Gyeongbokgung Station (경복궁역, Line 3) — Exit 3</strong><p class="text-gray-600 text-xs mt-1">Walk ~20 min along Changuimun-ro toward the Changuimun Gate (창의문). Follow signs for 인왕산.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">2</div>
+            <div><strong class="text-gray-800 text-sm">Hanyangdoseong wall trail (한양도성길)</strong><p class="text-gray-600 text-xs mt-1">Follow the restored 14th-century city wall uphill. Stone steps are steeper here than other mountains. The wall provides a natural handrail.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">3</div>
+            <div><strong class="text-gray-800 text-sm">Summit (인왕산 정상, 338m)</strong><p class="text-gray-600 text-xs mt-1">360° views: Bugaksan to the north, Namsan to the south, Gyeongbokgung Palace below.</p></div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">Tips</h3>
+        <div class="tip-row"><span class="tip-icon2">🌃</span><span>Arrive 1 hr before sunset — the walk back down the lit fortress wall after dark is magical.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🌧️</span><span>Avoid after rain — granite boulders become dangerously slippery when wet.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🛕</span><span>Pass by Inwang Seonang shrine near the trailhead — an active shamanic worship site; be respectful.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🌙</span><span>Open 24 hours for night hiking, but strictly closed on Mondays (or Tuesdays if Monday is a holiday). Entrance sometimes restricted after heavy rain.</span></div>
+      </div>
+    </div>
+
+    <div class="trail-card" id="bugaksan">
+      <div class="trail-header">
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <h2 class="text-2xl font-bold text-gray-900">북악산</h2>
+          <span class="text-lg text-gray-500 font-medium">Bugaksan</span>
+          <span class="text-sm text-gray-400">· 342 m</span>
+        </div>
+        <div class="trail-meta">
+          <span class="trail-tag tag-elevation">⛰️ 342 m</span>
+          <span class="trail-tag tag-difficulty-moderate">🟡 Moderate</span>
+          <span class="trail-tag tag-time">⏱ 2–3 hrs</span>
+          <span class="trail-tag tag-best">🌿 Best: Clear days</span>
+        </div>
+      </div>
+      <div class="trail-body">
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">The mountain directly behind Gyeongbokgung Palace, historically restricted as it overlooks the presidential residence (Cheongwadae). Now open to the public, it offers forested trails along ancient city walls — and a rare sense of total calm compared to Seoul's busier mountains.</p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 mb-5 text-sm text-blue-900">
+          🏷️ <strong>Access Pass:</strong> No ID or passport required! Just walk into the information center at the entrance and pick up a free numbered lanyard to wear while on the trail. The trail closes at sunset — plan your timing carefully.
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">The Route</h3>
+        <div class="mb-5">
+          <div class="route-step">
+            <div class="route-num">1</div>
+            <div><strong class="text-gray-800 text-sm">Changuimun Gate (창의문)</strong><p class="text-gray-600 text-xs mt-1">From Gyeongbokgung Station (Line 3) Exit 3, take bus 1020, 7022, or 7212 to Changuimun Gate (~10 min). Pick up your free access lanyard at the entrance.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">2</div>
+            <div><strong class="text-gray-800 text-sm">Baegakmaroo (백악마루, 342m summit)</strong><p class="text-gray-600 text-xs mt-1">Well-maintained forested trail with boardwalk sections. The fortress wall runs alongside most of the route.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">3</div>
+            <div><strong class="text-gray-800 text-sm">Malbawi rest area (말바위) → exit via Sukjeongmun Gate</strong><p class="text-gray-600 text-xs mt-1">Descend east toward Samcheong Park. Bullets holes from the 1968 presidential palace raid are still visible on some trees — a sobering historical marker.</p></div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">Tips</h3>
+        <div class="tip-row"><span class="tip-icon2">🕐</span><span>Start no later than 2pm — checkpoint staff begin turning people away 1.5 hrs before sunset.</span></div>
+        <div class="tip-row"><span class="tip-icon2">📷</span><span>Photography near the Blue House area is restricted — follow the posted signs.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🌿</span><span>One of the quietest trails in Seoul due to the controlled access — remarkably peaceful.</span></div>
+      </div>
+    </div>
+
+    <div class="trail-card" id="bukhansan">
+      <div class="trail-header">
+        <div class="flex items-baseline gap-3 flex-wrap">
+          <h2 class="text-2xl font-bold text-gray-900">북한산</h2>
+          <span class="text-lg text-gray-500 font-medium">Bukhansan</span>
+          <span class="text-sm text-gray-400">· 836 m</span>
+        </div>
+        <div class="trail-meta">
+          <span class="trail-tag tag-elevation">⛰️ 836 m</span>
+          <span class="trail-tag tag-difficulty-hard">🔴 Moderate–Difficult</span>
+          <span class="trail-tag tag-time">⏱ 4–6 hrs round-trip</span>
+          <span class="trail-tag tag-best">🍂 Best: Autumn / Weekdays</span>
+        </div>
+      </div>
+      <div class="trail-body">
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">A full national park on Seoul's doorstep, with dramatic granite peaks, ancient Buddhist temples, and one of the world's highest visitor densities per km² among national parks. The Baegundae peak scramble is bucket-list material — but even easy valley walks are deeply rewarding.</p>
+
+        <h3 class="font-bold text-gray-800 mb-3">Route Options</h3>
+        <div class="mb-5">
+          <div class="route-step">
+            <div class="route-num">1</div>
+            <div><strong class="text-gray-800 text-sm">Baegundae Peak (백운대, 836m) — Challenging</strong><p class="text-gray-600 text-xs mt-1">From Gupabal Station (Line 3), bus to Bukhansan National Park visitor center. ~3 hrs to summit including chain-assisted rock sections near the top. Breathtaking views.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">2</div>
+            <div><strong class="text-gray-800 text-sm">Seunggasa Valley trail (승가사 계곡) — Easy</strong><p class="text-gray-600 text-xs mt-1">Gentle stream-side walk to Seunggasa Temple. Under 2 hrs round-trip. No technical sections — great for a relaxed morning. Cool shaded trail even in summer.</p></div>
+          </div>
+          <div class="route-step">
+            <div class="route-num">3</div>
+            <div><strong class="text-gray-800 text-sm">Ui-Sinseol Line + Dobongsan option</strong><p class="text-gray-600 text-xs mt-1">The Ui-Sinseol light rail line runs to the north of the park (Dobongsan area). Slightly different character — dramatic ridgeline with granite spires.</p></div>
+          </div>
+        </div>
+
+        <h3 class="font-bold text-gray-800 mb-3">Tips</h3>
+        <div class="tip-row"><span class="tip-icon2">📅</span><span>Go on a weekday — weekend crowds on the Baegundae trail can be genuinely dangerous near chains.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🥾</span><span>Proper hiking shoes essential for Baegundae — the summit rock scramble requires grip.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🎒</span><span>Bring 2L+ water and snacks — summit cafes charge premium prices and may be crowded.</span></div>
+        <div class="tip-row"><span class="tip-icon2">🚌</span><span>From Gupabal Station (Line 3), local buses 704/34 run to the park entrance — or take a taxi (~₩5,000).</span></div>
+        <div class="tip-row"><span class="tip-icon2">⚠️</span><span>Ranger-enforced descent deadline at sunset. Check the seasonal closing time posted at the entrance.</span></div>
+      </div>
+    </div>
+
+    <div class="text-center text-sm text-gray-400 pt-4 pb-8 border-t border-gray-200">
+      <a href="index.html#hiking" class="text-blue-500 hover:text-blue-600 font-medium">← Back to Seoul Guide</a>
+      &nbsp;·&nbsp; ICML 2026 · 서울에서 즐거운 하이킹 되세요! 🥾
+    </div>
+
+  </main>
+</body>
+</html>

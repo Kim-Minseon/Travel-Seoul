@@ -34,6 +34,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- ── Firebase (meetup coordination) ─────────────────────────────────── -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script>
+    // FIREBASE CONFIG — replace placeholder values with your project's config.
+    // Setup: https://console.firebase.google.com → New Project → Add Web App
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCrftR8ZXJu9iG2YVv4HBheFYtwcOJoAkM",
+      authDomain: "seoul-guide-icml2026.firebaseapp.com",
+      projectId: "seoul-guide-icml2026",
+      storageBucket: "seoul-guide-icml2026.firebasestorage.app",
+      messagingSenderId: "605847270035",
+      appId: "1:605847270035:web:b210c6646b92add95d1366",
+      measurementId: "G-5MQKYCDWCW"
+    };
+    const FIREBASE_READY = firebaseConfig.apiKey !== 'YOUR_API_KEY';
+    if (FIREBASE_READY) firebase.initializeApp(firebaseConfig);
+  </script>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -49,6 +69,7 @@
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
         <a href="#getting-here" class="hover:text-primary transition-colors">Getting Here</a>
         <a href="#activities" class="hover:text-primary transition-colors">Activities</a>
+        <a href="#hiking" class="hover:text-primary transition-colors">Hiking</a>
         <a href="#food-guide" class="hover:text-primary transition-colors">Food Guide</a>
         <a href="#near-coex" class="hover:text-primary transition-colors">Near COEX</a>
         <a href="#day-trips" class="hover:text-primary transition-colors">Day Trips</a>
@@ -64,6 +85,7 @@
   <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1 text-sm font-medium text-gray-600">
     <a href="#getting-here" class="block py-2 hover:text-primary">🚇 Getting Here</a>
     <a href="#activities" class="block py-2 hover:text-primary">🏯 Activities</a>
+    <a href="#hiking" class="block py-2 hover:text-primary">⛰️ Hiking</a>
     <a href="#food-guide" class="block py-2 hover:text-primary">🍜 Food Guide</a>
     <a href="#near-coex" class="block py-2 hover:text-primary">📍 Near COEX</a>
     <a href="#day-trips" class="block py-2 hover:text-primary">🚄 Day Trips</a>
@@ -73,7 +95,7 @@
 
 <!-- ══════════════════════════════════════════ HERO ════ -->
 <section id="hero" class="pt-[52px]">
-  <div class="hero-bg py-24 sm:py-32 px-4">
+  <div class="hero-bg py-7 sm:py-10 px-4">
     <div class="max-w-4xl mx-auto text-center text-white relative z-10">
       <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
         📅 ICML 2026 · COEX, Seoul · July 2026
@@ -90,13 +112,14 @@
         <a href="#food-guide" class="bg-white/20 border border-white/35 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/30 transition-colors text-sm backdrop-blur-sm">🍜 Food Guide</a>
         <a href="#activities" class="bg-white/20 border border-white/35 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/30 transition-colors text-sm backdrop-blur-sm">🏯 Activities</a>
         <a href="#day-trips" class="bg-white/20 border border-white/35 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/30 transition-colors text-sm backdrop-blur-sm">🚄 Day Trips</a>
+        <a href="https://english.visitseoul.net" target="_blank" rel="noopener" class="bg-white/20 border border-white/35 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/30 transition-colors text-sm backdrop-blur-sm">🌐 Official Seoul Guide</a>
       </div>
     </div>
   </div>
   <div class="bg-gray-900 text-white py-3 px-4">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-1 text-xs sm:text-sm text-gray-300">
       <span>📍 COEX Convention Center, Gangnam-gu</span>
-      <span>🚇 Samseong Station (Lines 2 &amp; 9)</span>
+      <span>🚇 Samseong Station (Line 2) &amp; Bongeunsa Station (Line 9)</span>
       <span>💱 ~1,400 KRW ≈ 1 USD</span>
       <span>🌡️ July avg. 28–33 °C / 82–91 °F</span>
     </div>
@@ -114,10 +137,16 @@
 <section id="getting-here" class="py-16 px-4 scroll-mt-16">
   <div class="max-w-7xl mx-auto">
     <div class="section-eyebrow">✈️ Airport to COEX</div>
-    <h2 class="text-3xl font-bold section-title mb-2">Getting from Incheon Airport</h2>
-    <p class="text-gray-500 mb-10">COEX is in Gangnam — roughly 1.5 hours from Incheon International Airport (ICN)</p>
+    <div class="flex items-baseline gap-4 flex-wrap mb-2">
+      <h2 class="text-3xl font-bold section-title">Getting from Incheon Airport</h2>
+      <button class="section-collapse-btn" data-target="airport-body">
+        <span class="collapse-label">Show details</span> <span class="collapse-arrow">▸</span>
+      </button>
+    </div>
+    <p class="text-gray-500 mb-6">COEX is in Gangnam — roughly 1.5 hours from Incheon International Airport (ICN)</p>
 
-    <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="section-collapse-body" id="airport-body" hidden>
+    <div class="grid md:grid-cols-3 gap-6 mb-12 mt-6">
 
       <!-- AREX -->
       <div class="transport-card recommended">
@@ -144,7 +173,8 @@
           </div>
         </div>
         <div class="mt-4 p-3 bg-green-50 border border-green-100 rounded-xl text-sm text-green-900">
-          <strong>To COEX:</strong> AREX → Seoul Station → Line 2 → <strong>Samseong Station (삼성역)</strong>, exit 6.
+          <strong>To COEX:</strong> AREX → Seoul Station → Line 2 → <strong>Samseong Station (삼성역)</strong>, exit 6.<br>
+          Also reachable via <strong>Line 9 → Bongeunsa Station (봉은사역)</strong>, exit 7 (direct entrance to COEX Mall).
           <br><br>
           Get a <strong>T-money card (T머니)</strong> at any convenience store for ₩4,000 — tap on and off all transit.
         </div>
@@ -198,11 +228,18 @@
       </div>
 
     </div>
+    </div><!-- /airport-body -->
 
     <!-- Seoul Metro Map -->
-    <div>
-      <h3 class="text-xl font-bold mb-1">Seoul Subway Map <span class="font-korean text-gray-400 font-normal text-base">서울 지하철 노선도</span></h3>
+    <div class="mt-10">
+      <div class="flex items-baseline gap-4 flex-wrap mb-1">
+        <h3 class="text-xl font-bold">Seoul Subway Map <span class="font-korean text-gray-400 font-normal text-base">서울 지하철 노선도</span></h3>
+        <button class="section-collapse-btn" data-target="subway-map-body">
+          <span class="collapse-label">Show map</span> <span class="collapse-arrow">▸</span>
+        </button>
+      </div>
       <p class="text-sm text-gray-500 mb-4">Scroll left/right to explore the map. COEX = <span class="metro-highlight">Samseong Station 삼성역 (Line 2 — green)</span></p>
+      <div class="section-collapse-body" id="subway-map-body" hidden>
       <div class="metro-map-wrap">
         <div class="metro-map-scroll" id="metroMap">
           <div style="position:relative; display:inline-block;">
@@ -219,6 +256,7 @@
           &nbsp;|&nbsp; Official map: Seoul Metropolitan Government
         </div>
       </div>
+      </div><!-- /subway-map-body -->
     </div>
 
   </div>
@@ -233,10 +271,10 @@
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="gyeongbokgung">
         <div class="activity-img-wrap">
           <div class="activity-img-badge">Palace · Free w/ Hanbok</div>
-          <img src="https://plus.unsplash.com/premium_photo-1716968595130-3df477c0087d?w=700&h=450&fit=crop&auto=format&q=80" alt="경복궁" loading="lazy">
+          <img src="images/activities/gyeongbokgung.jpg" alt="경복궁" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Gyeongbokgung Palace <span class="korean-tag">경복궁</span></h3>
@@ -250,10 +288,10 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="deoksugung">
         <div class="activity-img-wrap">
           <div class="activity-img-badge free">Free</div>
-          <img src="https://images.unsplash.com/photo-1566800890932-e89159daf3dc?w=700&h=450&fit=crop&auto=format&q=80" alt="돌담길" loading="lazy">
+          <img src="images/activities/deoksugung.jpg" alt="돌담길" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Deoksugung Stone Wall Walk <span class="korean-tag">돌담길 야경</span></h3>
@@ -267,10 +305,10 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="han-river">
         <div class="activity-img-wrap">
           <div class="activity-img-badge free">Free</div>
-          <img src="https://images.unsplash.com/photo-1631719223645-bc3cd67e5cdd?w=700&h=450&fit=crop&auto=format&q=80" alt="한강" loading="lazy">
+          <img src="images/activities/hangang.jpg" alt="한강" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Han River at Night <span class="korean-tag">한강 야경</span></h3>
@@ -284,9 +322,9 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="itaewon">
         <div class="activity-img-wrap">
-          <img src="https://images.unsplash.com/photo-1605656761288-05f68742b776?w=700&h=450&fit=crop&auto=format&q=80" alt="이태원" loading="lazy">
+          <img src="images/activities/itaewon.jpg" alt="이태원" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Itaewon <span class="korean-tag">이태원</span></h3>
@@ -299,9 +337,9 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="seongsu">
         <div class="activity-img-wrap">
-          <img src="https://images.unsplash.com/photo-1652189688750-e0fa6cb576d8?w=700&h=450&fit=crop&auto=format&q=80" alt="성수" loading="lazy">
+          <img src="images/activities/seongsu.jpg" alt="성수" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Seongsu Pop-Up District <span class="korean-tag">성수 팝업스토어</span></h3>
@@ -314,9 +352,9 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="specialty-cafes">
         <div class="activity-img-wrap">
-          <img src="https://images.unsplash.com/photo-1762267616547-6d6cd4adabc3?w=700&h=450&fit=crop&auto=format&q=80" alt="Specialty Cafes Seoul" loading="lazy">
+          <img src="images/activities/cafes.jpg" alt="Specialty Cafes Seoul" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Specialty Cafes</h3>
@@ -329,9 +367,9 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="traditional-markets">
         <div class="activity-img-wrap">
-          <img src="https://images.unsplash.com/photo-1762267659916-f5acbf0ed682?w=700&h=450&fit=crop&auto=format&q=80" alt="Traditional Markets Seoul" loading="lazy">
+          <img src="images/activities/markets.jpg" alt="Traditional Markets Seoul" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Traditional Markets <span class="korean-tag">재래시장</span></h3>
@@ -345,10 +383,10 @@
       </div>
 
       <!-- Photobooth — 인생네컷 -->
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="photo-booths">
         <div class="activity-img-wrap">
           <div class="activity-img-badge">K-Culture Must</div>
-          <img src="https://images.unsplash.com/photo-1747228469541-f0e7f56e7ec7?w=700&h=450&fit=crop&auto=format&q=80" alt="인생네컷 Photo Booth Korea" loading="lazy">
+          <img src="images/activities/photobooth.jpg" alt="인생네컷 Photo Booth Korea" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Photo Booths <span class="korean-tag">인생네컷</span></h3>
@@ -364,9 +402,9 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="norebang">
         <div class="activity-img-wrap">
-          <img src="https://images.unsplash.com/photo-1548701320-b145cdd936d6?w=700&h=450&fit=crop&auto=format&q=80" alt="Norebang Karaoke Seoul" loading="lazy">
+          <img src="images/activities/norebang.jpg" alt="Norebang Karaoke Seoul" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Norebang (Karaoke) <span class="korean-tag">노래방</span></h3>
@@ -379,10 +417,10 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="pc-bang">
         <div class="activity-img-wrap">
           <div class="activity-img-badge">Open 24h</div>
-          <img src="https://images.unsplash.com/photo-1740799346223-01af399faa0e?w=700&h=450&fit=crop&auto=format&q=80" alt="PC Bang Seoul" loading="lazy">
+          <img src="images/activities/pcbang.jpg" alt="PC Bang Seoul" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>PC Bang <span class="korean-tag">PC방</span></h3>
@@ -395,9 +433,9 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="drinking-culture">
         <div class="activity-img-wrap">
-          <img src="https://images.unsplash.com/photo-1670555830584-c8b4c97232a1?w=700&h=450&fit=crop&auto=format&q=80" alt="Korean Drinking Culture" loading="lazy">
+          <img src="images/activities/drinking.jpg" alt="Korean Drinking Culture" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Korean Drinking Culture <span class="korean-tag">술 문화</span></h3>
@@ -410,10 +448,10 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="frozen-beer">
         <div class="activity-img-wrap">
           <div class="activity-img-badge">Summer Exclusive</div>
-          <img src="https://images.unsplash.com/photo-1758384077399-2757a1de8b75?w=700&h=450&fit=crop&auto=format&q=80" alt="Frozen Beer Seoul 얼음맥주" loading="lazy">
+          <img src="images/activities/frozenbeer.jpg" alt="Frozen Beer Seoul 얼음맥주" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Frozen Beer <span class="korean-tag">얼음맥주</span></h3>
@@ -426,10 +464,10 @@
         </div>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card" data-activity-id="convenience-stores">
         <div class="activity-img-wrap">
           <div class="activity-img-badge">Open 24h</div>
-          <img src="https://images.unsplash.com/photo-1586962371016-a1e5ea08c316?w=700&h=450&fit=crop&auto=format&q=80" alt="편의점 Convenience Store Korea" loading="lazy">
+          <img src="images/activities/cvs.jpg" alt="편의점 Convenience Store Korea" loading="lazy">
         </div>
         <div class="activity-body">
           <h3>Convenience Stores <span class="korean-tag">편의점</span></h3>
@@ -441,6 +479,227 @@
         </div>
       </div>
 
+    
+      <!-- ── Suggest an Activity ── -->
+      <div class="activity-card suggest-card">
+        <div class="activity-body">
+          <div class="suggest-icon">💡</div>
+          <h3 class="suggest-title">Suggest an Activity</h3>
+          <p class="suggest-desc">Know somewhere cool we missed? Share it with ICML attendees!</p>
+          <form id="suggest-form">
+            <input class="meetup-input" name="title" placeholder="Activity name *" required maxlength="120">
+            <textarea class="meetup-input" name="description" placeholder="Description &amp; tips *" rows="2" required maxlength="400"></textarea>
+            <input class="meetup-input" name="contact" placeholder="Your contact (optional)" maxlength="120">
+            <button type="submit" class="meetup-submit-btn suggest-submit-btn">Submit →</button>
+          </form>
+          <p id="suggest-success" hidden style="color:#16A34A;font-size:0.78rem;margin-top:8px;font-weight:600;">✓ Thanks! Your suggestion was shared with attendees.</p>
+          <div id="suggest-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ HIKING ════ -->
+<section id="hiking" class="py-16 px-4 scroll-mt-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="section-eyebrow">⛰️ Nature in the City</div>
+    <h2 class="text-3xl font-bold section-title mb-2">Hiking Near Seoul</h2>
+    <p class="text-gray-500 mb-10">Seoul is surrounded by mountains — all reachable by subway from COEX (삼성역 기준). Perfect for an early morning before conference sessions.</p>
+
+    <!-- ── Accessibility Table ── -->
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-sm bg-white">
+        <thead>
+          <tr class="bg-gray-900 text-white text-xs uppercase tracking-wide">
+            <th class="px-5 py-4 text-left font-semibold rounded-tl-2xl">Mountain</th>
+            <th class="px-4 py-4 text-center font-semibold">Trail Guide</th>
+            <th class="px-4 py-4 text-center font-semibold">Meetup</th>
+            <th class="px-5 py-4 text-left font-semibold">Exit Station</th>
+            <th class="px-5 py-4 text-left font-semibold">Route from COEX (삼성역)</th>
+            <th class="px-5 py-4 text-center font-semibold whitespace-nowrap">Est. Time</th>
+            <th class="px-5 py-4 text-center font-semibold rounded-tr-2xl">Access</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+
+          <tr class="hike-main-row hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-4">
+              <button class="korean-name hike-name" data-korean="관악산">관악산</button>
+              <div class="text-xs text-gray-400 mt-0.5">Gwanaksan</div>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <a href="hiking.html#gwanaksan" class="hike-trail-link">🥾 Guide ↗</a>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <button class="hike-meetup-btn" type="button" data-hike="gwanaksan">👥 <span class="hike-meetup-arrow">▸</span></button>
+            </td>
+            <td class="px-5 py-4">
+              <div class="text-gray-700 font-medium">사당역 / 서울대입구역</div>
+              <div class="text-xs text-gray-400 mt-0.5"><span class="subway-pill line-2">2</span> Line 2</div>
+            </td>
+            <td class="px-5 py-4 text-gray-600 text-xs leading-relaxed">
+              <span class="subway-pill line-2">2</span> 삼성역 → 사당역 / 서울대입구역
+              <span class="ml-1 text-green-600 font-semibold">(직통 · no transfer)</span>
+            </td>
+            <td class="px-5 py-4 text-center font-bold text-gray-800 whitespace-nowrap">~15–20 min</td>
+            <td class="px-5 py-4 text-center"><span class="access-badge access-best">⭐⭐⭐⭐⭐</span></td>
+          </tr>
+          <tr class="hike-meetup-row" id="hike-meetup-gwanaksan" hidden>
+            <td colspan="7" class="px-6 py-4">
+              <div class="hike-meetup-slot" data-hike-id="gwanaksan"></div>
+            </td>
+          </tr>
+
+          <tr class="hike-main-row hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-4">
+              <button class="korean-name hike-name" data-korean="응봉산">응봉산</button>
+              <div class="text-xs text-gray-400 mt-0.5">Eungbongsan</div>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <a href="hiking.html#eungbongsan" class="hike-trail-link">🥾 Guide ↗</a>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <button class="hike-meetup-btn" type="button" data-hike="eungbongsan">👥 <span class="hike-meetup-arrow">▸</span></button>
+            </td>
+            <td class="px-5 py-4">
+              <div class="text-gray-700 font-medium">응봉역</div>
+              <div class="text-xs text-gray-400 mt-0.5"><span class="subway-pill line-gyj">경의중앙</span></div>
+            </td>
+            <td class="px-5 py-4 text-gray-600 text-xs leading-relaxed">
+              <span class="subway-pill line-2">2</span> 삼성역 → 왕십리역
+              <span class="text-gray-400">(환승)</span> →
+              <span class="subway-pill line-gyj">경의중앙</span> 응봉역
+            </td>
+            <td class="px-5 py-4 text-center font-bold text-gray-800 whitespace-nowrap">~30 min</td>
+            <td class="px-5 py-4 text-center"><span class="access-badge access-great">⭐⭐⭐⭐</span></td>
+          </tr>
+          <tr class="hike-meetup-row" id="hike-meetup-eungbongsan" hidden>
+            <td colspan="7" class="px-6 py-4">
+              <div class="hike-meetup-slot" data-hike-id="eungbongsan"></div>
+            </td>
+          </tr>
+
+          <tr class="hike-main-row hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-4">
+              <button class="korean-name hike-name" data-korean="아차산">아차산</button>
+              <div class="text-xs text-gray-400 mt-0.5">Achasan</div>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <a href="hiking.html#achasan" class="hike-trail-link">🥾 Guide ↗</a>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <button class="hike-meetup-btn" type="button" data-hike="achasan">👥 <span class="hike-meetup-arrow">▸</span></button>
+            </td>
+            <td class="px-5 py-4">
+              <div class="text-gray-700 font-medium">아차산역</div>
+              <div class="text-xs text-gray-400 mt-0.5"><span class="subway-pill line-5">5</span> Line 5</div>
+            </td>
+            <td class="px-5 py-4 text-gray-600 text-xs leading-relaxed">
+              <span class="subway-pill line-9">9</span> 봉은사역 → 석촌역
+              <span class="text-gray-400">(환승)</span> →
+              <span class="subway-pill line-8">8</span> 천호역
+              <span class="text-gray-400">(환승)</span> →
+              <span class="subway-pill line-5">5</span> 아차산역
+            </td>
+            <td class="px-5 py-4 text-center font-bold text-gray-800 whitespace-nowrap">~35–40 min</td>
+            <td class="px-5 py-4 text-center"><span class="access-badge access-ok">⭐⭐⭐</span></td>
+          </tr>
+          <tr class="hike-meetup-row" id="hike-meetup-achasan" hidden>
+            <td colspan="7" class="px-6 py-4">
+              <div class="hike-meetup-slot" data-hike-id="achasan"></div>
+            </td>
+          </tr>
+
+          <tr class="hike-main-row hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-4">
+              <button class="korean-name hike-name" data-korean="인왕산">인왕산</button>
+              <div class="text-xs text-gray-400 mt-0.5">Inwangsan</div>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <a href="hiking.html#inwangsan" class="hike-trail-link">🥾 Guide ↗</a>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <button class="hike-meetup-btn" type="button" data-hike="inwangsan">👥 <span class="hike-meetup-arrow">▸</span></button>
+            </td>
+            <td class="px-5 py-4">
+              <div class="text-gray-700 font-medium">독립문역 / 경복궁역</div>
+              <div class="text-xs text-gray-400 mt-0.5"><span class="subway-pill line-3">3</span> Line 3</div>
+            </td>
+            <td class="px-5 py-4 text-gray-600 text-xs leading-relaxed">
+              <span class="subway-pill line-2">2</span> 삼성역 → 교대역
+              <span class="text-gray-400">(환승)</span> →
+              <span class="subway-pill line-3">3</span> 독립문역
+            </td>
+            <td class="px-5 py-4 text-center font-bold text-gray-800 whitespace-nowrap">~45–50 min</td>
+            <td class="px-5 py-4 text-center"><span class="access-badge access-far">⭐⭐</span></td>
+          </tr>
+          <tr class="hike-meetup-row" id="hike-meetup-inwangsan" hidden>
+            <td colspan="7" class="px-6 py-4">
+              <div class="hike-meetup-slot" data-hike-id="inwangsan"></div>
+            </td>
+          </tr>
+
+          <tr class="hike-main-row hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-4">
+              <button class="korean-name hike-name" data-korean="북악산">북악산</button>
+              <div class="text-xs text-gray-400 mt-0.5">Bugaksan</div>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <a href="hiking.html#bugaksan" class="hike-trail-link">🥾 Guide ↗</a>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <button class="hike-meetup-btn" type="button" data-hike="bugaksan">👥 <span class="hike-meetup-arrow">▸</span></button>
+            </td>
+            <td class="px-5 py-4">
+              <div class="text-gray-700 font-medium">안국역 → 마을버스</div>
+              <div class="text-xs text-gray-400 mt-0.5"><span class="subway-pill line-3">3</span> Line 3 + bus</div>
+            </td>
+            <td class="px-5 py-4 text-gray-600 text-xs leading-relaxed">
+              <span class="subway-pill line-2">2</span> 삼성역 → 교대역
+              <span class="text-gray-400">(환승)</span> →
+              <span class="subway-pill line-3">3</span> 안국역 → 마을버스
+            </td>
+            <td class="px-5 py-4 text-center font-bold text-gray-800 whitespace-nowrap">~55–60 min</td>
+            <td class="px-5 py-4 text-center"><span class="access-badge access-far">⭐⭐</span></td>
+          </tr>
+          <tr class="hike-meetup-row" id="hike-meetup-bugaksan" hidden>
+            <td colspan="7" class="px-6 py-4">
+              <div class="hike-meetup-slot" data-hike-id="bugaksan"></div>
+            </td>
+          </tr>
+
+          <tr class="hike-main-row hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-4">
+              <button class="korean-name hike-name" data-korean="북한산">북한산</button>
+              <div class="text-xs text-gray-400 mt-0.5">Bukhansan</div>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <a href="hiking.html#bukhansan" class="hike-trail-link">🥾 Guide ↗</a>
+            </td>
+            <td class="px-4 py-4 text-center">
+              <button class="hike-meetup-btn" type="button" data-hike="bukhansan">👥 <span class="hike-meetup-arrow">▸</span></button>
+            </td>
+            <td class="px-5 py-4">
+              <div class="text-gray-700 font-medium">구파발역 / 우이신설선</div>
+              <div class="text-xs text-gray-400 mt-0.5"><span class="subway-pill line-3">3</span> Line 3 / Ui–Sinseol</div>
+            </td>
+            <td class="px-5 py-4 text-gray-600 text-xs leading-relaxed">
+              <span class="subway-pill line-2">2</span> 삼성역 → 교대역
+              <span class="text-gray-400">(환승)</span> →
+              <span class="subway-pill line-3">3</span> 구파발역
+            </td>
+            <td class="px-5 py-4 text-center font-bold text-gray-800 whitespace-nowrap">60+ min</td>
+            <td class="px-5 py-4 text-center"><span class="access-badge access-distant">⭐</span></td>
+          </tr>
+          <tr class="hike-meetup-row" id="hike-meetup-bukhansan" hidden>
+            <td colspan="7" class="px-6 py-4">
+              <div class="hike-meetup-slot" data-hike-id="bukhansan"></div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -460,6 +719,8 @@
       <button class="filter-btn" data-filter="noodles">🍜 Noodles</button>
       <button class="filter-btn" data-filter="street">🥡 Street Food</button>
       <button class="filter-btn" data-filter="seafood">🐟 Seafood</button>
+      <button class="filter-btn" data-filter="rice">🍚 Rice &amp; More</button>
+      <button class="filter-btn" data-filter="dessert">🍧 Dessert</button>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -483,7 +744,7 @@
 
       <div class="food-card" data-category="bbq">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1709433420549-06e96379c2b9?w=600&h=350&fit=crop&auto=format&q=80" alt="숯불갈비" loading="lazy">
+          <img src="images/food/sutbulgalbi.png" alt="숯불갈비" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="숯불갈비">숯불갈비</button>
@@ -498,7 +759,7 @@
 
       <div class="food-card" data-category="bbq">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1709433421859-2ecb831b6eb3?w=600&h=350&fit=crop&auto=format&q=80" alt="불고기" loading="lazy">
+          <img src="images/food/bulgogi.png" alt="불고기" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="불고기">불고기</button>
@@ -513,7 +774,7 @@
 
       <div class="food-card" data-category="bbq">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1709433420422-731e1be1c9aa?w=600&h=350&fit=crop&auto=format&q=80" alt="한우" loading="lazy">
+          <img src="images/food/hanwoobeef.png" alt="한우" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="한우">한우</button>
@@ -528,7 +789,7 @@
 
       <div class="food-card" data-category="bbq">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1709433420444-0535a5f616b9?w=600&h=350&fit=crop&auto=format&q=80" alt="닭갈비" loading="lazy">
+          <img src="images/food/dakgalbi.png" alt="닭갈비" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="닭갈비">닭갈비</button>
@@ -545,7 +806,7 @@
 
       <div class="food-card" data-category="pork">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1709433420624-832e2264c346?w=600&h=350&fit=crop&auto=format&q=80" alt="보쌈" loading="lazy">
+          <img src="images/food/bossam.png" alt="보쌈" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="보쌈">보쌈</button>
@@ -560,7 +821,7 @@
 
       <div class="food-card" data-category="pork">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1709433420612-8cad609df914?w=600&h=350&fit=crop&auto=format&q=80" alt="족발" loading="lazy">
+          <img src="images/food/jokbal.png" alt="족발" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="족발">족발</button>
@@ -575,7 +836,7 @@
 
       <div class="food-card" data-category="pork">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1552912470-ee2e96439539?w=600&h=350&fit=crop&auto=format&q=80" alt="제육볶음" loading="lazy">
+          <img src="images/food/jeyukbokkeum.jpg" alt="제육볶음" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="제육볶음">제육볶음</button>
@@ -592,7 +853,7 @@
 
       <div class="food-card" data-category="soup">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1661412855930-2936cf94e57a?w=600&h=350&fit=crop&auto=format&q=80" alt="김치찌개" loading="lazy">
+          <img src="images/food/kimchijjigae.png" alt="김치찌개" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="김치찌개">김치찌개</button>
@@ -607,7 +868,7 @@
 
       <div class="food-card" data-category="soup">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1671522636199-3af72349c2e5?w=600&h=350&fit=crop&auto=format&q=80" alt="된장찌개" loading="lazy">
+          <img src="images/food/doenjangjjigae.png" alt="된장찌개" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="된장찌개">된장찌개</button>
@@ -622,7 +883,7 @@
 
       <div class="food-card" data-category="soup">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1664360228159-437020f924c8?w=600&h=350&fit=crop&auto=format&q=80" alt="부대찌개" loading="lazy">
+          <img src="images/food/budaejjigae.png" alt="부대찌개" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="부대찌개">부대찌개</button>
@@ -637,7 +898,7 @@
 
       <div class="food-card" data-category="soup">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1661410881226-c42c7f6c6690?w=600&h=350&fit=crop&auto=format&q=80" alt="국밥" loading="lazy">
+          <img src="images/food/gukbap.jpg" alt="국밥" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="국밥">국밥</button>
@@ -650,26 +911,11 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="soup">
-        <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1682496178113-6275890f1fd7?w=600&h=350&fit=crop&auto=format&q=80" alt="내장탕" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="내장탕">내장탕</button>
-          <div class="food-english">Naejang Tang</div>
-          <p class="food-desc">Intensely flavored spicy offal soup. A bold local favorite — not for the squeamish, but a deeply authentic Korean experience.</p>
-          <div class="food-footer">
-            <span class="price">₩8,000–12,000</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/내장탕+서울" target="_blank" rel="noopener">Find on Maps →</a>
-          </div>
-        </div>
-      </div>
-
       <!-- ── NOODLES ─────────────────────────────────── -->
 
       <div class="food-card" data-category="noodles">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1666919621450-19b748451896?w=600&h=350&fit=crop&auto=format&q=80" alt="짜장면" loading="lazy">
+          <img src="images/food/jjajangmyeon.png" alt="짜장면" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="짜장면">짜장면</button>
@@ -684,7 +930,7 @@
 
       <div class="food-card" data-category="noodles">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1626803774007-f92c2c32cbe7?w=600&h=350&fit=crop&auto=format&q=80" alt="짬뽕" loading="lazy">
+          <img src="images/food/jjamppong.png" alt="짬뽕" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="짬뽕">짬뽕</button>
@@ -699,7 +945,7 @@
 
       <div class="food-card" data-category="noodles">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1564834730442-15e1985f2710?w=600&h=350&fit=crop&auto=format&q=80" alt="탕수육" loading="lazy">
+          <img src="images/food/tangsuyuk.png" alt="탕수육" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="탕수육">탕수육</button>
@@ -714,7 +960,7 @@
 
       <div class="food-card" data-category="noodles">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1628532429788-c35922b5e6c1?w=600&h=350&fit=crop&auto=format&q=80" alt="칼국수" loading="lazy">
+          <img src="images/food/kalguksu.png" alt="칼국수" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="칼국수">칼국수</button>
@@ -729,10 +975,10 @@
 
       <div class="food-card" data-category="noodles">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1629642621587-9947ce328799?w=600&h=350&fit=crop&auto=format&q=80" alt="비빔국수" loading="lazy">
+          <img src="images/food/bibimguksu.png" alt="비빔국수" loading="lazy">
         </div>
         <div class="food-content">
-          <button class="korean-name" data-korean="비빔국수">비빔국수</button>
+          <button class="korean-name" data-korean="비빔국수">비빔국수 🌱</button>
           <div class="food-english">Bibim Guksu</div>
           <p class="food-desc">Spicy cold mixed noodles with gochujang, cucumber, and egg. Refreshing and punchy — a lifesaver in Seoul's hot, humid July weather.</p>
           <div class="food-footer">
@@ -744,7 +990,7 @@
 
       <div class="food-card" data-category="noodles">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1683121624323-0c5bf3ca6af2?w=600&h=350&fit=crop&auto=format&q=80" alt="잔치국수" loading="lazy">
+          <img src="images/food/janchiguksu.png" alt="잔치국수" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="잔치국수">잔치국수</button>
@@ -761,10 +1007,10 @@
 
       <div class="food-card" data-category="street">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1664360227360-16628277f9f0?w=600&h=350&fit=crop&auto=format&q=80" alt="떡볶이" loading="lazy">
+          <img src="images/food/tteokbokki.png" alt="떡볶이" loading="lazy">
         </div>
         <div class="food-content">
-          <button class="korean-name" data-korean="떡볶이">떡볶이</button>
+          <button class="korean-name" data-korean="떡볶이">떡볶이 🌱</button>
           <div class="food-english">Tteokbokki</div>
           <p class="food-desc">Chewy rice cakes in spicy-sweet gochujang sauce. Korea's most beloved street food — sold everywhere from pojangmacha to upscale restaurants.</p>
           <div class="food-footer">
@@ -776,7 +1022,7 @@
 
       <div class="food-card" data-category="street">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1679581083578-94eae6e8d7a4?w=600&h=350&fit=crop&auto=format&q=80" alt="순대" loading="lazy">
+          <img src="images/food/sundae.png" alt="순대" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="순대">순대</button>
@@ -791,7 +1037,7 @@
 
       <div class="food-card" data-category="street">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1679581083909-daf9604102ac?w=600&h=350&fit=crop&auto=format&q=80" alt="튀김" loading="lazy">
+          <img src="images/food/twigim.png" alt="튀김" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="튀김">튀김</button>
@@ -821,7 +1067,7 @@
 
       <div class="food-card" data-category="street">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1683139916670-38113db90cb9?w=600&h=350&fit=crop&auto=format&q=80" alt="Korean Fried Chicken" loading="lazy">
+          <img src="images/food/koreanfriedchicken.png" alt="Korean Fried Chicken" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="후라이드 치킨 / 양념치킨 / 간장치킨">후라이드 / 양념 / 간장치킨</button>
@@ -838,7 +1084,7 @@
 
       <div class="food-card" data-category="seafood">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1703945530505-2f06e3e1cf97?w=600&h=350&fit=crop&auto=format&q=80" alt="회" loading="lazy">
+          <img src="images/food/hoe.png" alt="회" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="회">회</button>
@@ -853,7 +1099,7 @@
 
       <div class="food-card" data-category="seafood">
         <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1649477870301-0dac6b5500f2?w=600&h=350&fit=crop&auto=format&q=80" alt="매운탕" loading="lazy">
+          <img src="images/food/maeuntang.png" alt="매운탕" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="매운탕">매운탕</button>
@@ -868,7 +1114,7 @@
 
       <div class="food-card" data-category="seafood">
         <div class="food-img-wrap">
-          <img src="https://plus.unsplash.com/premium_photo-1686538381765-da778cf88d9b?w=600&h=350&fit=crop&auto=format&q=80" alt="초밥" loading="lazy">
+          <img src="images/food/chobap.png" alt="초밥" loading="lazy">
         </div>
         <div class="food-content">
           <button class="korean-name" data-korean="초밥">초밥</button>
@@ -877,6 +1123,164 @@
           <div class="food-footer">
             <span class="price">₩15,000–25,000</span>
             <a class="maps-link" href="https://www.google.com/maps/search/초밥+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SOUPS (additional) ──────────────────────────── -->
+
+      <div class="food-card" data-category="soup">
+        <div class="food-img-wrap">
+          <img src="images/food/samgyetang.png" alt="삼계탕" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="삼계탕">삼계탕</button>
+          <div class="food-english">Ginseng Chicken Soup</div>
+          <p class="food-desc">A whole young chicken stuffed with glutinous rice, ginseng, jujubes, and garlic, simmered into a rich milky broth. Korea's classic summer restorative.</p>
+          <div class="food-footer">
+            <span class="price">₩15,000–22,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/삼계탕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="soup">
+        <div class="food-img-wrap">
+          <img src="images/food/shabu-shabu.png" alt="샤브샤브" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="샤브샤브">샤브샤브</button>
+          <div class="food-english">Shabu-shabu Hot Pot</div>
+          <p class="food-desc">Thinly sliced beef and fresh vegetables swished through a simmering kombu broth at the table. Finishes with porridge made from the remaining broth.</p>
+          <div class="food-footer">
+            <span class="price">₩20,000–40,000 / 인</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/샤브샤브+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── NOODLES (additional) ────────────────────────── -->
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-img-wrap">
+          <img src="images/food/mul-naengmyeon.png" alt="물냉면" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="물냉면">물냉면</button>
+          <div class="food-english">Cold Buckwheat Noodle Soup</div>
+          <p class="food-desc">Chewy buckwheat noodles in an ice-cold beef broth with sliced beef, cucumber, pickled radish, and a half boiled egg. Perfect for Seoul's humid July heat.</p>
+          <div class="food-footer">
+            <span class="price">₩12,000–15,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/물냉면+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="noodles">
+        <div class="food-img-wrap">
+          <img src="images/food/memil-soba.png" alt="메밀소바" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="메밀소바">메밀소바</button>
+          <div class="food-english">Buckwheat Cold Noodles</div>
+          <p class="food-desc">Dark, nutty buckwheat noodles on a bamboo tray with a dipping sauce, grated daikon, and wasabi. Light and satisfying — popular at Korean-Japanese restaurants.</p>
+          <div class="food-footer">
+            <span class="price">₩10,000–14,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/메밀소바+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RICE & MORE ──────────────────────────────────── -->
+
+      <div class="food-card" data-category="rice">
+        <div class="food-img-wrap">
+          <img src="images/food/bibimbap.png" alt="비빔밥" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="비빔밥">비빔밥 🌱</button>
+          <div class="food-english">Bibimbap</div>
+          <p class="food-desc">Rice topped with seasoned vegetables, ground beef, and a fried egg — mixed together with gochujang at the table. One of Korea's most iconic and balanced dishes.</p>
+          <div class="food-footer">
+            <span class="price">₩8,000–12,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/비빔밥+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="rice">
+        <div class="food-img-wrap">
+          <img src="images/food/donkatsu.png" alt="돈까스" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="돈까스">돈까스</button>
+          <div class="food-english">Donkatsu (Pork Cutlet)</div>
+          <p class="food-desc">Panko-breaded pork cutlet, crispy outside and juicy inside, drizzled with tonkatsu sauce. A beloved comfort food staple — budget-friendly and everywhere.</p>
+          <div class="food-footer">
+            <span class="price">₩8,000–14,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/돈까스+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="rice">
+        <div class="food-img-wrap">
+          <img src="images/food/dubu-jorim.png" alt="두부조림" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="두부조림">두부조림 🌱</button>
+          <div class="food-english">Braised Spicy Tofu</div>
+          <p class="food-desc">Pan-fried tofu simmered in a rich soy-gochugaru sauce with garlic and green onions. A staple side dish (banchan) eaten with rice at everyday Korean meals.</p>
+          <div class="food-footer">
+            <span class="price">₩6,000–10,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/두부조림+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="rice">
+        <div class="food-img-wrap">
+          <img src="images/food/wolnam-ssam.png" alt="월남쌈" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="월남쌈">월남쌈</button>
+          <div class="food-english">Fresh Spring Rolls</div>
+          <p class="food-desc">Translucent rice paper rolls stuffed with shrimp, pork, vermicelli, fresh herbs, and vegetables. A light, refreshing option widely served at Korean restaurants.</p>
+          <div class="food-footer">
+            <span class="price">₩12,000–18,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/월남쌈+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-card" data-category="rice">
+        <div class="food-img-wrap">
+          <img src="images/food/dotorimuk-sabal.png" alt="도토리묵사발" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="도토리묵사발">도토리묵사발 🌱</button>
+          <div class="food-english">Acorn Jelly Cold Bowl</div>
+          <p class="food-desc">Silky dark acorn jelly cubes in a cold savory broth with cucumber, seaweed, and sesame. Uniquely Korean, light, and healthy — a great starter or light meal.</p>
+          <div class="food-footer">
+            <span class="price">₩6,000–10,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/도토리묵사발+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DESSERT ──────────────────────────────────────── -->
+
+      <div class="food-card" data-category="dessert">
+        <div class="food-img-wrap">
+          <img src="images/food/bingsu.png" alt="빙수" loading="lazy">
+        </div>
+        <div class="food-content">
+          <button class="korean-name" data-korean="빙수">빙수</button>
+          <div class="food-english">Bingsu (Korean Shaved Ice)</div>
+          <p class="food-desc">Fluffy milk-shaved ice piled with sweet red bean paste, chewy rice cake, and condensed milk. Korean bingsu is far softer than ordinary shaved ice — life-changing in July heat.</p>
+          <div class="food-footer">
+            <span class="price">₩10,000–18,000</span>
+            <a class="maps-link" href="https://www.google.com/maps/search/빙수+팥빙수+서울" target="_blank" rel="noopener">Find on Maps →</a>
           </div>
         </div>
       </div>
