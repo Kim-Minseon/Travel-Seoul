@@ -7,7 +7,7 @@ A community travel guide for ICML 2026 attendees visiting Seoul. Covers getting 
 
 ## 🌐 Live Site
 
-[minseonkim.github.io/Travel-Seoul](https://minseonkim.github.io/Travel-Seoul/)
+[kim-minseon.github.io/Travel-Seoul]([https://kim-minseon.github.io/Travel-Seoul/])
 
 ## What's Inside
 
