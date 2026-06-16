@@ -16,6 +16,21 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
 
+// ── Clickable cards → detail page ─────────────────────────────────────────
+document.querySelectorAll('.activity-card[data-activity-id]').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a, button, .meetup-panel, .meetup-toggle-btn, form')) return;
+    window.location.href = 'detail.html?type=activity&id=' + encodeURIComponent(card.getAttribute('data-activity-id'));
+  });
+});
+
+document.querySelectorAll('.food-card[data-food-id]').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a, button')) return;
+    window.location.href = 'detail.html?type=food&id=' + encodeURIComponent(card.getAttribute('data-food-id'));
+  });
+});
+
 // Copy Korean name to clipboard
 const toast = document.getElementById('copy-toast');
 let toastTimeout;

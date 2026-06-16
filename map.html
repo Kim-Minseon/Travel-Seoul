@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Map of activities and things to do in Seoul for ICML 2026 attendees.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇰🇷</text></svg>">
+  <title>Activity Map — Seoul Guide for ICML 2026</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6B9BD2',
+            'primary-dark': '#5585BF',
+            'primary-light': '#DBEAFE',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    #map { width: 100%; height: calc(100vh - 52px - 60px); min-height: 500px; }
+    .map-popup h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 4px; color: #111827; }
+    .map-popup .popup-korean { font-family: 'Noto Sans KR', sans-serif; font-size: 0.8rem; color: #6B9BD2; margin-bottom: 6px; }
+    .map-popup p { font-size: 0.78rem; color: #6B7280; line-height: 1.5; margin: 0 0 8px; }
+    .map-popup .popup-meta { font-size: 0.7rem; color: #9CA3AF; margin-bottom: 6px; }
+    .map-popup .popup-link { font-size: 0.75rem; color: #3B82F6; text-decoration: none; font-weight: 600; }
+    .map-popup .popup-link:hover { text-decoration: underline; }
+    .map-legend {
+      background: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
+    .map-legend-title { font-weight: 700; font-size: 0.8rem; margin-bottom: 4px; color: #111827; }
+    .legend-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-[1000] bg-white border-b border-gray-200 transition-shadow duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 no-underline">
+        <span class="text-2xl">🇰🇷</span>
+        <span class="font-bold text-gray-900">Seoul Guide</span>
+        <span class="hidden sm:inline text-xs bg-primary text-white px-2 py-0.5 rounded-full font-semibold">ICML 2026</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        <a href="index.html#activities" class="hover:text-primary transition-colors">Activities</a>
+        <a href="index.html#food-guide" class="hover:text-primary transition-colors">Food Guide</a>
+        <a href="board.html" class="hover:text-primary transition-colors">Board</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Map -->
+<div class="pt-[52px]">
+  <div id="map"></div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-4 px-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between text-sm text-gray-500">
+    <a href="index.html#activities" class="text-gray-400 hover:text-white transition-colors">← Back to Activities</a>
+    <span>Seoul Guide · ICML 2026</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  mobileMenuBtn.addEventListener('click', () => {
+    // simple: just go back
+    window.location.href = 'index.html#activities';
+  });
+
+  // ── Map setup ──
+  const map = L.map('map', {
+    center: [37.5326, 126.9900],
+    zoom: 12,
+    zoomControl: true,
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  // ── Custom icon factory ──
+  function makeIcon(emoji) {
+    return L.divIcon({
+      html: `<div style="font-size:1.6rem;text-align:center;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">${emoji}</div>`,
+      className: '',
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -16],
+    });
+  }
+
+  // ── Pin data ──
+  const pins = [
+    {
+      lat: 37.5796, lng: 126.9770,
+      emoji: '🏯',
+      category: 'palace',
+      title: 'Gyeongbokgung Palace',
+      korean: '경복궁',
+      desc: 'Seoul\'s grandest palace. Guard changing at 10am & 2pm. Free entry with hanbok.',
+      meta: '🕘 9am–6pm (closed Tue) · 💰 ₩3,000 · 🚇 Line 3',
+      detailId: 'gyeongbokgung',
+    },
+    {
+      lat: 37.5658, lng: 126.9751,
+      emoji: '🌙',
+      category: 'walk',
+      title: 'Deoksugung Stone Wall Walk',
+      korean: '돌담길 야경',
+      desc: 'Atmospheric illuminated stone wall walk along the palace. Best at night.',
+      meta: '🌙 Best after 7pm · 💰 Free · 🚇 City Hall (Lines 1 & 2)',
+      detailId: 'deoksugung',
+    },
+    {
+      lat: 37.5134, lng: 126.9961,
+      emoji: '🌊',
+      category: 'nature',
+      title: 'Han River at Night',
+      korean: '한강 야경',
+      desc: 'Banpo Hangang Park. Moonlight Rainbow Fountain runs 9–11pm weekends.',
+      meta: '🌙 Best after dark · 💰 Free · 🚇 Express Bus Terminal (Line 3)',
+      detailId: 'han-river',
+    },
+    {
+      lat: 37.5346, lng: 126.9945,
+      emoji: '🌍',
+      category: 'district',
+      title: 'Itaewon',
+      korean: '이태원',
+      desc: 'International neighbourhood — global restaurants, cocktail bars, vintage shops, nightlife.',
+      meta: '🚇 Itaewon (Line 6) · 💰 Varies',
+      detailId: 'itaewon',
+    },
+    {
+      lat: 37.5447, lng: 127.0558,
+      emoji: '🎨',
+      category: 'district',
+      title: 'Seongsu Pop-Up District',
+      korean: '성수 팝업스토어',
+      desc: 'Seoul\'s Brooklyn — rotating pop-up stores, specialty coffee, creative brands.',
+      meta: '🚇 Seongsu (Line 2) · 💰 Free to browse',
+      detailId: 'seongsu',
+    },
+    {
+      lat: 37.5100, lng: 127.1001,
+      emoji: '🎢',
+      category: 'attraction',
+      title: 'Lotte World',
+      korean: '롯데월드',
+      desc: 'One of the world\'s largest indoor theme parks plus outdoor Magic Island.',
+      meta: '🕘 10am–9pm · 💰 ₩62,000 · 🚇 Jamsil (Lines 2 & 8)',
+      detailId: 'lotte-world',
+    },
+    {
+      lat: 37.5085, lng: 127.0985,
+      emoji: '🌳',
+      category: 'nature',
+      title: 'Seokchon Lake',
+      korean: '석촌호수',
+      desc: 'Peaceful 2.5 km lake loop next to Lotte Tower. Lakeside cafés, sunset views.',
+      meta: '🌳 Open 24h · 💰 Free · 🚇 Jamsil (Lines 2 & 8)',
+      detailId: 'seokchon-lake',
+    },
+    {
+      lat: 37.5824, lng: 126.9847,
+      emoji: '🏘️',
+      category: 'culture',
+      title: 'Bukchon Hanok Village',
+      korean: '북촌한옥마을',
+      desc: '600-year-old traditional hanok neighbourhood between two palaces.',
+      meta: '🕘 Best 10am–5pm · 💰 Free · 🚇 Anguk (Line 3)',
+      detailId: 'bukchon-hanok',
+    },
+    // ── Traditional Markets ──
+    {
+      lat: 37.5701, lng: 126.9994,
+      emoji: '🏪',
+      category: 'market',
+      title: 'Gwangjang Market',
+      korean: '광장시장',
+      desc: 'Seoul\'s oldest traditional market. Famous for bindaetteok (mung bean pancakes), mayak gimbap, and raw beef yukhoe. A must-visit food destination.',
+      meta: '🕘 9am–11pm · 💰 Budget · 🚇 Jongno 5-ga (Line 1)',
+    },
+    {
+      lat: 37.5560, lng: 126.9189,
+      emoji: '🏪',
+      category: 'market',
+      title: 'Mangwon Market',
+      korean: '망원시장',
+      desc: 'Local, relaxed, less touristy market loved by Seoulites. Great street food, fresh produce, and a neighbourhood vibe.',
+      meta: '🕘 9am–9pm · 💰 Budget · 🚇 Mangwon (Line 6)',
+    },
+    {
+      lat: 37.5724, lng: 126.9715,
+      emoji: '🏪',
+      category: 'market',
+      title: 'Tongin Market',
+      korean: '통인시장',
+      desc: 'Famous for its unique lunch-box café — buy tokens and pick dishes from different stalls to build your own meal tray. Near Gyeongbokgung.',
+      meta: '🕘 9am–6pm · 💰 ₩5,000 lunch box · 🚇 Gyeongbokgung (Line 3)',
+    },
+    {
+      lat: 37.5135, lng: 126.9407,
+      emoji: '🐟',
+      category: 'market',
+      title: 'Noryangjin Fish Market',
+      korean: '노량진 수산시장',
+      desc: 'Seoul\'s largest seafood market. Buy fresh fish, crab, and shellfish on the first floor and have it prepared upstairs. A raw fish (회) paradise.',
+      meta: '🕘 Open 24h · 💰 Varies · 🚇 Noryangjin (Lines 1 & 9)',
+    },
+    {
+      lat: 37.4945, lng: 127.0115,
+      emoji: '🐟',
+      category: 'market',
+      title: 'Garak Market',
+      korean: '가락시장',
+      desc: 'Korea\'s largest wholesale agricultural & seafood market. Massive scale — best experienced in the early morning for the fish auction.',
+      meta: '🕘 Early morning best · 💰 Wholesale prices · 🚇 Garak Market (Line 8)',
+    },
+    {
+      lat: 37.5647, lng: 127.0718,
+      emoji: '🥩',
+      category: 'market',
+      title: 'Majang Meat Market',
+      korean: '마장동 한우 시장',
+      desc: 'Korea\'s largest meat market — buy premium hanwoo beef and pork at wholesale prices and grill it at restaurants inside the market. Unbeatable quality and value.',
+      meta: '🕘 5am–7pm · 💰 30–50% cheaper than restaurants · 🚇 Majang (Line 5)',
+    },
+  ];
+
+  // ── Category colors for legend ──
+  const categoryColors = {
+    palace: '#B45309',
+    walk: '#7C3AED',
+    nature: '#059669',
+    district: '#2563EB',
+    attraction: '#DC2626',
+    culture: '#92400E',
+    market: '#0891B2',
+  };
+
+  const categoryLabels = {
+    palace: 'Palace',
+    walk: 'Walk',
+    nature: 'Nature',
+    district: 'District',
+    attraction: 'Attraction',
+    culture: 'Culture',
+    market: 'Market',
+  };
+
+  // ── Add markers ──
+  const markers = [];
+
+  pins.forEach(pin => {
+    const marker = L.marker([pin.lat, pin.lng], { icon: makeIcon(pin.emoji) }).addTo(map);
+
+    const detailLink = pin.detailId
+      ? `<a class="popup-link" href="detail.html?type=activity&id=${pin.detailId}">View details →</a>`
+      : '';
+    const mapsLink = `<a class="popup-link" href="https://www.google.com/maps/search/${encodeURIComponent(pin.korean)}" target="_blank" rel="noopener" style="margin-left:${detailLink ? '10px' : '0'}">Google Maps ↗</a>`;
+
+    marker.bindPopup(`
+      <div class="map-popup" style="min-width:200px;max-width:260px;">
+        <h3>${pin.title}</h3>
+        <div class="popup-korean">${pin.korean}</div>
+        <p>${pin.desc}</p>
+        <div class="popup-meta">${pin.meta}</div>
+        <div>${detailLink}${mapsLink}</div>
+      </div>
+    `);
+
+    markers.push(marker);
+  });
+
+  // Fit all markers
+  if (markers.length) {
+    const group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds().pad(0.1));
+  }
+
+  // ── Legend ──
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function () {
+    const div = L.DomUtil.create('div', 'map-legend');
+    div.innerHTML = '<div class="map-legend-title">📍 Categories</div>' +
+      Object.entries(categoryLabels).map(([key, label]) =>
+        `<div><span class="legend-dot" style="background:${categoryColors[key]}"></span>${label}</div>`
+      ).join('');
+    return div;
+  };
+  legend.addTo(map);
+
+  // ── COEX marker (venue) ──
+  const coexMarker = L.marker([37.5126, 127.0590], {
+    icon: L.divIcon({
+      html: '<div style="font-size:1.8rem;text-align:center;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.4));">⭐</div>',
+      className: '',
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
+      popupAnchor: [0, -18],
+    })
+  }).addTo(map);
+
+  coexMarker.bindPopup(`
+    <div class="map-popup" style="min-width:200px;">
+      <h3>COEX Convention Center</h3>
+      <div class="popup-korean">코엑스 · ICML 2026 Venue</div>
+      <p>The conference venue! Samseong station (Line 2) or COEX station (Line 9).</p>
+      <a class="popup-link" href="https://www.google.com/maps/search/코엑스+서울" target="_blank" rel="noopener">Google Maps ↗</a>
+    </div>
+  `).openPopup();
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community Board — ask questions, share tips, and connect with fellow ICML 2026 attendees in Seoul.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇰🇷</text></svg>">
+  <title>Community Board — Seoul Guide for ICML 2026</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6B9BD2',
+            'primary-dark': '#5585BF',
+            'primary-light': '#DBEAFE',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCrftR8ZXJu9iG2YVv4HBheFYtwcOJoAkM",
+      authDomain: "seoul-guide-icml2026.firebaseapp.com",
+      projectId: "seoul-guide-icml2026",
+      storageBucket: "seoul-guide-icml2026.firebasestorage.app",
+      messagingSenderId: "605847270035",
+      appId: "1:605847270035:web:b210c6646b92add95d1366",
+      measurementId: "G-5MQKYCDWCW"
+    };
+    const FIREBASE_READY = firebaseConfig.apiKey !== 'YOUR_API_KEY';
+    if (FIREBASE_READY) firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ══════════════════════════════════════════ NAVBAR ══ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 transition-shadow duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between py-3">
+      <a href="index.html" class="flex items-center gap-2 no-underline">
+        <span class="text-2xl">🇰🇷</span>
+        <span class="font-bold text-gray-900">Seoul Guide</span>
+        <span class="hidden sm:inline text-xs bg-primary text-white px-2 py-0.5 rounded-full font-semibold">ICML 2026</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        <a href="index.html#activities" class="hover:text-primary transition-colors">Activities</a>
+        <a href="index.html#food-guide" class="hover:text-primary transition-colors">Food Guide</a>
+        <a href="board.html" class="text-primary font-semibold">Board</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1 text-sm font-medium text-gray-600">
+    <a href="index.html" class="block py-2 hover:text-primary">🏠 Home</a>
+    <a href="index.html#activities" class="block py-2 hover:text-primary">🏯 Activities</a>
+    <a href="index.html#food-guide" class="block py-2 hover:text-primary">🍜 Food Guide</a>
+    <a href="board.html" class="block py-2 text-primary font-semibold">📋 Community Board</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════ BOARD ══ -->
+<main class="pt-20 pb-16 px-4">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="section-eyebrow">📋 Community</div>
+      <h1 class="text-3xl font-bold section-title mb-2">Community Board</h1>
+      <p class="text-gray-500 text-sm">Ask questions, share tips, and connect with fellow attendees. ❤️ posts you find helpful!</p>
+    </div>
+
+    <!-- Create Post -->
+    <details id="board-create-toggle" class="mb-8">
+      <summary class="board-create-summary">✏️ Write a new post</summary>
+      <form id="board-create-form" class="board-create-form-inner">
+        <input class="board-input" name="authorName" placeholder="Your name *" required maxlength="80">
+        <input class="board-input" name="postTitle" placeholder="Title *" required maxlength="200">
+        <textarea class="board-input" name="postContent" placeholder="What's on your mind? Ask a question, share a tip…" required maxlength="2000" rows="4"></textarea>
+        <button type="submit" class="board-submit-btn">Post →</button>
+      </form>
+    </details>
+
+    <!-- Sort -->
+    <div class="flex items-center gap-2 mb-5">
+      <span class="text-xs text-gray-400 font-semibold uppercase tracking-wide">Sort:</span>
+      <button class="board-sort-btn active" data-sort="likes">🔥 Most Liked</button>
+      <button class="board-sort-btn" data-sort="newest">🕐 Newest</button>
+    </div>
+
+    <!-- Posts list -->
+    <div id="board-full">
+      <span class="board-loading">Loading posts…</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- ══════════════════════════════════════════ FOOTER ══ -->
+<footer class="bg-gray-900 text-white py-8 px-4">
+  <div class="max-w-3xl mx-auto text-center text-sm text-gray-500">
+    <a href="index.html" class="text-gray-400 hover:text-white transition-colors">← Back to Seoul Guide</a>
+    <div class="mt-3">Made for ICML 2026 attendees &nbsp;·&nbsp; 서울에서 즐거운 시간 보내세요! 🎉</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+</script>
+<script src="js/board.js"></script>
+</body>
+</html>

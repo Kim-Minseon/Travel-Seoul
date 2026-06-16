@@ -23,9 +23,9 @@
       theme: {
         extend: {
           colors: {
-            primary: '#DC2626',
-            'primary-dark': '#B91C1C',
-            'primary-light': '#FEE2E2',
+            primary: '#6B9BD2',
+            'primary-dark': '#5585BF',
+            'primary-light': '#DBEAFE',
           }
         }
       }
@@ -74,6 +74,7 @@
         <a href="#near-coex" class="hover:text-primary transition-colors">Near COEX</a>
         <a href="#day-trips" class="hover:text-primary transition-colors">Day Trips</a>
         <a href="#tips" class="hover:text-primary transition-colors">Tips</a>
+        <a href="board.html" class="hover:text-primary transition-colors">Board</a>
       </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,6 +91,7 @@
     <a href="#near-coex" class="block py-2 hover:text-primary">📍 Near COEX</a>
     <a href="#day-trips" class="block py-2 hover:text-primary">🚄 Day Trips</a>
     <a href="#tips" class="block py-2 hover:text-primary">💡 Tips</a>
+    <a href="board.html" class="block py-2 hover:text-primary">📋 Board</a>
   </div>
 </nav>
 
@@ -257,6 +259,16 @@
         </div>
       </div>
       </div><!-- /subway-map-body -->
+
+      <!-- Public Transport Tips -->
+      <div class="mt-6 p-5 bg-blue-50 border border-blue-200 rounded-2xl">
+        <h4 class="text-sm font-bold text-gray-800 mb-3">🚍 Public Transportation Tips</h4>
+        <ul class="text-sm text-gray-600 space-y-2 leading-relaxed">
+          <li><strong>Always tap in AND out</strong> — You must tap your transit card (T-money) when boarding <em>and</em> exiting both buses and metro. Forgetting to tap out charges you the maximum fare.</li>
+          <li><strong>Red buses (광역버스)</strong> are express buses that travel outside Seoul to satellite cities. They cost more than regular blue/green city buses (~₩2,500+ vs ₩1,500).</li>
+          <li><strong>Late-night taxi surcharge</strong> — Taxi base fares increase between 10 PM and 4 AM (~20% surcharge), so plan accordingly for late nights.</li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -267,7 +279,10 @@
   <div class="max-w-7xl mx-auto">
     <div class="section-eyebrow">🏯 Explore Seoul</div>
     <h2 class="text-3xl font-bold section-title mb-2">Things To Do</h2>
-    <p class="text-gray-500 mb-10">From ancient palaces to frozen beer and photo booths</p>
+    <div class="flex items-center gap-3 mb-10">
+      <p class="text-gray-500">From ancient palaces to frozen beer and photo booths</p>
+      <a href="map.html" class="inline-flex items-center gap-1.5 text-sm font-semibold bg-primary-light text-primary-dark px-4 py-1.5 rounded-full no-underline hover:bg-primary hover:text-white transition-colors shrink-0" title="View on Map">📍 Map</a>
+    </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
@@ -373,8 +388,16 @@
         </div>
         <div class="activity-body">
           <h3>Traditional Markets <span class="korean-tag">재래시장</span></h3>
-          <p><strong>Gwangjang Market (광장시장)</strong> — bindaetteok pancakes and silk. <strong>Namdaemun</strong> — everything imaginable. <strong>Mangwon Market</strong> — local, relaxed, less touristy.</p>
-          <div class="activity-meta">
+          <p>Seoul's legendary markets — each with its own specialty. Explore on foot, eat everything, and bring cash.</p>
+          <div class="activity-meta" style="flex-direction:column;gap:4px;">
+            <span>🏪 <strong>광장시장</strong> Gwangjang — bindaetteok, yukhoe, mayak gimbap</span>
+            <span>🏪 <strong>망원시장</strong> Mangwon — local, relaxed, great street food</span>
+            <span>🏪 <strong>통인시장</strong> Tongin — DIY lunch-box café near Gyeongbokgung</span>
+            <span>🐟 <strong>노량진 수산시장</strong> Noryangjin Fish — fresh seafood &amp; raw fish (회)</span>
+            <span>🐟 <strong>가락시장</strong> Garak — largest wholesale seafood &amp; produce</span>
+            <span>🥩 <strong>마장동 한우 시장</strong> Majang Meat — premium hanwoo beef at wholesale prices</span>
+          </div>
+          <div class="activity-meta" style="margin-top:6px;">
             <span>🕘 Morning is best</span>
             <span>💰 Free entry</span>
           </div>
@@ -461,6 +484,57 @@
             <span>💰 ₩4,000–7,000</span>
           </div>
           <a class="activity-link" href="https://www.google.com/maps/search/얼음맥주+호프+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card" data-activity-id="lotte-world">
+        <div class="activity-img-wrap">
+          <div class="activity-img-badge paid">Paid</div>
+          <img src="images/activities/lotteworld.png" alt="롯데월드" loading="lazy">
+        </div>
+        <div class="activity-body">
+          <h3>Lotte World <span class="korean-tag">롯데월드</span></h3>
+          <p>One of the world's largest indoor theme parks, plus an outdoor "Magic Island" on Seokchon Lake. Roller coasters, parades, and an ice rink — all in one complex near COEX.</p>
+          <div class="activity-meta">
+            <span>🕘 10am–9pm daily</span>
+            <span>💰 ₩62,000</span>
+            <span>🚇 Jamsil (Lines 2 &amp; 8)</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/롯데월드+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card" data-activity-id="seokchon-lake">
+        <div class="activity-img-wrap">
+          <div class="activity-img-badge free">Free</div>
+          <img src="images/activities/seokchon.png" alt="석촌호수" loading="lazy">
+        </div>
+        <div class="activity-body">
+          <h3>Seokchon Lake <span class="korean-tag">석촌호수</span></h3>
+          <p>A peaceful lake park right next to Lotte World and Lotte Tower. Walk the 2.5 km loop, enjoy lakeside cafés, and catch the Lotte Tower skyline at sunset. Famous for cherry blossoms in spring.</p>
+          <div class="activity-meta">
+            <span>🌳 Open 24h</span>
+            <span>💰 Free</span>
+            <span>🚇 Jamsil (Lines 2 &amp; 8)</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/석촌호수+서울" target="_blank" rel="noopener">Maps →</a>
+        </div>
+      </div>
+
+      <div class="activity-card" data-activity-id="bukchon-hanok">
+        <div class="activity-img-wrap">
+          <div class="activity-img-badge free">Free</div>
+          <img src="images/activities/hanok.png" alt="북촌한옥마을" loading="lazy">
+        </div>
+        <div class="activity-body">
+          <h3>Bukchon Hanok Village <span class="korean-tag">북촌한옥마을</span></h3>
+          <p>A hillside neighbourhood of 600-year-old traditional Korean houses (hanok) between two palaces. Wander narrow alleys with stunning Seoul skyline views. Please keep quiet — it's a residential area.</p>
+          <div class="activity-meta">
+            <span>🕘 Best 10am–5pm</span>
+            <span>💰 Free</span>
+            <span>🚇 Anguk (Line 3)</span>
+          </div>
+          <a class="activity-link" href="https://www.google.com/maps/search/북촌한옥마을+서울" target="_blank" rel="noopener">Maps →</a>
         </div>
       </div>
 
@@ -727,7 +801,7 @@
 
       <!-- ── BBQ & GRILL ────────────────────────────── -->
 
-      <div class="food-card" data-category="bbq">
+      <div class="food-card" data-food-id="samgyeopsal" data-category="bbq">
         <div class="food-img-wrap">
           <img src="images/food/samgyeopsal.jpg" alt="삼겹살" loading="lazy">
         </div>
@@ -742,7 +816,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="bbq">
+      <div class="food-card" data-food-id="sutbul-galbi" data-category="bbq">
         <div class="food-img-wrap">
           <img src="images/food/sutbulgalbi.png" alt="숯불갈비" loading="lazy">
         </div>
@@ -757,7 +831,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="bbq">
+      <div class="food-card" data-food-id="bulgogi" data-category="bbq">
         <div class="food-img-wrap">
           <img src="images/food/bulgogi.png" alt="불고기" loading="lazy">
         </div>
@@ -772,7 +846,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="bbq">
+      <div class="food-card" data-food-id="hanwoo-beef" data-category="bbq">
         <div class="food-img-wrap">
           <img src="images/food/hanwoobeef.png" alt="한우" loading="lazy">
         </div>
@@ -787,7 +861,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="bbq">
+      <div class="food-card" data-food-id="dakgalbi" data-category="bbq">
         <div class="food-img-wrap">
           <img src="images/food/dakgalbi.png" alt="닭갈비" loading="lazy">
         </div>
@@ -804,7 +878,7 @@
 
       <!-- ── PORK DISHES ────────────────────────────── -->
 
-      <div class="food-card" data-category="pork">
+      <div class="food-card" data-food-id="bossam" data-category="pork">
         <div class="food-img-wrap">
           <img src="images/food/bossam.png" alt="보쌈" loading="lazy">
         </div>
@@ -819,7 +893,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="pork">
+      <div class="food-card" data-food-id="jokbal" data-category="pork">
         <div class="food-img-wrap">
           <img src="images/food/jokbal.png" alt="족발" loading="lazy">
         </div>
@@ -834,7 +908,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="pork">
+      <div class="food-card" data-food-id="jeyuk-bokkeum" data-category="pork">
         <div class="food-img-wrap">
           <img src="images/food/jeyukbokkeum.jpg" alt="제육볶음" loading="lazy">
         </div>
@@ -851,7 +925,7 @@
 
       <!-- ── SOUPS & STEWS ──────────────────────────── -->
 
-      <div class="food-card" data-category="soup">
+      <div class="food-card" data-food-id="kimchi-jjigae" data-category="soup">
         <div class="food-img-wrap">
           <img src="images/food/kimchijjigae.png" alt="김치찌개" loading="lazy">
         </div>
@@ -866,7 +940,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="soup">
+      <div class="food-card" data-food-id="doenjang-jjigae" data-category="soup">
         <div class="food-img-wrap">
           <img src="images/food/doenjangjjigae.png" alt="된장찌개" loading="lazy">
         </div>
@@ -881,7 +955,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="soup">
+      <div class="food-card" data-food-id="budae-jjigae" data-category="soup">
         <div class="food-img-wrap">
           <img src="images/food/budaejjigae.png" alt="부대찌개" loading="lazy">
         </div>
@@ -896,7 +970,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="soup">
+      <div class="food-card" data-food-id="gukbap" data-category="soup">
         <div class="food-img-wrap">
           <img src="images/food/gukbap.jpg" alt="국밥" loading="lazy">
         </div>
@@ -913,7 +987,7 @@
 
       <!-- ── NOODLES ─────────────────────────────────── -->
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="jjajangmyeon" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/jjajangmyeon.png" alt="짜장면" loading="lazy">
         </div>
@@ -928,7 +1002,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="jjamppong" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/jjamppong.png" alt="짬뽕" loading="lazy">
         </div>
@@ -943,7 +1017,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="tangsuyuk" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/tangsuyuk.png" alt="탕수육" loading="lazy">
         </div>
@@ -958,7 +1032,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="kalguksu" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/kalguksu.png" alt="칼국수" loading="lazy">
         </div>
@@ -973,7 +1047,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="bibim-guksu" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/bibimguksu.png" alt="비빔국수" loading="lazy">
         </div>
@@ -988,7 +1062,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="janchi-guksu" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/janchiguksu.png" alt="잔치국수" loading="lazy">
         </div>
@@ -1005,7 +1079,7 @@
 
       <!-- ── STREET FOOD ─────────────────────────────── -->
 
-      <div class="food-card" data-category="street">
+      <div class="food-card" data-food-id="tteokbokki" data-category="street">
         <div class="food-img-wrap">
           <img src="images/food/tteokbokki.png" alt="떡볶이" loading="lazy">
         </div>
@@ -1020,7 +1094,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="street">
+      <div class="food-card" data-food-id="sundae" data-category="street">
         <div class="food-img-wrap">
           <img src="images/food/sundae.png" alt="순대" loading="lazy">
         </div>
@@ -1035,7 +1109,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="street">
+      <div class="food-card" data-food-id="twigim" data-category="street">
         <div class="food-img-wrap">
           <img src="images/food/twigim.png" alt="튀김" loading="lazy">
         </div>
@@ -1050,7 +1124,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="street">
+      <div class="food-card" data-food-id="gimbap" data-category="street">
         <div class="food-img-wrap">
           <img src="https://images.unsplash.com/photo-1608731001805-187e9c904388?w=600&h=350&fit=crop&auto=format&q=80" alt="김밥" loading="lazy">
         </div>
@@ -1065,7 +1139,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="street">
+      <div class="food-card" data-food-id="korean-fried-chicken" data-category="street">
         <div class="food-img-wrap">
           <img src="images/food/koreanfriedchicken.png" alt="Korean Fried Chicken" loading="lazy">
         </div>
@@ -1082,7 +1156,7 @@
 
       <!-- ── SEAFOOD ──────────────────────────────────── -->
 
-      <div class="food-card" data-category="seafood">
+      <div class="food-card" data-food-id="hoe-raw-fish" data-category="seafood">
         <div class="food-img-wrap">
           <img src="images/food/hoe.png" alt="회" loading="lazy">
         </div>
@@ -1097,7 +1171,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="seafood">
+      <div class="food-card" data-food-id="maeuntang" data-category="seafood">
         <div class="food-img-wrap">
           <img src="images/food/maeuntang.png" alt="매운탕" loading="lazy">
         </div>
@@ -1112,7 +1186,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="seafood">
+      <div class="food-card" data-food-id="chobap-korean-sushi" data-category="seafood">
         <div class="food-img-wrap">
           <img src="images/food/chobap.png" alt="초밥" loading="lazy">
         </div>
@@ -1129,7 +1203,7 @@
 
       <!-- ── SOUPS (additional) ──────────────────────────── -->
 
-      <div class="food-card" data-category="soup">
+      <div class="food-card" data-food-id="ginseng-chicken-soup" data-category="soup">
         <div class="food-img-wrap">
           <img src="images/food/samgyetang.png" alt="삼계탕" loading="lazy">
         </div>
@@ -1144,7 +1218,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="soup">
+      <div class="food-card" data-food-id="shabu-shabu-hot-pot" data-category="soup">
         <div class="food-img-wrap">
           <img src="images/food/shabu-shabu.png" alt="샤브샤브" loading="lazy">
         </div>
@@ -1161,7 +1235,7 @@
 
       <!-- ── NOODLES (additional) ────────────────────────── -->
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="cold-buckwheat-noodle-soup" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/mul-naengmyeon.png" alt="물냉면" loading="lazy">
         </div>
@@ -1176,7 +1250,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="noodles">
+      <div class="food-card" data-food-id="buckwheat-cold-noodles" data-category="noodles">
         <div class="food-img-wrap">
           <img src="images/food/memil-soba.png" alt="메밀소바" loading="lazy">
         </div>
@@ -1193,7 +1267,7 @@
 
       <!-- ── RICE & MORE ──────────────────────────────────── -->
 
-      <div class="food-card" data-category="rice">
+      <div class="food-card" data-food-id="bibimbap" data-category="rice">
         <div class="food-img-wrap">
           <img src="images/food/bibimbap.png" alt="비빔밥" loading="lazy">
         </div>
@@ -1208,7 +1282,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="rice">
+      <div class="food-card" data-food-id="donkatsu-pork-cutlet" data-category="rice">
         <div class="food-img-wrap">
           <img src="images/food/donkatsu.png" alt="돈까스" loading="lazy">
         </div>
@@ -1223,7 +1297,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="rice">
+      <div class="food-card" data-food-id="braised-spicy-tofu" data-category="rice">
         <div class="food-img-wrap">
           <img src="images/food/dubu-jorim.png" alt="두부조림" loading="lazy">
         </div>
@@ -1238,7 +1312,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="rice">
+      <div class="food-card" data-food-id="fresh-spring-rolls" data-category="rice">
         <div class="food-img-wrap">
           <img src="images/food/wolnam-ssam.png" alt="월남쌈" loading="lazy">
         </div>
@@ -1253,7 +1327,7 @@
         </div>
       </div>
 
-      <div class="food-card" data-category="rice">
+      <div class="food-card" data-food-id="acorn-jelly-cold-bowl" data-category="rice">
         <div class="food-img-wrap">
           <img src="images/food/dotorimuk-sabal.png" alt="도토리묵사발" loading="lazy">
         </div>
@@ -1270,7 +1344,7 @@
 
       <!-- ── DESSERT ──────────────────────────────────────── -->
 
-      <div class="food-card" data-category="dessert">
+      <div class="food-card" data-food-id="bingsu-korean-shaved-ice" data-category="dessert">
         <div class="food-img-wrap">
           <img src="images/food/bingsu.png" alt="빙수" loading="lazy">
         </div>
@@ -1456,7 +1530,7 @@
       <div class="tip-card">
         <div class="tip-icon">🚕</div>
         <h4>KakaoT for Taxis (카카오T)</h4>
-        <p>Shows fare upfront, in-app card payment, shareable ride link. Essential since most drivers don't speak English and Korean addresses can be confusing.</p>
+        <p>Shows fare upfront, in-app card payment, shareable ride link. Essential since most drivers don't speak English and Korean addresses can be confusing. <strong>Uber</strong> also works in Korea as an alternative.</p>
       </div>
       <div class="tip-card">
         <div class="tip-icon">💰</div>
@@ -1498,6 +1572,25 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════ COMMUNITY BOARD ══ -->
+<section id="community-board" class="py-16 px-4 bg-white scroll-mt-16">
+  <div class="max-w-5xl mx-auto">
+    <div class="section-eyebrow">📋 Community</div>
+    <h2 class="text-3xl font-bold section-title mb-2">Community Board</h2>
+    <p class="text-gray-500 text-sm mb-8">Questions, tips, and conversations from fellow attendees — ❤️ posts you find helpful!</p>
+
+    <div id="board-preview" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
+      <span class="board-loading">Loading top posts…</span>
+    </div>
+
+    <div class="text-center">
+      <a href="board.html" class="inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-6 py-3 rounded-full hover:bg-primary-dark transition-colors">
+        View All Posts &amp; Write Your Own →
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════════════════════════ FOOTER ═════ -->
 <footer class="bg-gray-900 text-white py-12 px-4">
   <div class="max-w-7xl mx-auto">
@@ -1518,6 +1611,7 @@
           <li><a href="#activities" class="hover:text-white transition-colors">🏯 Activities</a></li>
           <li><a href="#day-trips" class="hover:text-white transition-colors">🚄 Day Trips</a></li>
           <li><a href="#tips" class="hover:text-white transition-colors">💡 Insider Tips</a></li>
+          <li><a href="board.html" class="hover:text-white transition-colors">📋 Community Board</a></li>
         </ul>
       </div>
       <div>
@@ -1563,5 +1657,6 @@
 </div>
 
 <script src="js/main.js"></script>
+<script src="js/board.js"></script>
 </body>
 </html>
