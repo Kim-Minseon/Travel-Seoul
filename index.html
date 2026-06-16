@@ -65,6 +65,32 @@
         <span class="text-2xl">🇰🇷</span>
         <span class="font-bold text-gray-900">Seoul Guide</span>
         <span class="hidden sm:inline text-xs bg-primary text-white px-2 py-0.5 rounded-full font-semibold">ICML 2026</span>
+        <!-- "Who made this" frog button -->
+        <div class="relative">
+          <button id="about-btn" class="hover:scale-110 active:scale-95 transition-transform ml-1.5 text-xl leading-none" aria-label="About this site" title="Who made this?">🐸</button>
+          <div id="about-popup" class="hidden absolute left-0 top-full mt-2 w-80 bg-white rounded-xl shadow-xl border border-gray-200 p-5 z-[60] text-sm text-gray-700 leading-relaxed">
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-semibold text-gray-900">About this page</span>
+              <button id="about-close" class="text-gray-400 hover:text-gray-600 text-lg leading-none">&times;</button>
+            </div>
+            <p class="mb-3">A lot of friends asked me where to visit and what to eat while visiting Seoul for ICML. There are <em>sooooo</em> many great food spots and places to explore, and every time I missed recommending something. So I made this page so everyone can enjoy Seoul as much as possible! 🇰🇷</p>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-3">
+              <p class="font-semibold text-blue-800 text-xs uppercase tracking-wide mb-1">📢 Come say hi!</p>
+              <p class="text-blue-700">Interested in my work? Visit the <strong>Microsoft Booth</strong> on <strong>Tuesday at 2 PM</strong>!</p>
+            </div>
+            <p class="mb-3">Contributions welcome — help make it even better!</p>
+            <div class="flex flex-col gap-1.5">
+              <a href="https://github.com/Kim-Minseon/Travel-Seoul" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary hover:underline">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.694.825.576C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub Repo
+              </a>
+              <a href="https://kim-minseon.github.io/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-primary hover:underline">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                Made by Minseon Kim
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
         <a href="#getting-here" class="hover:text-primary transition-colors">Getting Here</a>
@@ -103,11 +129,10 @@
         📅 ICML 2026 · COEX, Seoul · July 2026
       </div>
       <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 leading-tight tracking-tight drop-shadow-lg">
-        Your Seoul Survival Guide
+        Your Seoul Guide
       </h1>
-      <p class="text-xl sm:text-2xl text-white/85 mb-2 font-korean drop-shadow">서울에 오신 것을 환영합니다</p>
-      <p class="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-10 drop-shadow">
-        Getting here, what to eat, where to explore — everything you need for ICML 2026 at COEX.
+      <p class="text-base sm:text-lg text-white max-w-4xl mx-auto mb-10 drop-shadow">
+        Getting here, what to eat, where to explore — everything you need for ICML 2026.
       </p>
       <div class="flex flex-wrap justify-center gap-3">
         <a href="#getting-here" class="bg-white text-primary font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors shadow-lg text-sm">🚇 Getting Here</a>
@@ -1656,6 +1681,16 @@
   </div>
 </div>
 
+<script>
+// "About this site" popup toggle
+(function(){
+  const btn=document.getElementById('about-btn'), popup=document.getElementById('about-popup'), close=document.getElementById('about-close');
+  if(!btn||!popup) return;
+  btn.addEventListener('click',function(e){e.stopPropagation();popup.classList.toggle('hidden');});
+  close.addEventListener('click',function(){popup.classList.add('hidden');});
+  document.addEventListener('click',function(e){if(!popup.contains(e.target)&&e.target!==btn)popup.classList.add('hidden');});
+})();
+</script>
 <script src="js/main.js"></script>
 <script src="js/board.js"></script>
 </body>
