@@ -221,6 +221,32 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .maps-link { font-size: 0.72rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
 .maps-link:hover { text-decoration: underline; }
 
+/* ── Minseon's Pick ───────────────────────────────────── */
+.minseon-pick { margin-top: 8px; margin-bottom: 8px; }
+.minseon-pick-toggle {
+  background: none; border: none; cursor: pointer;
+  font-size: 0.74rem; font-weight: 600; color: #D97706;
+  padding: 4px 0; display: flex; align-items: center; gap: 4px;
+}
+.minseon-pick-toggle::after {
+  content: '▸'; font-size: 0.7rem; transition: transform 0.2s;
+}
+.minseon-pick-toggle.open::after { transform: rotate(90deg); }
+.minseon-pick-body {
+  margin-top: 6px; padding: 8px 10px;
+  background: #FFFBEB; border-radius: 6px; border: 1px solid #FDE68A;
+}
+.minseon-pick-item {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; padding: 3px 0; font-size: 0.76rem;
+}
+.minseon-pick-item + .minseon-pick-item { border-top: 1px solid #FDE68A; padding-top: 6px; margin-top: 4px; }
+.pick-name { font-weight: 600; color: #92400E; }
+.pick-english { font-weight: 400; color: #B45309; font-size: 0.7rem; }
+.pick-map-link { font-size: 0.7rem; color: #3B82F6; text-decoration: none; font-weight: 500; white-space: nowrap; }
+.pick-map-link:hover { text-decoration: underline; }
+.food-card.has-pick { box-shadow: 0 0 0 2px #FDE68A; }
+
 /* ── COEX cards ───────────────────────────────────────── */
 .coex-card {
   background: #fff;
