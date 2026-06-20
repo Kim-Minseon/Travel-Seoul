@@ -217,6 +217,7 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   margin-top: auto;
 }
 .price { font-weight: 700; color: #16A34A; font-size: 0.82rem; }
+.spice-level { font-size: 0.75rem; font-weight: 600; color: #EA580C; white-space: nowrap; }
 .maps-link { font-size: 0.72rem; color: #3B82F6; text-decoration: none; font-weight: 500; }
 .maps-link:hover { text-decoration: underline; }
 

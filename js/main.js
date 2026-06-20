@@ -165,7 +165,8 @@ filterBtns.forEach(btn => {
 
     const filter = btn.getAttribute('data-filter');
     foodCards.forEach(card => {
-      const match = filter === 'all' || card.getAttribute('data-category') === filter;
+      const categories = (card.getAttribute('data-category') || '').split(/\s+/).filter(Boolean);
+      const match = filter === 'all' || categories.includes(filter);
       card.classList.toggle('hidden', !match);
     });
   });
