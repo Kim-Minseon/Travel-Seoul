@@ -73,7 +73,7 @@
 
     const badge = document.createElement('span');
     badge.className = 'food-card-ig-badge';
-    badge.textContent = '⭐ Minseon's Pick';
+    badge.textContent = "⭐ Minseon's Pick";
     imgWrap.appendChild(badge);
   }
 
