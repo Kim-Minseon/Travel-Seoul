@@ -247,6 +247,368 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 .pick-map-link:hover { text-decoration: underline; }
 .food-card.has-pick { box-shadow: 0 0 0 2px #FDE68A; }
 
+
+
+/* ── Food Guide IG Style ─────────────────────────────── */
+.food-guide-ig-section {
+  background: #FAFAF8;
+  padding: 64px 16px 48px;
+}
+.food-guide-ig-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.food-guide-ig-hero {
+  margin-bottom: 32px;
+}
+.food-guide-ig-hero h2 {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #111827;
+}
+.food-guide-ig-hero p {
+  max-width: 720px;
+  margin-top: 16px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #6B7280;
+}
+.food-guide-ig-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.filter-btn-ig {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.filter-btn-ig:hover {
+  border-color: #111827;
+}
+.filter-btn-ig.active {
+  background: #111827;
+  border-color: #111827;
+  color: #fff;
+}
+.food-grid-ig {
+  column-count: 1;
+  column-gap: 24px;
+}
+.food-card-ig {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  border-radius: 16px;
+  overflow: hidden;
+  break-inside: avoid;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.food-card-ig:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+.food-card-ig:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 4px;
+}
+.food-card-ig.hidden {
+  display: none !important;
+}
+.food-card-ig-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #E5E7EB;
+  aspect-ratio: 4 / 3;
+}
+.food-card-ig:nth-child(4n + 1) .food-card-ig-img,
+.food-card-ig:nth-child(4n) .food-card-ig-img {
+  aspect-ratio: 3 / 4;
+}
+.food-card-ig:nth-child(4n + 2) .food-card-ig-img,
+.food-card-ig:nth-child(4n + 3) .food-card-ig-img {
+  aspect-ratio: 4 / 3;
+}
+.food-card-ig-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.food-card-ig:hover .food-card-ig-img img {
+  transform: scale(1.04);
+}
+.food-card-ig-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.1));
+}
+.food-card-ig-korean {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+}
+.food-card-ig-english {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+}
+.food-card-ig-info {
+  padding: 14px 4px 4px;
+}
+.food-card-ig-name {
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+.food-card-ig-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.86rem;
+  color: #6B7280;
+}
+.food-card-ig-tags,
+.food-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.food-card-ig-tags {
+  margin-top: 12px;
+}
+.food-tag-ig {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #F3F4F6;
+  color: #374151;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.food-card-ig-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(17,24,39,0.72);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.food-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+}
+.food-modal-backdrop[hidden] {
+  display: none !important;
+}
+.food-modal {
+  position: relative;
+  width: min(100%, 600px);
+  max-width: 600px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 32px 100px rgba(0,0,0,0.28);
+}
+.food-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(17,24,39,0.72);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.food-modal-img img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px 24px 0 0;
+}
+.food-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+.food-modal-korean {
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  cursor: pointer;
+}
+.food-modal-english {
+  margin-top: -8px;
+  font-size: 1.125rem;
+  color: #6B7280;
+}
+.food-modal-price {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+.food-modal-desc {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4B5563;
+}
+.food-modal-pick-slot[hidden] {
+  display: none !important;
+}
+.food-modal-pick-slot .minseon-pick {
+  margin: 0;
+  padding: 16px;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 18px;
+}
+.food-modal-pick-slot .minseon-pick-toggle {
+  padding: 0 0 10px;
+  cursor: default;
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+.food-modal-pick-slot .minseon-pick-toggle::after {
+  display: none;
+}
+.food-modal-pick-slot .minseon-pick-body {
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+.food-modal-pick-slot .minseon-pick-item {
+  font-size: 0.82rem;
+  padding: 0;
+}
+.food-modal-pick-slot .minseon-pick-item + .minseon-pick-item {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.food-modal-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.food-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.food-modal-btn:hover {
+  transform: translateY(-1px);
+}
+.food-modal-btn.primary {
+  border: 1px solid #111827;
+  background: #111827;
+  color: #fff;
+}
+.food-modal-btn.secondary {
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  color: #111827;
+}
+body.food-modal-open {
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .food-grid-ig {
+    column-count: 2;
+  }
+}
+@media (min-width: 1200px) {
+  .food-grid-ig {
+    column-count: 4;
+  }
+}
+@media (max-width: 1023px) {
+  .food-guide-ig-hero h2 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .food-guide-ig-section {
+    padding-top: 56px;
+  }
+  .food-guide-ig-hero h2 {
+    font-size: 40px;
+    line-height: 1.05;
+  }
+  .food-guide-ig-hero p {
+    font-size: 18px;
+  }
+  .food-modal-actions {
+    grid-template-columns: 1fr;
+  }
+  .food-modal-body {
+    padding: 20px;
+  }
+  .food-modal-korean {
+    font-size: 1.75rem;
+  }
+}
+
 /* ── COEX cards ───────────────────────────────────────── */
 .coex-card {
   background: #fff;
@@ -1171,6 +1533,7 @@ details[open] .board-create-summary { border-color: #6B9BD2; border-style: solid
 
 /* Clickable cards */
 .activity-card[data-activity-id],
-.food-card[data-food-id] {
+.food-card[data-food-id],
+.food-card-ig[data-food-id] {
   cursor: pointer;
 }

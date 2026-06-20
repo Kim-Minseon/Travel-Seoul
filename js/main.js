@@ -35,14 +35,21 @@ document.querySelectorAll('.food-card[data-food-id]').forEach(card => {
 const toast = document.getElementById('copy-toast');
 let toastTimeout;
 
+function showCopyToast() {
+  if (!toast) return;
+  toast.style.opacity = '1';
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => { toast.style.opacity = '0'; }, 2200);
+}
+
+function copyKoreanText(text) {
+  if (!text || !navigator.clipboard) return Promise.resolve();
+  return navigator.clipboard.writeText(text).then(showCopyToast).catch(() => {});
+}
+
 document.querySelectorAll('.korean-name').forEach(btn => {
   btn.addEventListener('click', () => {
-    const text = btn.getAttribute('data-korean');
-    navigator.clipboard.writeText(text).then(() => {
-      toast.style.opacity = '1';
-      clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => { toast.style.opacity = '0'; }, 2200);
-    });
+    copyKoreanText(btn.getAttribute('data-korean'));
   });
 });
 
@@ -171,6 +178,126 @@ filterBtns.forEach(btn => {
     });
   });
 });
+
+
+(function () {
+  const filterBtnsIg = document.querySelectorAll('.filter-btn-ig');
+  const foodCardsIg = document.querySelectorAll('.food-card-ig');
+  const modal = document.getElementById('food-modal');
+  const modalClose = document.getElementById('food-modal-close');
+  const modalImage = document.getElementById('food-modal-image');
+  const modalKorean = document.getElementById('food-modal-korean');
+  const modalEnglish = document.getElementById('food-modal-english');
+  const modalPrice = document.getElementById('food-modal-price');
+  const modalTags = document.getElementById('food-modal-tags');
+  const modalDesc = document.getElementById('food-modal-desc');
+  const modalCopy = document.getElementById('food-modal-copy');
+  const modalMaps = document.getElementById('food-modal-maps');
+  const modalPickSlot = document.getElementById('food-modal-pick-slot');
+  let activeCard = null;
+  let lastFocused = null;
+
+  if (filterBtnsIg.length) {
+    filterBtnsIg.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtnsIg.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        foodCardsIg.forEach(card => {
+          const categories = (card.getAttribute('data-category') || '').split(/\s+/).filter(Boolean);
+          const match = filter === 'all' || categories.includes(filter);
+          card.classList.toggle('hidden', !match);
+        });
+      });
+    });
+  }
+
+  if (!modal || !foodCardsIg.length) return;
+
+  function renderTags(tags) {
+    modalTags.innerHTML = '';
+    tags.filter(Boolean).forEach(tag => {
+      const el = document.createElement('span');
+      el.className = 'food-tag-ig';
+      el.textContent = tag;
+      modalTags.appendChild(el);
+    });
+  }
+
+  function openModal(card) {
+    activeCard = card;
+    lastFocused = document.activeElement;
+
+    const korean = card.getAttribute('data-korean') || '';
+    const english = card.getAttribute('data-english') || '';
+    const price = card.getAttribute('data-price') || '';
+    const desc = card.getAttribute('data-desc') || '';
+    const maps = card.getAttribute('data-maps') || '#';
+    const img = card.getAttribute('data-img') || '';
+    const tags = (card.getAttribute('data-tags') || '').split(',').map(tag => tag.trim());
+
+    modalImage.src = img;
+    modalImage.alt = korean || english;
+    modalKorean.textContent = korean;
+    modalKorean.setAttribute('data-korean', korean);
+    modalEnglish.textContent = english;
+    modalPrice.textContent = price;
+    modalDesc.textContent = desc;
+    modalCopy.setAttribute('data-korean', korean);
+    modalMaps.href = maps;
+    renderTags(tags);
+
+    if (modalPickSlot) {
+      modalPickSlot.hidden = true;
+      modalPickSlot.innerHTML = '';
+    }
+
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('food-modal-open');
+    document.dispatchEvent(new CustomEvent('foodGuideModalOpen', {
+      detail: { card, modal, pickSlot: modalPickSlot }
+    }));
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    if (modal.hidden) return;
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('food-modal-open');
+    document.dispatchEvent(new CustomEvent('foodGuideModalClose', {
+      detail: { card: activeCard, modal, pickSlot: modalPickSlot }
+    }));
+    activeCard = null;
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  foodCardsIg.forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  [modalKorean, modalCopy].forEach(btn => {
+    btn.addEventListener('click', () => {
+      copyKoreanText(btn.getAttribute('data-korean'));
+    });
+  });
+})();
 
 // ── Collapsible sections (Airport / Subway Map) ───────────────────────────
 document.querySelectorAll('.section-collapse-btn').forEach(btn => {
