@@ -821,627 +821,658 @@
 </section>
 
 <!-- ══════════════════════════════════════ FOOD GUIDE ═══ -->
-<section id="food-guide" class="py-16 px-4 bg-white scroll-mt-16">
-  <div class="max-w-7xl mx-auto">
-    <div class="section-eyebrow">🍜 Korean Cuisine</div>
-    <h2 class="text-3xl font-bold section-title mb-2">Korean Food Guide</h2>
-    <p class="text-gray-500 mb-2">Must-try dishes. <strong>Tap the Korean name</strong> to copy it — paste into Maps or show your server.</p>
-
-    <div class="flex flex-wrap gap-2 mb-8 mt-4">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="bbq">🔥 BBQ &amp; Grill</button>
-      <button class="filter-btn" data-filter="pork">🥩 Pork Dishes</button>
-      <button class="filter-btn" data-filter="soup">🍲 Soups &amp; Stews</button>
-      <button class="filter-btn" data-filter="noodles">🍜 Noodles</button>
-      <button class="filter-btn" data-filter="street">🥡 Street Food</button>
-      <button class="filter-btn" data-filter="seafood">🐟 Seafood</button>
-      <button class="filter-btn" data-filter="rice">🍚 Rice &amp; More</button>
-      <button class="filter-btn" data-filter="dessert">🍧 Dessert</button>
-      <button class="filter-btn" data-filter="vegan">🌱 Vegan</button>
+<section id="food-guide" class="food-guide-ig-section scroll-mt-16">
+  <div class="food-guide-ig-shell">
+    <div class="food-guide-ig-hero">
+      <h2>🇰🇷 Korean Food Guide</h2>
+      <p>20+ dishes every visitor should try in Korea.</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div class="food-guide-ig-filters" role="tablist" aria-label="Filter Korean food dishes">
+      <button class="filter-btn-ig active" type="button" data-filter="all">All</button>
+      <button class="filter-btn-ig" type="button" data-filter="bbq">🔥 BBQ</button>
+      <button class="filter-btn-ig" type="button" data-filter="soup">🍲 Stews</button>
+      <button class="filter-btn-ig" type="button" data-filter="noodles">🍜 Noodles</button>
+      <button class="filter-btn-ig" type="button" data-filter="dessert">🍧 Desserts</button>
+      <button class="filter-btn-ig" type="button" data-filter="vegan">🌱 Vegan</button>
+    </div>
 
-      <!-- ── BBQ & GRILL ────────────────────────────── -->
-
-      <div class="food-card" data-food-id="samgyeopsal" data-category="bbq">
-        <div class="food-img-wrap">
+    <div class="food-grid-ig" id="food-grid-ig">
+      <article class="food-card-ig" data-food-id="samgyeopsal" data-category="bbq" data-korean="삼겹살" data-english="Samgyeopsal" data-desc="Thick-cut pork belly grilled at the table. Wrap in lettuce with garlic, green peppers, and ssamjang. Korea&#x27;s most beloved BBQ." data-price="₩15,000–20,000 / 인" data-maps="https://www.google.com/maps/search/삼겹살+restaurant+강남+서울" data-img="images/food/samgyeopsal.jpg" data-tags="BBQ,Must Try,Sharing" tabindex="0" role="button" aria-label="Open details for 삼겹살 / Samgyeopsal">
+        <div class="food-card-ig-img">
           <img src="images/food/samgyeopsal.jpg" alt="삼겹살" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="삼겹살">삼겹살</button>
-          <div class="food-english">Samgyeopsal</div>
-          <p class="food-desc">Thick-cut pork belly grilled at the table. Wrap in lettuce with garlic, green peppers, and ssamjang. Korea's most beloved BBQ.</p>
-          <div class="food-footer">
-            <span class="price">₩15,000–20,000 / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/삼겹살+restaurant+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">삼겹살</span>
+            <span class="food-card-ig-english">Samgyeopsal</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">삼겹살</span>
+          <span class="food-card-ig-sub">Samgyeopsal</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">BBQ</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="sutbul-galbi" data-category="bbq">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="sutbul-galbi" data-category="bbq" data-korean="숯불갈비" data-english="Sutbul Galbi" data-desc="Charcoal-grilled short ribs with smoky, caramelized edges. A step above regular BBQ — worth every won." data-price="₩30,000–50,000 / 인" data-maps="https://www.google.com/maps/search/숯불갈비+강남+서울" data-img="images/food/sutbulgalbi.png" data-tags="BBQ,Premium,Sharing" tabindex="0" role="button" aria-label="Open details for 숯불갈비 / Sutbul Galbi">
+        <div class="food-card-ig-img">
           <img src="images/food/sutbulgalbi.png" alt="숯불갈비" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="숯불갈비">숯불갈비</button>
-          <div class="food-english">Sutbul Galbi</div>
-          <p class="food-desc">Charcoal-grilled short ribs with smoky, caramelized edges. A step above regular BBQ — worth every won.</p>
-          <div class="food-footer">
-            <span class="price">₩30,000–50,000 / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/숯불갈비+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">숯불갈비</span>
+            <span class="food-card-ig-english">Sutbul Galbi</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">숯불갈비</span>
+          <span class="food-card-ig-sub">Sutbul Galbi</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">BBQ</span><span class="food-tag-ig">Premium</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="bulgogi" data-category="bbq">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="bulgogi" data-category="bbq" data-korean="불고기" data-english="Bulgogi" data-desc="Thinly sliced marinated beef, sweet and savory. Grilled or stir-fried — one of Korea&#x27;s most internationally recognized dishes." data-price="₩15,000–20,000 / 인" data-maps="https://www.google.com/maps/search/불고기+restaurant+서울" data-img="images/food/bulgogi.png" data-tags="BBQ,Must Try,Mild" tabindex="0" role="button" aria-label="Open details for 불고기 / Bulgogi">
+        <div class="food-card-ig-img">
           <img src="images/food/bulgogi.png" alt="불고기" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="불고기">불고기</button>
-          <div class="food-english">Bulgogi</div>
-          <p class="food-desc">Thinly sliced marinated beef, sweet and savory. Grilled or stir-fried — one of Korea's most internationally recognized dishes.</p>
-          <div class="food-footer">
-            <span class="price">₩15,000–20,000 / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/불고기+restaurant+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">불고기</span>
+            <span class="food-card-ig-english">Bulgogi</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">불고기</span>
+          <span class="food-card-ig-sub">Bulgogi</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">BBQ</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="hanwoo-beef" data-category="bbq">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="hanwoo-beef" data-category="bbq" data-korean="한우" data-english="Hanwoo Beef" data-desc="Premium Korean native cattle — extraordinary marbling. More expensive but genuinely life-changing. The wagyu of Korea." data-price="₩60,000–120,000+ / 인" data-maps="https://www.google.com/maps/search/한우+restaurant+강남+서울" data-img="images/food/hanwoobeef.png" data-tags="BBQ,Premium" tabindex="0" role="button" aria-label="Open details for 한우 / Hanwoo Beef">
+        <div class="food-card-ig-img">
           <img src="images/food/hanwoobeef.png" alt="한우" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="한우">한우</button>
-          <div class="food-english">Hanwoo Beef</div>
-          <p class="food-desc">Premium Korean native cattle — extraordinary marbling. More expensive but genuinely life-changing. The wagyu of Korea.</p>
-          <div class="food-footer">
-            <span class="price">₩60,000–120,000+ / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/한우+restaurant+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">한우</span>
+            <span class="food-card-ig-english">Hanwoo Beef</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">한우</span>
+          <span class="food-card-ig-sub">Hanwoo Beef</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">BBQ</span><span class="food-tag-ig">Premium</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="dakgalbi" data-category="bbq">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="dakgalbi" data-category="bbq" data-korean="닭갈비" data-english="Dakgalbi" data-desc="Spicy stir-fried chicken with rice cakes, cabbage, and gochujang on a hot iron plate. Add extra cheese for the modern version." data-price="₩13,000–17,000 / 인" data-maps="https://www.google.com/maps/search/닭갈비+서울" data-img="images/food/dakgalbi.png" data-tags="Grill,Spicy,Sharing" tabindex="0" role="button" aria-label="Open details for 닭갈비 / Dakgalbi">
+        <div class="food-card-ig-img">
           <img src="images/food/dakgalbi.png" alt="닭갈비" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="닭갈비">닭갈비</button>
-          <div class="food-english">Dakgalbi</div>
-          <p class="food-desc">Spicy stir-fried chicken with rice cakes, cabbage, and gochujang on a hot iron plate. Add extra cheese for the modern version.</p>
-          <div class="food-footer">
-            <span class="price">₩13,000–17,000 / 인</span>
-            <span class="spice-level" title="Spicy">🌶️ 3</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/닭갈비+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">닭갈비</span>
+            <span class="food-card-ig-english">Dakgalbi</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">닭갈비</span>
+          <span class="food-card-ig-sub">Dakgalbi</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Grill</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── PORK DISHES ────────────────────────────── -->
-
-      <div class="food-card" data-food-id="bossam" data-category="pork">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="bossam" data-category="pork" data-korean="보쌈" data-english="Bossam" data-desc="Slow-boiled pork belly wrapped in cabbage or perilla leaves with oyster kimchi and radish. Mild, tender, endlessly satisfying." data-price="₩15,000–25,000 / 인" data-maps="https://www.google.com/maps/search/보쌈+서울" data-img="images/food/bossam.png" data-tags="Pork,Must Try,Sharing" tabindex="0" role="button" aria-label="Open details for 보쌈 / Bossam">
+        <div class="food-card-ig-img">
           <img src="images/food/bossam.png" alt="보쌈" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="보쌈">보쌈</button>
-          <div class="food-english">Bossam</div>
-          <p class="food-desc">Slow-boiled pork belly wrapped in cabbage or perilla leaves with oyster kimchi and radish. Mild, tender, endlessly satisfying.</p>
-          <div class="food-footer">
-            <span class="price">₩15,000–25,000 / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/보쌈+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">보쌈</span>
+            <span class="food-card-ig-english">Bossam</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">보쌈</span>
+          <span class="food-card-ig-sub">Bossam</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Pork</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="jokbal" data-category="pork">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="jokbal" data-category="pork" data-korean="족발" data-english="Jokbal" data-desc="Braised pig&#x27;s trotters in soy sauce, ginger, and spices. Gelatinous, tender, and surprisingly delicious dipped in salted shrimp paste." data-price="₩20,000–30,000 / 인" data-maps="https://www.google.com/maps/search/족발+서울" data-img="images/food/jokbal.png" data-tags="Pork,Late Night,Sharing" tabindex="0" role="button" aria-label="Open details for 족발 / Jokbal">
+        <div class="food-card-ig-img">
           <img src="images/food/jokbal.png" alt="족발" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="족발">족발</button>
-          <div class="food-english">Jokbal</div>
-          <p class="food-desc">Braised pig's trotters in soy sauce, ginger, and spices. Gelatinous, tender, and surprisingly delicious dipped in salted shrimp paste.</p>
-          <div class="food-footer">
-            <span class="price">₩20,000–30,000 / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/족발+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">족발</span>
+            <span class="food-card-ig-english">Jokbal</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">족발</span>
+          <span class="food-card-ig-sub">Jokbal</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Pork</span><span class="food-tag-ig">Late Night</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="jeyuk-bokkeum" data-category="pork">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="jeyuk-bokkeum" data-category="pork" data-korean="제육볶음" data-english="Jeyuk Bokkeum" data-desc="Spicy stir-fried pork with gochujang. A weekday lunch staple — served over rice with banchan side dishes." data-price="₩8,000–12,000" data-maps="https://www.google.com/maps/search/제육볶음+서울" data-img="images/food/jeyukbokkeum.jpg" data-tags="Pork,Spicy,Comfort Food" tabindex="0" role="button" aria-label="Open details for 제육볶음 / Jeyuk Bokkeum">
+        <div class="food-card-ig-img">
           <img src="images/food/jeyukbokkeum.jpg" alt="제육볶음" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="제육볶음">제육볶음</button>
-          <div class="food-english">Jeyuk Bokkeum</div>
-          <p class="food-desc">Spicy stir-fried pork with gochujang. A weekday lunch staple — served over rice with banchan side dishes.</p>
-          <div class="food-footer">
-            <span class="price">₩8,000–12,000</span>
-            <span class="spice-level" title="Spicy">🌶️ 3</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/제육볶음+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">제육볶음</span>
+            <span class="food-card-ig-english">Jeyuk Bokkeum</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">제육볶음</span>
+          <span class="food-card-ig-sub">Jeyuk Bokkeum</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Pork</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── SOUPS & STEWS ──────────────────────────── -->
-
-      <div class="food-card" data-food-id="kimchi-jjigae" data-category="soup">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="kimchi-jjigae" data-category="soup" data-korean="김치찌개" data-english="Kimchi Jjigae" data-desc="Kimchi stew with pork and tofu. Korea&#x27;s ultimate comfort food — best with well-fermented kimchi. Served bubbling hot at the table." data-price="₩8,000–12,000" data-maps="https://www.google.com/maps/search/김치찌개+서울" data-img="images/food/kimchijjigae.png" data-tags="Stew,Spicy,Comfort Food" tabindex="0" role="button" aria-label="Open details for 김치찌개 / Kimchi Jjigae">
+        <div class="food-card-ig-img">
           <img src="images/food/kimchijjigae.png" alt="김치찌개" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="김치찌개">김치찌개</button>
-          <div class="food-english">Kimchi Jjigae</div>
-          <p class="food-desc">Kimchi stew with pork and tofu. Korea's ultimate comfort food — best with well-fermented kimchi. Served bubbling hot at the table.</p>
-          <div class="food-footer">
-            <span class="price">₩8,000–12,000</span>
-            <span class="spice-level" title="Medium spicy">🌶️ 2</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/김치찌개+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">김치찌개</span>
+            <span class="food-card-ig-english">Kimchi Jjigae</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">김치찌개</span>
+          <span class="food-card-ig-sub">Kimchi Jjigae</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Stew</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="doenjang-jjigae" data-category="soup">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="doenjang-jjigae" data-category="soup" data-korean="된장찌개" data-english="Doenjang Jjigae" data-desc="Fermented soybean paste stew with tofu, zucchini, and mushrooms. Korea&#x27;s answer to miso soup — earthier, heartier, deeply umami." data-price="₩7,000–10,000" data-maps="https://www.google.com/maps/search/된장찌개+서울" data-img="images/food/doenjangjjigae.png" data-tags="Stew,Mild,Comfort Food" tabindex="0" role="button" aria-label="Open details for 된장찌개 / Doenjang Jjigae">
+        <div class="food-card-ig-img">
           <img src="images/food/doenjangjjigae.png" alt="된장찌개" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="된장찌개">된장찌개</button>
-          <div class="food-english">Doenjang Jjigae</div>
-          <p class="food-desc">Fermented soybean paste stew with tofu, zucchini, and mushrooms. Korea's answer to miso soup — earthier, heartier, deeply umami.</p>
-          <div class="food-footer">
-            <span class="price">₩7,000–10,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/된장찌개+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">된장찌개</span>
+            <span class="food-card-ig-english">Doenjang Jjigae</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">된장찌개</span>
+          <span class="food-card-ig-sub">Doenjang Jjigae</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Stew</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="budae-jjigae" data-category="soup">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="budae-jjigae" data-category="soup" data-korean="부대찌개" data-english="Budae Jjigae" data-desc="&quot;Army Stew&quot; — spam, hot dogs, ramen, kimchi, and cheese in spicy broth. Born after the Korean War, still iconic decades later." data-price="₩11,000–16,000 / 인" data-maps="https://www.google.com/maps/search/부대찌개+서울" data-img="images/food/budaejjigae.png" data-tags="Stew,Spicy,Sharing" tabindex="0" role="button" aria-label="Open details for 부대찌개 / Budae Jjigae">
+        <div class="food-card-ig-img">
           <img src="images/food/budaejjigae.png" alt="부대찌개" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="부대찌개">부대찌개</button>
-          <div class="food-english">Budae Jjigae</div>
-          <p class="food-desc">"Army Stew" — spam, hot dogs, ramen, kimchi, and cheese in spicy broth. Born after the Korean War, still iconic decades later.</p>
-          <div class="food-footer">
-            <span class="price">₩11,000–16,000 / 인</span>
-            <span class="spice-level" title="Medium spicy">🌶️ 2</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/부대찌개+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">부대찌개</span>
+            <span class="food-card-ig-english">Budae Jjigae</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">부대찌개</span>
+          <span class="food-card-ig-sub">Budae Jjigae</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Stew</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="gukbap" data-category="soup">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="gukbap" data-category="soup" data-korean="국밥" data-english="Gukbap" data-desc="Rice in hot pork or beef bone broth, loaded with meat. Korea&#x27;s ultimate hangover cure and the perfect late-night meal. Open 24 hours." data-price="₩7,000–10,000" data-maps="https://www.google.com/maps/search/국밥+서울" data-img="images/food/gukbap.jpg" data-tags="Stew,Comfort Food,Late Night" tabindex="0" role="button" aria-label="Open details for 국밥 / Gukbap">
+        <div class="food-card-ig-img">
           <img src="images/food/gukbap.jpg" alt="국밥" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="국밥">국밥</button>
-          <div class="food-english">Gukbap</div>
-          <p class="food-desc">Rice in hot pork or beef bone broth, loaded with meat. Korea's ultimate hangover cure and the perfect late-night meal. Open 24 hours.</p>
-          <div class="food-footer">
-            <span class="price">₩7,000–10,000</span>
-            <span class="spice-level" title="Mild">🌶️ 1</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/국밥+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">국밥</span>
+            <span class="food-card-ig-english">Gukbap</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">국밥</span>
+          <span class="food-card-ig-sub">Gukbap</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Stew</span><span class="food-tag-ig">Comfort Food</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── NOODLES ─────────────────────────────────── -->
-
-      <div class="food-card" data-food-id="jjajangmyeon" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="jjajangmyeon" data-category="noodles" data-korean="짜장면" data-english="Jjajangmyeon" data-desc="Noodles in black bean sauce with pork and vegetables. Korea&#x27;s #1 delivery food — rich, satisfying, nothing like Chinese lo mein." data-price="₩6,000–8,000" data-maps="https://www.google.com/maps/search/짜장면+중국집+서울" data-img="images/food/jjajangmyeon.png" data-tags="Noodles,Must Try,Mild" tabindex="0" role="button" aria-label="Open details for 짜장면 / Jjajangmyeon">
+        <div class="food-card-ig-img">
           <img src="images/food/jjajangmyeon.png" alt="짜장면" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="짜장면">짜장면</button>
-          <div class="food-english">Jjajangmyeon</div>
-          <p class="food-desc">Noodles in black bean sauce with pork and vegetables. Korea's #1 delivery food — rich, satisfying, nothing like Chinese lo mein.</p>
-          <div class="food-footer">
-            <span class="price">₩6,000–8,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/짜장면+중국집+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">짜장면</span>
+            <span class="food-card-ig-english">Jjajangmyeon</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">짜장면</span>
+          <span class="food-card-ig-sub">Jjajangmyeon</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="jjamppong" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="jjamppong" data-category="noodles" data-korean="짬뽕" data-english="Jjamppong" data-desc="Spicy red seafood noodle soup. The fiery counterpart to jjajangmyeon — often ordered together as a combo at Chinese-Korean restaurants." data-price="₩7,000–9,000" data-maps="https://www.google.com/maps/search/짬뽕+서울" data-img="images/food/jjamppong.png" data-tags="Noodles,Spicy,Seafood" tabindex="0" role="button" aria-label="Open details for 짬뽕 / Jjamppong">
+        <div class="food-card-ig-img">
           <img src="images/food/jjamppong.png" alt="짬뽕" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="짬뽕">짬뽕</button>
-          <div class="food-english">Jjamppong</div>
-          <p class="food-desc">Spicy red seafood noodle soup. The fiery counterpart to jjajangmyeon — often ordered together as a combo at Chinese-Korean restaurants.</p>
-          <div class="food-footer">
-            <span class="price">₩7,000–9,000</span>
-            <span class="spice-level" title="Spicy">🌶️ 3</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/짬뽕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">짬뽕</span>
+            <span class="food-card-ig-english">Jjamppong</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">짬뽕</span>
+          <span class="food-card-ig-sub">Jjamppong</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="tangsuyuk" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="tangsuyuk" data-category="noodles" data-korean="탕수육" data-english="Tangsuyuk" data-desc="Korean sweet-and-sour crispy pork. Ordered alongside jjajangmyeon. The great debate: dip (찍먹) or pour sauce (부먹)? Pick a side." data-price="₩18,000–25,000 (공유)" data-maps="https://www.google.com/maps/search/탕수육+서울" data-img="images/food/tangsuyuk.png" data-tags="Sharing,Mild,Popular" tabindex="0" role="button" aria-label="Open details for 탕수육 / Tangsuyuk">
+        <div class="food-card-ig-img">
           <img src="images/food/tangsuyuk.png" alt="탕수육" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="탕수육">탕수육</button>
-          <div class="food-english">Tangsuyuk</div>
-          <p class="food-desc">Korean sweet-and-sour crispy pork. Ordered alongside jjajangmyeon. The great debate: dip (찍먹) or pour sauce (부먹)? Pick a side.</p>
-          <div class="food-footer">
-            <span class="price">₩18,000–25,000 (공유)</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/탕수육+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">탕수육</span>
+            <span class="food-card-ig-english">Tangsuyuk</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">탕수육</span>
+          <span class="food-card-ig-sub">Tangsuyuk</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Sharing</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="kalguksu" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="kalguksu" data-category="noodles" data-korean="칼국수" data-english="Kalguksu" data-desc="Handmade knife-cut wheat noodles in a clear anchovy or chicken broth. Simple, hearty, and deeply comforting after a long session day." data-price="₩8,000–12,000" data-maps="https://www.google.com/maps/search/칼국수+서울" data-img="images/food/kalguksu.png" data-tags="Noodles,Mild,Comfort Food" tabindex="0" role="button" aria-label="Open details for 칼국수 / Kalguksu">
+        <div class="food-card-ig-img">
           <img src="images/food/kalguksu.png" alt="칼국수" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="칼국수">칼국수</button>
-          <div class="food-english">Kalguksu</div>
-          <p class="food-desc">Handmade knife-cut wheat noodles in a clear anchovy or chicken broth. Simple, hearty, and deeply comforting after a long session day.</p>
-          <div class="food-footer">
-            <span class="price">₩8,000–12,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/칼국수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">칼국수</span>
+            <span class="food-card-ig-english">Kalguksu</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">칼국수</span>
+          <span class="food-card-ig-sub">Kalguksu</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="bibim-guksu" data-category="noodles vegan">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="bibim-guksu" data-category="noodles vegan" data-korean="비빔국수" data-english="Bibim Guksu" data-desc="Spicy cold mixed noodles with gochujang, cucumber, and egg. Refreshing and punchy — a lifesaver in Seoul&#x27;s hot, humid July weather." data-price="₩7,000–10,000" data-maps="https://www.google.com/maps/search/비빔국수+서울" data-img="images/food/bibimguksu.png" data-tags="Noodles,Spicy,Refreshing,Vegan" tabindex="0" role="button" aria-label="Open details for 비빔국수 / Bibim Guksu">
+        <div class="food-card-ig-img">
           <img src="images/food/bibimguksu.png" alt="비빔국수" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="비빔국수">비빔국수 🌱</button>
-          <div class="food-english">Bibim Guksu</div>
-          <p class="food-desc">Spicy cold mixed noodles with gochujang, cucumber, and egg. Refreshing and punchy — a lifesaver in Seoul's hot, humid July weather.</p>
-          <div class="food-footer">
-            <span class="price">₩7,000–10,000</span>
-            <span class="spice-level" title="Medium spicy">🌶️ 2</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/비빔국수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">비빔국수</span>
+            <span class="food-card-ig-english">Bibim Guksu</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">비빔국수</span>
+          <span class="food-card-ig-sub">Bibim Guksu</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="janchi-guksu" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="janchi-guksu" data-category="noodles" data-korean="잔치국수" data-english="Janchi Guksu" data-desc="Traditional banquet noodle soup — thin noodles in a light, clean anchovy broth. Elegant simplicity. The gentle option when your stomach needs a break." data-price="₩6,000–8,000" data-maps="https://www.google.com/maps/search/잔치국수+서울" data-img="images/food/janchiguksu.png" data-tags="Noodles,Light,Mild" tabindex="0" role="button" aria-label="Open details for 잔치국수 / Janchi Guksu">
+        <div class="food-card-ig-img">
           <img src="images/food/janchiguksu.png" alt="잔치국수" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="잔치국수">잔치국수</button>
-          <div class="food-english">Janchi Guksu</div>
-          <p class="food-desc">Traditional banquet noodle soup — thin noodles in a light, clean anchovy broth. Elegant simplicity. The gentle option when your stomach needs a break.</p>
-          <div class="food-footer">
-            <span class="price">₩6,000–8,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/잔치국수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">잔치국수</span>
+            <span class="food-card-ig-english">Janchi Guksu</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">잔치국수</span>
+          <span class="food-card-ig-sub">Janchi Guksu</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Light</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── STREET FOOD ─────────────────────────────── -->
-
-      <div class="food-card" data-food-id="tteokbokki" data-category="street vegan">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="tteokbokki" data-category="street vegan" data-korean="떡볶이" data-english="Tteokbokki" data-desc="Chewy rice cakes in spicy-sweet gochujang sauce. Korea&#x27;s most beloved street food — sold everywhere from pojangmacha to upscale restaurants." data-price="₩3,000–5,000" data-maps="https://www.google.com/maps/search/떡볶이+서울" data-img="images/food/tteokbokki.png" data-tags="Street Food,Spicy,Must Try,Vegan" tabindex="0" role="button" aria-label="Open details for 떡볶이 / Tteokbokki">
+        <div class="food-card-ig-img">
           <img src="images/food/tteokbokki.png" alt="떡볶이" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="떡볶이">떡볶이 🌱</button>
-          <div class="food-english">Tteokbokki</div>
-          <p class="food-desc">Chewy rice cakes in spicy-sweet gochujang sauce. Korea's most beloved street food — sold everywhere from pojangmacha to upscale restaurants.</p>
-          <div class="food-footer">
-            <span class="price">₩3,000–5,000</span>
-            <span class="spice-level" title="Spicy">🌶️ 3</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/떡볶이+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">떡볶이</span>
+            <span class="food-card-ig-english">Tteokbokki</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">떡볶이</span>
+          <span class="food-card-ig-sub">Tteokbokki</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Street Food</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="sundae" data-category="street">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="sundae" data-category="street" data-korean="순대" data-english="Sundae" data-desc="Korean blood sausage stuffed with glass noodles and vegetables. Usually served with tteokbokki and twigim as the classic street food trio." data-price="₩3,000–5,000" data-maps="https://www.google.com/maps/search/순대+분식+서울" data-img="images/food/sundae.png" data-tags="Street Food,Popular" tabindex="0" role="button" aria-label="Open details for 순대 / Sundae">
+        <div class="food-card-ig-img">
           <img src="images/food/sundae.png" alt="순대" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="순대">순대</button>
-          <div class="food-english">Sundae</div>
-          <p class="food-desc">Korean blood sausage stuffed with glass noodles and vegetables. Usually served with tteokbokki and twigim as the classic street food trio.</p>
-          <div class="food-footer">
-            <span class="price">₩3,000–5,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/순대+분식+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">순대</span>
+            <span class="food-card-ig-english">Sundae</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">순대</span>
+          <span class="food-card-ig-sub">Sundae</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Street Food</span><span class="food-tag-ig">Popular</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="twigim" data-category="street">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="twigim" data-category="street" data-korean="튀김" data-english="Twigim" data-desc="Korean-style fried snacks — shrimp, squid, sweet potato, and more. Sold by weight at street stalls, typically dipped in tteokbokki sauce." data-price="₩1,000–3,000" data-maps="https://www.google.com/maps/search/분식집+튀김+서울" data-img="images/food/twigim.png" data-tags="Street Food,Mild" tabindex="0" role="button" aria-label="Open details for 튀김 / Twigim">
+        <div class="food-card-ig-img">
           <img src="images/food/twigim.png" alt="튀김" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="튀김">튀김</button>
-          <div class="food-english">Twigim</div>
-          <p class="food-desc">Korean-style fried snacks — shrimp, squid, sweet potato, and more. Sold by weight at street stalls, typically dipped in tteokbokki sauce.</p>
-          <div class="food-footer">
-            <span class="price">₩1,000–3,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/분식집+튀김+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">튀김</span>
+            <span class="food-card-ig-english">Twigim</span>
           </div>
         </div>
-      </div>
-
-      <div class="food-card" data-food-id="gimbap" data-category="street">
-        <div class="food-img-wrap">
-          <img src="https://images.unsplash.com/photo-1608731001805-187e9c904388?w=600&h=350&fit=crop&auto=format&q=80" alt="김밥" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="김밥">김밥</button>
-          <div class="food-english">Gimbap</div>
-          <p class="food-desc">Seaweed rice rolls with egg, vegetables, and fillings. The perfect on-the-go meal between sessions — at every 분식 shop and convenience store.</p>
-          <div class="food-footer">
-            <span class="price">₩3,000–5,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/김밥+서울" target="_blank" rel="noopener">Find on Maps →</a>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">튀김</span>
+          <span class="food-card-ig-sub">Twigim</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Street Food</span><span class="food-tag-ig">Mild</span>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="food-card" data-food-id="korean-fried-chicken" data-category="street">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="gimbap" data-category="street" data-korean="김밥" data-english="Gimbap" data-desc="Seaweed rice rolls with egg, vegetables, and fillings. The perfect on-the-go meal between sessions — at every 분식 shop and convenience store." data-price="₩3,000–5,000" data-maps="https://www.google.com/maps/search/김밥+서울" data-img="https://images.unsplash.com/photo-1608731001805-187e9c904388?w=600&amp;h=350&amp;fit=crop&amp;auto=format&amp;q=80" data-tags="Street Food,Light,Popular" tabindex="0" role="button" aria-label="Open details for 김밥 / Gimbap">
+        <div class="food-card-ig-img">
+          <img src="https://images.unsplash.com/photo-1608731001805-187e9c904388?w=600&amp;h=350&amp;fit=crop&amp;auto=format&amp;q=80" alt="김밥" loading="lazy">
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">김밥</span>
+            <span class="food-card-ig-english">Gimbap</span>
+          </div>
+        </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">김밥</span>
+          <span class="food-card-ig-sub">Gimbap</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Street Food</span><span class="food-tag-ig">Light</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="food-card-ig" data-food-id="korean-fried-chicken" data-category="street" data-korean="후라이드 치킨 / 양념치킨 / 간장치킨" data-english="Korean Fried Chicken" data-desc="Double-fried for maximum crunch. Three styles: Original (후라이드), sweet-spicy sauce (양념), soy garlic (간장). Order with icy cold beer — &quot;치맥&quot;!" data-price="₩18,000–25,000" data-maps="https://www.google.com/maps/search/치킨+강남+서울" data-img="images/food/koreanfriedchicken.png" data-tags="Street Food,Must Try,Late Night" tabindex="0" role="button" aria-label="Open details for 후라이드 치킨 / 양념치킨 / 간장치킨 / Korean Fried Chicken">
+        <div class="food-card-ig-img">
           <img src="images/food/koreanfriedchicken.png" alt="Korean Fried Chicken" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="후라이드 치킨 / 양념치킨 / 간장치킨">후라이드 / 양념 / 간장치킨</button>
-          <div class="food-english">Korean Fried Chicken</div>
-          <p class="food-desc">Double-fried for maximum crunch. Three styles: Original (후라이드), sweet-spicy sauce (양념), soy garlic (간장). Order with icy cold beer — "치맥"!</p>
-          <div class="food-footer">
-            <span class="price">₩18,000–25,000</span>
-            <span class="spice-level" title="Mild">🌶️ 1</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/치킨+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">후라이드 / 양념 / 간장치킨</span>
+            <span class="food-card-ig-english">Korean Fried Chicken</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">후라이드 / 양념 / 간장치킨</span>
+          <span class="food-card-ig-sub">Korean Fried Chicken</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Street Food</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── SEAFOOD ──────────────────────────────────── -->
-
-      <div class="food-card" data-food-id="hoe-raw-fish" data-category="seafood">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="hoe-raw-fish" data-category="seafood" data-korean="회" data-english="Hoe (Raw Fish)" data-desc="Korean-style sashimi — fresh fish served with sesame oil &amp; salt, or wrapped in perilla with gochujang. Distinctly different from Japanese sashimi." data-price="₩30,000–70,000+ / 인" data-maps="https://www.google.com/maps/search/횟집+강남+서울" data-img="images/food/hoe.png" data-tags="Seafood,Premium" tabindex="0" role="button" aria-label="Open details for 회 / Hoe (Raw Fish)">
+        <div class="food-card-ig-img">
           <img src="images/food/hoe.png" alt="회" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="회">회</button>
-          <div class="food-english">Hoe (Raw Fish)</div>
-          <p class="food-desc">Korean-style sashimi — fresh fish served with sesame oil &amp; salt, or wrapped in perilla with gochujang. Distinctly different from Japanese sashimi.</p>
-          <div class="food-footer">
-            <span class="price">₩30,000–70,000+ / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/횟집+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">회</span>
+            <span class="food-card-ig-english">Hoe (Raw Fish)</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">회</span>
+          <span class="food-card-ig-sub">Hoe (Raw Fish)</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Seafood</span><span class="food-tag-ig">Premium</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="maeuntang" data-category="seafood">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="maeuntang" data-category="seafood" data-korean="매운탕" data-english="Maeuntang" data-desc="Fiery spiced fish stew with tofu, mushrooms, and vegetables. Traditionally served after 회 — the hot broth made from the remaining fish." data-price="₩10,000–20,000" data-maps="https://www.google.com/maps/search/매운탕+서울" data-img="images/food/maeuntang.png" data-tags="Seafood,Spicy,Stew" tabindex="0" role="button" aria-label="Open details for 매운탕 / Maeuntang">
+        <div class="food-card-ig-img">
           <img src="images/food/maeuntang.png" alt="매운탕" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="매운탕">매운탕</button>
-          <div class="food-english">Maeuntang</div>
-          <p class="food-desc">Fiery spiced fish stew with tofu, mushrooms, and vegetables. Traditionally served after 회 — the hot broth made from the remaining fish.</p>
-          <div class="food-footer">
-            <span class="price">₩10,000–20,000</span>
-            <span class="spice-level" title="Very spicy">🌶️ 4</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/매운탕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">매운탕</span>
+            <span class="food-card-ig-english">Maeuntang</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">매운탕</span>
+          <span class="food-card-ig-sub">Maeuntang</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Seafood</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="chobap-korean-sushi" data-category="seafood">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="chobap-korean-sushi" data-category="seafood" data-korean="초밥" data-english="Chobap (Korean Sushi)" data-desc="Korean-style nigiri with fresh domestic fish. Larger portions, competitive quality, and usually better value than you&#x27;d expect." data-price="₩15,000–25,000" data-maps="https://www.google.com/maps/search/초밥+강남+서울" data-img="images/food/chobap.png" data-tags="Seafood,Mild,Premium" tabindex="0" role="button" aria-label="Open details for 초밥 / Chobap (Korean Sushi)">
+        <div class="food-card-ig-img">
           <img src="images/food/chobap.png" alt="초밥" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="초밥">초밥</button>
-          <div class="food-english">Chobap (Korean Sushi)</div>
-          <p class="food-desc">Korean-style nigiri with fresh domestic fish. Larger portions, competitive quality, and usually better value than you'd expect.</p>
-          <div class="food-footer">
-            <span class="price">₩15,000–25,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/초밥+강남+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">초밥</span>
+            <span class="food-card-ig-english">Chobap (Korean Sushi)</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">초밥</span>
+          <span class="food-card-ig-sub">Chobap (Korean Sushi)</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Seafood</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── SOUPS (additional) ──────────────────────────── -->
-
-      <div class="food-card" data-food-id="ginseng-chicken-soup" data-category="soup">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="ginseng-chicken-soup" data-category="soup" data-korean="삼계탕" data-english="Ginseng Chicken Soup" data-desc="A whole young chicken stuffed with glutinous rice, ginseng, jujubes, and garlic, simmered into a rich milky broth. Korea&#x27;s classic summer restorative." data-price="₩15,000–22,000" data-maps="https://www.google.com/maps/search/삼계탕+서울" data-img="images/food/samgyetang.png" data-tags="Stew,Mild,Must Try" tabindex="0" role="button" aria-label="Open details for 삼계탕 / Ginseng Chicken Soup">
+        <div class="food-card-ig-img">
           <img src="images/food/samgyetang.png" alt="삼계탕" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="삼계탕">삼계탕</button>
-          <div class="food-english">Ginseng Chicken Soup</div>
-          <p class="food-desc">A whole young chicken stuffed with glutinous rice, ginseng, jujubes, and garlic, simmered into a rich milky broth. Korea's classic summer restorative.</p>
-          <div class="food-footer">
-            <span class="price">₩15,000–22,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/삼계탕+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">삼계탕</span>
+            <span class="food-card-ig-english">Ginseng Chicken Soup</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">삼계탕</span>
+          <span class="food-card-ig-sub">Ginseng Chicken Soup</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Stew</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="shabu-shabu-hot-pot" data-category="soup">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="shabu-shabu-hot-pot" data-category="soup" data-korean="샤브샤브" data-english="Shabu-shabu Hot Pot" data-desc="Thinly sliced beef and fresh vegetables swished through a simmering kombu broth at the table. Finishes with porridge made from the remaining broth." data-price="₩20,000–40,000 / 인" data-maps="https://www.google.com/maps/search/샤브샤브+서울" data-img="images/food/shabu-shabu.png" data-tags="Stew,Mild,Sharing" tabindex="0" role="button" aria-label="Open details for 샤브샤브 / Shabu-shabu Hot Pot">
+        <div class="food-card-ig-img">
           <img src="images/food/shabu-shabu.png" alt="샤브샤브" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="샤브샤브">샤브샤브</button>
-          <div class="food-english">Shabu-shabu Hot Pot</div>
-          <p class="food-desc">Thinly sliced beef and fresh vegetables swished through a simmering kombu broth at the table. Finishes with porridge made from the remaining broth.</p>
-          <div class="food-footer">
-            <span class="price">₩20,000–40,000 / 인</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/샤브샤브+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">샤브샤브</span>
+            <span class="food-card-ig-english">Shabu-shabu Hot Pot</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">샤브샤브</span>
+          <span class="food-card-ig-sub">Shabu-shabu Hot Pot</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Stew</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── NOODLES (additional) ────────────────────────── -->
-
-      <div class="food-card" data-food-id="cold-buckwheat-noodle-soup" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="cold-buckwheat-noodle-soup" data-category="noodles" data-korean="물냉면" data-english="Cold Buckwheat Noodle Soup" data-desc="Chewy buckwheat noodles in an ice-cold beef broth with sliced beef, cucumber, pickled radish, and a half boiled egg. Perfect for Seoul&#x27;s humid July heat." data-price="₩12,000–15,000" data-maps="https://www.google.com/maps/search/물냉면+서울" data-img="images/food/mul-naengmyeon.png" data-tags="Noodles,Refreshing,Must Try" tabindex="0" role="button" aria-label="Open details for 물냉면 / Cold Buckwheat Noodle Soup">
+        <div class="food-card-ig-img">
           <img src="images/food/mul-naengmyeon.png" alt="물냉면" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="물냉면">물냉면</button>
-          <div class="food-english">Cold Buckwheat Noodle Soup</div>
-          <p class="food-desc">Chewy buckwheat noodles in an ice-cold beef broth with sliced beef, cucumber, pickled radish, and a half boiled egg. Perfect for Seoul's humid July heat.</p>
-          <div class="food-footer">
-            <span class="price">₩12,000–15,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/물냉면+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">물냉면</span>
+            <span class="food-card-ig-english">Cold Buckwheat Noodle Soup</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">물냉면</span>
+          <span class="food-card-ig-sub">Cold Buckwheat Noodle Soup</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Refreshing</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="buckwheat-cold-noodles" data-category="noodles">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="buckwheat-cold-noodles" data-category="noodles" data-korean="메밀소바" data-english="Buckwheat Cold Noodles" data-desc="Dark, nutty buckwheat noodles on a bamboo tray with a dipping sauce, grated daikon, and wasabi. Light and satisfying — popular at Korean-Japanese restaurants." data-price="₩10,000–14,000" data-maps="https://www.google.com/maps/search/메밀소바+서울" data-img="images/food/memil-soba.png" data-tags="Noodles,Light,Refreshing" tabindex="0" role="button" aria-label="Open details for 메밀소바 / Buckwheat Cold Noodles">
+        <div class="food-card-ig-img">
           <img src="images/food/memil-soba.png" alt="메밀소바" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="메밀소바">메밀소바</button>
-          <div class="food-english">Buckwheat Cold Noodles</div>
-          <p class="food-desc">Dark, nutty buckwheat noodles on a bamboo tray with a dipping sauce, grated daikon, and wasabi. Light and satisfying — popular at Korean-Japanese restaurants.</p>
-          <div class="food-footer">
-            <span class="price">₩10,000–14,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/메밀소바+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">메밀소바</span>
+            <span class="food-card-ig-english">Buckwheat Cold Noodles</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">메밀소바</span>
+          <span class="food-card-ig-sub">Buckwheat Cold Noodles</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Noodles</span><span class="food-tag-ig">Light</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── RICE & MORE ──────────────────────────────────── -->
-
-      <div class="food-card" data-food-id="bibimbap" data-category="rice vegan">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="bibimbap" data-category="rice vegan" data-korean="비빔밥" data-english="Bibimbap" data-desc="Rice topped with seasoned vegetables, ground beef, and a fried egg — mixed together with gochujang at the table. One of Korea&#x27;s most iconic and balanced dishes." data-price="₩8,000–12,000" data-maps="https://www.google.com/maps/search/비빔밥+서울" data-img="images/food/bibimbap.png" data-tags="Rice,Must Try,Vegan" tabindex="0" role="button" aria-label="Open details for 비빔밥 / Bibimbap">
+        <div class="food-card-ig-img">
           <img src="images/food/bibimbap.png" alt="비빔밥" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="비빔밥">비빔밥 🌱</button>
-          <div class="food-english">Bibimbap</div>
-          <p class="food-desc">Rice topped with seasoned vegetables, ground beef, and a fried egg — mixed together with gochujang at the table. One of Korea's most iconic and balanced dishes.</p>
-          <div class="food-footer">
-            <span class="price">₩8,000–12,000</span>
-            <span class="spice-level" title="Mild">🌶️ 1</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/비빔밥+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">비빔밥</span>
+            <span class="food-card-ig-english">Bibimbap</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">비빔밥</span>
+          <span class="food-card-ig-sub">Bibimbap</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Rice</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="donkatsu-pork-cutlet" data-category="rice">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="donkatsu-pork-cutlet" data-category="rice" data-korean="돈까스" data-english="Donkatsu (Pork Cutlet)" data-desc="Panko-breaded pork cutlet, crispy outside and juicy inside, drizzled with tonkatsu sauce. A beloved comfort food staple — budget-friendly and everywhere." data-price="₩8,000–14,000" data-maps="https://www.google.com/maps/search/돈까스+서울" data-img="images/food/donkatsu.png" data-tags="Comfort Food,Mild,Popular" tabindex="0" role="button" aria-label="Open details for 돈까스 / Donkatsu (Pork Cutlet)">
+        <div class="food-card-ig-img">
           <img src="images/food/donkatsu.png" alt="돈까스" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="돈까스">돈까스</button>
-          <div class="food-english">Donkatsu (Pork Cutlet)</div>
-          <p class="food-desc">Panko-breaded pork cutlet, crispy outside and juicy inside, drizzled with tonkatsu sauce. A beloved comfort food staple — budget-friendly and everywhere.</p>
-          <div class="food-footer">
-            <span class="price">₩8,000–14,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/돈까스+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">돈까스</span>
+            <span class="food-card-ig-english">Donkatsu (Pork Cutlet)</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">돈까스</span>
+          <span class="food-card-ig-sub">Donkatsu (Pork Cutlet)</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Comfort Food</span><span class="food-tag-ig">Mild</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="braised-spicy-tofu" data-category="rice vegan">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="braised-spicy-tofu" data-category="rice vegan" data-korean="두부조림" data-english="Braised Spicy Tofu" data-desc="Pan-fried tofu simmered in a rich soy-gochugaru sauce with garlic and green onions. A staple side dish (banchan) eaten with rice at everyday Korean meals." data-price="₩6,000–10,000" data-maps="https://www.google.com/maps/search/두부조림+서울" data-img="images/food/dubu-jorim.png" data-tags="Vegan,Spicy,Comfort Food" tabindex="0" role="button" aria-label="Open details for 두부조림 / Braised Spicy Tofu">
+        <div class="food-card-ig-img">
           <img src="images/food/dubu-jorim.png" alt="두부조림" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="두부조림">두부조림 🌱</button>
-          <div class="food-english">Braised Spicy Tofu</div>
-          <p class="food-desc">Pan-fried tofu simmered in a rich soy-gochugaru sauce with garlic and green onions. A staple side dish (banchan) eaten with rice at everyday Korean meals.</p>
-          <div class="food-footer">
-            <span class="price">₩6,000–10,000</span>
-            <span class="spice-level" title="Medium spicy">🌶️ 2</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/두부조림+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">두부조림</span>
+            <span class="food-card-ig-english">Braised Spicy Tofu</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">두부조림</span>
+          <span class="food-card-ig-sub">Braised Spicy Tofu</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Vegan</span><span class="food-tag-ig">Spicy</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="fresh-spring-rolls" data-category="rice">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="fresh-spring-rolls" data-category="rice" data-korean="월남쌈" data-english="Fresh Spring Rolls" data-desc="Translucent rice paper rolls stuffed with shrimp, pork, vermicelli, fresh herbs, and vegetables. A light, refreshing option widely served at Korean restaurants." data-price="₩12,000–18,000" data-maps="https://www.google.com/maps/search/월남쌈+서울" data-img="images/food/wolnam-ssam.png" data-tags="Light,Refreshing,Sharing" tabindex="0" role="button" aria-label="Open details for 월남쌈 / Fresh Spring Rolls">
+        <div class="food-card-ig-img">
           <img src="images/food/wolnam-ssam.png" alt="월남쌈" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="월남쌈">월남쌈</button>
-          <div class="food-english">Fresh Spring Rolls</div>
-          <p class="food-desc">Translucent rice paper rolls stuffed with shrimp, pork, vermicelli, fresh herbs, and vegetables. A light, refreshing option widely served at Korean restaurants.</p>
-          <div class="food-footer">
-            <span class="price">₩12,000–18,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/월남쌈+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">월남쌈</span>
+            <span class="food-card-ig-english">Fresh Spring Rolls</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">월남쌈</span>
+          <span class="food-card-ig-sub">Fresh Spring Rolls</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Light</span><span class="food-tag-ig">Refreshing</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="food-card" data-food-id="acorn-jelly-cold-bowl" data-category="rice vegan">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="acorn-jelly-cold-bowl" data-category="rice vegan" data-korean="도토리묵사발" data-english="Acorn Jelly Cold Bowl" data-desc="Silky dark acorn jelly cubes in a cold savory broth with cucumber, seaweed, and sesame. Uniquely Korean, light, and healthy — a great starter or light meal." data-price="₩6,000–10,000" data-maps="https://www.google.com/maps/search/도토리묵사발+서울" data-img="images/food/dotorimuk-sabal.png" data-tags="Vegan,Light,Refreshing" tabindex="0" role="button" aria-label="Open details for 도토리묵사발 / Acorn Jelly Cold Bowl">
+        <div class="food-card-ig-img">
           <img src="images/food/dotorimuk-sabal.png" alt="도토리묵사발" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="도토리묵사발">도토리묵사발 🌱</button>
-          <div class="food-english">Acorn Jelly Cold Bowl</div>
-          <p class="food-desc">Silky dark acorn jelly cubes in a cold savory broth with cucumber, seaweed, and sesame. Uniquely Korean, light, and healthy — a great starter or light meal.</p>
-          <div class="food-footer">
-            <span class="price">₩6,000–10,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/도토리묵사발+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">도토리묵사발</span>
+            <span class="food-card-ig-english">Acorn Jelly Cold Bowl</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">도토리묵사발</span>
+          <span class="food-card-ig-sub">Acorn Jelly Cold Bowl</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Vegan</span><span class="food-tag-ig">Light</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- ── DESSERT ──────────────────────────────────────── -->
-
-      <div class="food-card" data-food-id="bingsu-korean-shaved-ice" data-category="dessert">
-        <div class="food-img-wrap">
+      <article class="food-card-ig" data-food-id="bingsu-korean-shaved-ice" data-category="dessert" data-korean="빙수" data-english="Bingsu (Korean Shaved Ice)" data-desc="Fluffy milk-shaved ice piled with sweet red bean paste, chewy rice cake, and condensed milk. Korean bingsu is far softer than ordinary shaved ice — life-changing in July heat." data-price="₩10,000–18,000" data-maps="https://www.google.com/maps/search/빙수+팥빙수+서울" data-img="images/food/bingsu.png" data-tags="Dessert,Must Try,Refreshing" tabindex="0" role="button" aria-label="Open details for 빙수 / Bingsu (Korean Shaved Ice)">
+        <div class="food-card-ig-img">
           <img src="images/food/bingsu.png" alt="빙수" loading="lazy">
-        </div>
-        <div class="food-content">
-          <button class="korean-name" data-korean="빙수">빙수</button>
-          <div class="food-english">Bingsu (Korean Shaved Ice)</div>
-          <p class="food-desc">Fluffy milk-shaved ice piled with sweet red bean paste, chewy rice cake, and condensed milk. Korean bingsu is far softer than ordinary shaved ice — life-changing in July heat.</p>
-          <div class="food-footer">
-            <span class="price">₩10,000–18,000</span>
-            <span class="spice-level" title="Not spicy">🌶️ 0</span>
-            <a class="maps-link" href="https://www.google.com/maps/search/빙수+팥빙수+서울" target="_blank" rel="noopener">Find on Maps →</a>
+          <div class="food-card-ig-overlay">
+            <span class="food-card-ig-korean">빙수</span>
+            <span class="food-card-ig-english">Bingsu (Korean Shaved Ice)</span>
           </div>
         </div>
-      </div>
+        <div class="food-card-ig-info">
+          <span class="food-card-ig-name">빙수</span>
+          <span class="food-card-ig-sub">Bingsu (Korean Shaved Ice)</span>
+          <div class="food-card-ig-tags">
+            <span class="food-tag-ig">Dessert</span><span class="food-tag-ig">Must Try</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
 
+  <div class="food-modal-backdrop" id="food-modal" hidden aria-hidden="true">
+    <div class="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-korean">
+      <button class="food-modal-close" id="food-modal-close" type="button" aria-label="Close food details">&times;</button>
+      <div class="food-modal-img">
+        <img id="food-modal-image" src="" alt="">
+      </div>
+      <div class="food-modal-body">
+        <button class="food-modal-korean" id="food-modal-korean" type="button" data-korean=""></button>
+        <div class="food-modal-english" id="food-modal-english"></div>
+        <div class="food-modal-price" id="food-modal-price"></div>
+        <div class="food-modal-tags" id="food-modal-tags"></div>
+        <p class="food-modal-desc" id="food-modal-desc"></p>
+        <div class="food-modal-pick-slot" id="food-modal-pick-slot" hidden></div>
+        <div class="food-modal-actions">
+          <button class="food-modal-btn primary" id="food-modal-copy" type="button" data-korean="">Copy Korean Name</button>
+          <a class="food-modal-btn secondary" id="food-modal-maps" href="#" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
 <!-- AdSense Slot 2 ─────────────────────────────────────
 <div class="max-w-7xl mx-auto px-4 py-2">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
