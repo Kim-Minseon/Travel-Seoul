@@ -302,8 +302,8 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   color: #fff;
 }
 .food-grid-ig {
-  column-count: 1;
-  column-gap: 24px;
+  column-count: 2;
+  column-gap: 12px;
 }
 .food-card-ig {
   display: inline-block;
@@ -574,7 +574,8 @@ body.food-modal-open {
 }
 @media (min-width: 768px) {
   .food-grid-ig {
-    column-count: 2;
+    column-count: 3;
+    column-gap: 24px;
   }
 }
 @media (min-width: 1200px) {
@@ -1536,4 +1537,59 @@ details[open] .board-create-summary { border-color: #6B9BD2; border-style: solid
 .food-card[data-food-id],
 .food-card-ig[data-food-id] {
   cursor: pointer;
+}
+
+/* ── Advertisement zones ──────────────────────────────── */
+.ad-zone {
+  min-height: 90px;
+}
+.ad-zone--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  border: 1px dashed #D1D5DB;
+  border-radius: 12px;
+  background: repeating-linear-gradient(45deg, #FAFAFA, #FAFAFA 10px, #F3F4F6 10px, #F3F4F6 20px);
+  color: #9CA3AF;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Mobile: compact 2-up card layout ─────────────────── */
+@media (max-width: 639px) {
+  /* Activity cards */
+  .activity-img-wrap { height: 120px; }
+  .activity-img-badge { font-size: 0.58rem; padding: 2px 7px; top: 8px; left: 8px; }
+  .activity-body { padding: 11px 12px 13px; }
+  .activity-body h3 { font-size: 0.85rem; margin-bottom: 4px; }
+  .activity-body p { font-size: 0.72rem; line-height: 1.45; margin-bottom: 8px; }
+  .korean-tag { display: inline-block; margin-left: 0; margin-top: 2px; font-size: 0.62rem; }
+  .activity-meta { gap: 4px; margin-bottom: 8px; }
+  .activity-meta span { font-size: 0.6rem; padding: 2px 6px; }
+  .activity-link { font-size: 0.68rem; }
+
+  /* Day trip cards */
+  .daytrip-img-wrap { height: 130px; }
+  .daytrip-overlay-content { padding: 10px 12px; }
+  .daytrip-overlay-content h3 { font-size: 1rem; }
+  .daytrip-overlay-content .korean-sub { font-size: 0.72rem; }
+  .trip-badge { font-size: 0.6rem; padding: 3px 8px; top: 8px; right: 8px; }
+  .daytrip-body { padding: 12px; }
+  .daytrip-body p { font-size: 0.72rem; line-height: 1.45; margin-bottom: 10px; }
+  .daytrip-highlights { gap: 4px; margin-bottom: 10px; }
+  .daytrip-highlights span { font-size: 0.62rem; padding: 2px 8px; }
+  .daytrip-link { font-size: 0.7rem; }
+
+  /* Food (Instagram-style) cards */
+  .food-card-ig { margin-bottom: 12px; }
+  .food-card-ig-overlay { padding: 12px; }
+  .food-card-ig-korean { font-size: 1.1rem; }
+  .food-card-ig-english { font-size: 0.8rem; }
+  .food-card-ig-info { padding: 8px 2px 2px; }
+  .food-card-ig-name { font-size: 0.88rem; }
+  .food-card-ig-sub { font-size: 0.76rem; }
+  .food-card-ig-badge { font-size: 0.62rem; padding: 4px 8px; top: 10px; left: 10px; }
 }

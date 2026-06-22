@@ -10,12 +10,25 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇰🇷</text></svg>">
   <title>Seoul Guide for ICML 2026 — Food, Transport & Activities</title>
 
-  <!-- ═══════════════════════════════════════════════
-       GOOGLE ADSENSE — uncomment after site approval
-       Replace ca-pub-XXXXXXXXXXXXXXXX with your ID
-       ═══════════════════════════════════════════════
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  -->
+  <!-- ═══════════════════════════════════════════════════════════
+       ADVERTISEMENTS (Google AdSense)
+       1. Paste your publisher ID into ADSENSE_CLIENT below (ca-pub-...)
+       2. In AdSense, create ad units and replace each data-ad-slot value
+          on the <div class="ad-zone"> elements throughout the page.
+       Until a client ID is set, lightweight "Advertisement" placeholders
+       are shown so you can see where ads will appear.
+       ═══════════════════════════════════════════════════════════ -->
+  <script>
+    // ▶ Paste your AdSense publisher ID here once approved, e.g. 'ca-pub-1234567890123456'
+    window.ADSENSE_CLIENT = 'ca-pub-9611827331820926';
+    if (window.ADSENSE_CLIENT) {
+      const adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + window.ADSENSE_CLIENT;
+      adScript.crossOrigin = 'anonymous';
+      document.head.appendChild(adScript);
+    }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -153,12 +166,11 @@
   </div>
 </section>
 
-<!-- AdSense Slot 1 ─────────────────────────────────────
+<!-- Advertisement -->
 <div class="max-w-7xl mx-auto px-4 py-2">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="ad-zone" data-ad-slot="XXXXXXXXXX"></div>
 </div>
-──────────────────────────────────────────────────────── -->
+
 
 <!-- ══════════════════════════════════════ GETTING HERE ═ -->
 <section id="getting-here" class="py-16 px-4 scroll-mt-16">
@@ -309,7 +321,7 @@
       <a href="map.html" class="inline-flex items-center gap-1.5 text-sm font-semibold bg-primary-light text-primary-dark px-4 py-1.5 rounded-full no-underline hover:bg-primary hover:text-white transition-colors shrink-0" title="View on Map">📍 Map</a>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
 
       <div class="activity-card" data-activity-id="gyeongbokgung">
         <div class="activity-img-wrap">
@@ -1473,12 +1485,11 @@
     </div>
   </div>
 </section>
-<!-- AdSense Slot 2 ─────────────────────────────────────
+<!-- Advertisement -->
 <div class="max-w-7xl mx-auto px-4 py-2">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="ad-zone" data-ad-slot="XXXXXXXXXX"></div>
 </div>
-──────────────────────────────────────────────────────── -->
+
 
 <!-- ════════════════════════════════════════ NEAR COEX ══ -->
 <section id="near-coex" class="py-16 px-4 scroll-mt-16">
@@ -1531,7 +1542,7 @@
     <h2 class="text-3xl font-bold section-title mb-2">Day Trips from Seoul</h2>
     <p class="text-gray-500 mb-10">Short getaways reachable by KTX or metro — perfect for a free day before or after the conference</p>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
 
       <!-- Jeonju -->
       <div class="daytrip-card">
@@ -1637,12 +1648,11 @@
   </div>
 </section>
 
-<!-- AdSense Slot 3 ─────────────────────────────────────
+<!-- Advertisement -->
 <div class="max-w-7xl mx-auto px-4 py-2">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="ad-zone" data-ad-slot="XXXXXXXXXX"></div>
 </div>
-──────────────────────────────────────────────────────── -->
+
 
 <!-- ════════════════════════════════════════ TIPS ═══════ -->
 <section id="tips" class="py-16 px-4 bg-white scroll-mt-16">
@@ -1804,5 +1814,28 @@
 <script src="js/main.js"></script>
 <script src="js/minseon-picks.js"></script>
 <script src="js/board.js"></script>
+
+<!-- Render ad zones: real AdSense units when ADSENSE_CLIENT is set, otherwise placeholders -->
+<script>
+  (function () {
+    var client = window.ADSENSE_CLIENT;
+    document.querySelectorAll('.ad-zone').forEach(function (zone) {
+      if (client) {
+        var ins = document.createElement('ins');
+        ins.className = 'adsbygoogle';
+        ins.style.display = 'block';
+        ins.setAttribute('data-ad-client', client);
+        ins.setAttribute('data-ad-slot', zone.dataset.adSlot || '');
+        ins.setAttribute('data-ad-format', 'auto');
+        ins.setAttribute('data-full-width-responsive', 'true');
+        zone.appendChild(ins);
+        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+      } else {
+        zone.classList.add('ad-zone--placeholder');
+        zone.innerHTML = '<span>Advertisement</span>';
+      }
+    });
+  })();
+</script>
 </body>
 </html>
